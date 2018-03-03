@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.FondoSolidaridad" table="fondo_solidaridad" schema="public" optimistic-lock="version">
+        <id name="idFondoSolidaridad" type="int">
+            <column name="id_fondo_solidaridad" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="persona" class="lissa.be.Persona" fetch="select">
+            <column name="id_persona" />
+        </many-to-one>
+        <property name="fechaReg" type="date">
+            <column name="fecha_reg" length="13" />
+        </property>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+        <property name="importe" type="big_decimal">
+            <column name="importe" precision="16" />
+        </property>
+        <set name="servicioFondoSolidaridads" table="servicio_fondo_solidaridad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fondo_solidaridad" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.ServicioFondoSolidaridad" />
+        </set>
+        <set name="serviciosFondoSolidaridads" table="servicios_fondo_solidaridad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fondosolidaridad" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.ServiciosFondoSolidaridad" />
+        </set>
+        <set name="historialAtencionFpses" table="historial_atencion_fps" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fps" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.HistorialAtencionFps" />
+        </set>
+    </class>
+</hibernate-mapping>

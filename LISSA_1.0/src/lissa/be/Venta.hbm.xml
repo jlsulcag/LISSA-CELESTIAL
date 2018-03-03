@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-oct-2016 12:42:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Venta" table="venta" schema="farmacia" optimistic-lock="version">
+        <id name="idventa" type="int">
+            <column name="idventa" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="farComprobante" class="lissa.be.FarComprobante" fetch="select">
+            <column name="id_farcomprobante" not-null="true" />
+        </many-to-one>
+        <many-to-one name="areaConsumo" class="lissa.be.AreaConsumo" fetch="select">
+            <column name="id_areaconsumo" not-null="false" />
+        </many-to-one>
+        <property name="idCliente" type="int">
+            <column name="id_cliente" />
+        </property>
+        <property name="idUsuario" type="int">
+            <column name="id_usuario" not-null="true" />
+        </property>
+        <property name="fechaVenta" type="date">
+            <column name="fecha_venta" length="13" not-null="true" />
+        </property>
+        <property name="horaVenta" type="string">
+            <column name="hora_venta" length="15" not-null="true" />
+        </property>
+        <property name="numComprobante" type="java.lang.Long">
+            <column name="num_comprobante" />
+        </property>
+        <property name="grupoNumeracion" type="int">
+            <column name="grupo_numeracion" not-null="true" />
+        </property>
+        <property name="subTotal" type="big_decimal">
+            <column name="sub_total" precision="18" not-null="true" />
+        </property>
+        <property name="montoIgv" type="big_decimal">
+            <column name="monto_igv" precision="18" not-null="true" />
+        </property>
+        <property name="total" type="big_decimal">
+            <column name="total" precision="18" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="30" not-null="true" />
+        </property>
+        <property name="motivoAnulacion" type="string">
+            <column name="motivo_anulacion" length="160" />
+        </property>
+        <property name="idCaja" type="int">
+            <column name="id_caja" not-null="true" />
+        </property>
+        <property name="idPersonajuridica" type="int">
+            <column name="id_personajuridica" not-null="true" />
+        </property>
+        <property name="numOperacion" type="int">
+            <column name="num_operacion" not-null="true" />
+        </property>
+        <set name="detalleVentas" table="detalle_venta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_venta" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.DetalleVenta" />
+        </set>
+        <set name="cuentaxcobrars" table="cuentaxcobrar" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_venta" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Cuentaxcobrar" />
+        </set>
+        <property name="responsableNotasalida" type="string">
+            <column name="responsable_notasalida" length="120" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

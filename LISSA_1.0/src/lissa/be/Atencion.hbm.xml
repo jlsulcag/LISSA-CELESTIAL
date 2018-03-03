@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Atencion" table="atencion" schema="public" optimistic-lock="version">
+        <id name="idAtencion" type="int">
+            <column name="id_atencion" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="historiaClinica" class="lissa.be.HistoriaClinica" fetch="select">
+            <column name="id_hc" not-null="true" />
+        </many-to-one>
+        <property name="fechaAtencion" type="date">
+            <column name="fecha_atencion" length="13" not-null="true" />
+        </property>
+        <property name="horaAtencion" type="string">
+            <column name="hora_atencion" length="18" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+        <property name="tipoAtencion" type="string">
+            <column name="tipo_atencion" length="30" />
+        </property>
+        <property name="idUsuarioEnf" type="java.lang.Integer">
+            <column name="id_usuario_enf" />
+        </property>
+        <property name="idUsuarioMed" type="java.lang.Integer">
+            <column name="id_usuario_med" />
+        </property>
+        <set name="alergias" table="alergia" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.Alergia" />
+        </set>
+        <set name="anamnesises" table="anamnesis" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.Anamnesis" />
+        </set>
+        <set name="diagnosticos" table="diagnostico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Diagnostico" />
+        </set>
+        <set name="datoAdicionals" table="dato_adicional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.DatoAdicional" />
+        </set>
+        <set name="antecedentes" table="antecedente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.Antecedente" />
+        </set>
+        <set name="examenAuxiliars" table="examen_auxiliar" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.ExamenAuxiliar" />
+        </set>
+        <set name="funcionVitals" table="funcion_vital" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.FuncionVital" />
+        </set>
+        <set name="tratamientos" table="tratamiento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencion" />
+            </key>
+            <one-to-many class="lissa.be.Tratamiento" />
+        </set>
+    </class>
+</hibernate-mapping>

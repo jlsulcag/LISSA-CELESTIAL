@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Comprobante" table="comprobante" schema="public" optimistic-lock="version">
+        <id name="idComprobante" type="int">
+            <column name="id_comprobante" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="beneficio" class="lissa.be.Beneficio" fetch="select">
+            <column name="id_beneficio" />
+        </many-to-one>
+        <many-to-one name="caja" class="lissa.be.Caja" fetch="select">
+            <column name="id_caja" not-null="true" />
+        </many-to-one>
+        <many-to-one name="paciente" class="lissa.be.Paciente" fetch="select">
+            <column name="id_paciente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoComprobante" class="lissa.be.TipoComprobante" fetch="select">
+            <column name="tipo_documento" />
+        </many-to-one>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+        <property name="fechaBoleta" type="date">
+            <column name="fecha_boleta" length="13" />
+        </property>
+        <property name="idPersonaRucFactura" type="java.lang.Integer">
+            <column name="id_persona_ruc_factura" />
+        </property>
+        <property name="fechaReg" type="timestamp">
+            <column name="fecha_reg" length="29" />
+        </property>
+        <property name="numeroBoleta" type="java.lang.Integer">
+            <column name="numero_boleta" />
+        </property>
+        <property name="subTotal" type="big_decimal">
+            <column name="sub_total" precision="16" />
+        </property>
+        <property name="montoIgv" type="big_decimal">
+            <column name="monto_igv" precision="16" />
+        </property>
+        <property name="montoTotal" type="big_decimal">
+            <column name="monto_total" precision="16" />
+        </property>
+        <property name="motivoAnulacion" type="string">
+            <column name="motivo_anulacion" length="160" />
+        </property>
+        <property name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+        </property>
+        <property name="numeroOperacion" type="java.lang.Integer">
+            <column name="numero_operacion" />
+        </property>
+        <property name="grupoNumeracion" type="java.lang.Integer">
+            <column name="grupo_numeracion" />
+        </property>
+        <property name="tipoPaciente" type="string">
+            <column length="20" name="tipo_paciente"/>
+        </property>
+        <set name="pagos" table="pago" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_comprobante" />
+            </key>
+            <one-to-many class="lissa.be.Pago" />
+        </set>
+        <set name="itemsComprobantes" table="items_comprobante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_boleta" />
+            </key>
+            <one-to-many class="lissa.be.ItemsComprobante" />
+        </set>
+    </class>
+</hibernate-mapping>

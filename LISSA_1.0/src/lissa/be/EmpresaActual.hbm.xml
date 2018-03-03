@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-abr-2016 10:23:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.EmpresaActual" table="empresa_actual" schema="public" optimistic-lock="version">
+        <id name="idempresaactual" type="int">
+            <column name="idempresaactual" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencionOcupacional" class="lissa.be.AtencionOcupacional" fetch="select">
+            <column name="id_atencionocupacional" not-null="true" />
+        </many-to-one>
+        <property name="areaTrabajo" type="string">
+            <column name="area_trabajo" length="60" />
+        </property>
+        <property name="superficie" type="java.lang.Boolean">
+            <column name="superficie" />
+        </property>
+        <property name="subsuelo" type="java.lang.Boolean">
+            <column name="subsuelo" />
+        </property>
+        <property name="tiempoLaborando" type="string">
+            <column name="tiempo_laborando" length="30" />
+        </property>
+        <property name="riesgo" type="string">
+            <column name="riesgo" length="180" />
+        </property>
+        <property name="medidaSeguridad" type="string">
+            <column name="medida_seguridad" length="180" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

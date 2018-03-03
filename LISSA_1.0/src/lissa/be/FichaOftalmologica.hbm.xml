@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.FichaOftalmologica" table="ficha_oftalmologica" schema="public" optimistic-lock="version">
+        <id name="idfichaoftalmologica" type="int">
+            <column name="idfichaoftalmologica" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencionOcupacional" class="lissa.be.AtencionOcupacional" fetch="select">
+            <column name="id_atencionocupacional" not-null="true" />
+        </many-to-one>
+        <property name="diabetes" type="java.lang.Boolean">
+            <column name="diabetes" />
+        </property>
+        <property name="radiacion" type="java.lang.Boolean">
+            <column name="radiacion" />
+        </property>
+        <property name="cirugiaOcular" type="java.lang.Boolean">
+            <column name="cirugia_ocular" />
+        </property>
+        <property name="hipertension" type="java.lang.Boolean">
+            <column name="hipertension" />
+        </property>
+        <property name="traumaOcular" type="java.lang.Boolean">
+            <column name="trauma_ocular" />
+        </property>
+        <property name="correctores" type="java.lang.Boolean">
+            <column name="correctores" />
+        </property>
+        <property name="expSustQuimicas" type="java.lang.Boolean">
+            <column name="exp_sust_quimicas" />
+        </property>
+        <property name="glaucoma" type="java.lang.Boolean">
+            <column name="glaucoma" />
+        </property>
+        <property name="expRadiaciones" type="java.lang.Boolean">
+            <column name="exp_radiaciones" />
+        </property>
+        <property name="antFamiliar" type="java.lang.Boolean">
+            <column name="ant_familiar" />
+        </property>
+        <property name="otro" type="java.lang.Boolean">
+            <column name="otro" />
+        </property>
+        <property name="descOtro" type="string">
+            <column name="desc_otro" length="160" />
+        </property>
+        <property name="visionCercaOdSc1" type="java.lang.Integer">
+            <column name="vision_cerca_od_sc1" />
+        </property>
+        <property name="visionCercaOdSc2" type="java.lang.Integer">
+            <column name="vision_cerca_od_sc2" />
+        </property>
+        <property name="visionCercaOdCc1" type="java.lang.Integer">
+            <column name="vision_cerca_od_cc1" />
+        </property>
+        <property name="visionCercaOdCc2" type="java.lang.Integer">
+            <column name="vision_cerca_od_cc2" />
+        </property>
+        <property name="visionCercaOiSc1" type="java.lang.Integer">
+            <column name="vision_cerca_oi_sc1" />
+        </property>
+        <property name="visionCercaOiSc2" type="java.lang.Integer">
+            <column name="vision_cerca_oi_sc2" />
+        </property>
+        <property name="visionCercaOiCc1" type="java.lang.Integer">
+            <column name="vision_cerca_oi_cc1" />
+        </property>
+        <property name="visionCercaOiCc2" type="java.lang.Integer">
+            <column name="vision_cerca_oi_cc2" />
+        </property>
+        <property name="visionLejosOdSc1" type="java.lang.Integer">
+            <column name="vision_lejos_od_sc1" />
+        </property>
+        <property name="visionLejosOdSc2" type="java.lang.Integer">
+            <column name="vision_lejos_od_sc2" />
+        </property>
+        <property name="visionLejosOdCc1" type="java.lang.Integer">
+            <column name="vision_lejos_od_cc1" />
+        </property>
+        <property name="visionLejosOdCc2" type="java.lang.Integer">
+            <column name="vision_lejos_od_cc2" />
+        </property>
+        <property name="visionLejosOiSc1" type="java.lang.Integer">
+            <column name="vision_lejos_oi_sc1" />
+        </property>
+        <property name="visionLejosOiSc2" type="java.lang.Integer">
+            <column name="vision_lejos_oi_sc2" />
+        </property>
+        <property name="visionLejosOiCc1" type="java.lang.Integer">
+            <column name="vision_lejos_oi_cc1" />
+        </property>
+        <property name="visionLejosOiCc2" type="java.lang.Integer">
+            <column name="vision_lejos_oi_cc2" />
+        </property>
+        <property name="noPatologiaOcular" type="java.lang.Boolean">
+            <column name="no_patologia_ocular" />
+        </property>
+        <property name="ptosisOd" type="java.lang.Boolean">
+            <column name="ptosis_od" />
+        </property>
+        <property name="ptosisOi" type="java.lang.Boolean">
+            <column name="ptosis_oi" />
+        </property>
+        <property name="pterigionOd" type="java.lang.Boolean">
+            <column name="pterigion_od" />
+        </property>
+        <property name="pterigionOi" type="java.lang.Boolean">
+            <column name="pterigion_oi" />
+        </property>
+        <property name="blefaritisOd" type="java.lang.Boolean">
+            <column name="blefaritis_od" />
+        </property>
+        <property name="blefaritisOi" type="java.lang.Boolean">
+            <column name="blefaritis_oi" />
+        </property>
+        <property name="chalazionOd" type="java.lang.Boolean">
+            <column name="chalazion_od" />
+        </property>
+        <property name="chalazionOi" type="java.lang.Boolean">
+            <column name="chalazion_oi" />
+        </property>
+        <property name="conjuntivitisOd" type="java.lang.Boolean">
+            <column name="conjuntivitis_od" />
+        </property>
+        <property name="conjuntivitisOi" type="java.lang.Boolean">
+            <column name="conjuntivitis_oi" />
+        </property>
+        <property name="estravismoOd" type="java.lang.Boolean">
+            <column name="estravismo_od" />
+        </property>
+        <property name="estravismoOi" type="java.lang.Boolean">
+            <column name="estravismo_oi" />
+        </property>
+        <property name="otraPatologia" type="string">
+            <column name="otra_patologia" length="160" />
+        </property>
+        <property name="foDentroLimites" type="java.lang.Boolean">
+            <column name="fo_dentro_limites" />
+        </property>
+        <property name="foMaculapatiaOd" type="java.lang.Boolean">
+            <column name="fo_maculapatia_od" />
+        </property>
+        <property name="foMaculapatiaOi" type="java.lang.Boolean">
+            <column name="fo_maculapatia_oi" />
+        </property>
+        <property name="foAngiopatiaOd" type="java.lang.Boolean">
+            <column name="fo_angiopatia_od" />
+        </property>
+        <property name="foAngiopatiaOi" type="java.lang.Boolean">
+            <column name="fo_angiopatia_oi" />
+        </property>
+        <property name="foEdemaOd" type="java.lang.Boolean">
+            <column name="fo_edema_od" />
+        </property>
+        <property name="foEdemaOi" type="java.lang.Boolean">
+            <column name="fo_edema_oi" />
+        </property>
+        <property name="foRetinopatiaOd" type="java.lang.Boolean">
+            <column name="fo_retinopatia_od" />
+        </property>
+        <property name="foRetinopatiaOi" type="java.lang.Boolean">
+            <column name="fo_retinopatia_oi" />
+        </property>
+        <property name="foNeuritisOd" type="java.lang.Boolean">
+            <column name="fo_neuritis_od" />
+        </property>
+        <property name="foNeuritisOi" type="java.lang.Boolean">
+            <column name="fo_neuritis_oi" />
+        </property>
+        <property name="foAtrofiaOd" type="java.lang.Boolean">
+            <column name="fo_atrofia_od" />
+        </property>
+        <property name="foAtrofiaOi" type="java.lang.Boolean">
+            <column name="fo_atrofia_oi" />
+        </property>
+        <property name="foOtro" type="java.lang.Boolean">
+            <column name="fo_otro" />
+        </property>
+        <property name="foOtroDesc" type="string">
+            <column name="fo_otro_desc" length="160" />
+        </property>
+        <property name="campimetriaOd" type="string">
+            <column name="campimetria_od" length="30" />
+        </property>
+        <property name="campimetriaOi" type="string">
+            <column name="campimetria_oi" length="30" />
+        </property>
+        <property name="tanometriaOd" type="string">
+            <column name="tanometria_od" length="30" />
+        </property>
+        <property name="tanometriaOi" type="string">
+            <column name="tanometria_oi" length="30" />
+        </property>
+        <property name="vcNormal" type="java.lang.Boolean">
+            <column name="vc_normal" />
+        </property>
+        <property name="vcDiscromatopsia" type="java.lang.Boolean">
+            <column name="vc_discromatopsia" />
+        </property>
+        <property name="vcOd" type="java.lang.Boolean">
+            <column name="vc_od" />
+        </property>
+        <property name="vcOi" type="java.lang.Boolean">
+            <column name="vc_oi" />
+        </property>
+        <property name="estereopsia" type="java.lang.Integer">
+            <column name="estereopsia" />
+        </property>
+        <property name="dxEmetropeOd" type="java.lang.Boolean">
+            <column name="dx_emetrope_od" />
+        </property>
+        <property name="dxEmetropeOi" type="java.lang.Boolean">
+            <column name="dx_emetrope_oi" />
+        </property>
+        <property name="dxPresbiciaCorreOd" type="java.lang.Boolean">
+            <column name="dx_presbicia_corre_od" />
+        </property>
+        <property name="dxPresbiciaCorreOi" type="java.lang.Boolean">
+            <column name="dx_presbicia_corre_oi" />
+        </property>
+        <property name="dxPresbiciaNocorreOd" type="java.lang.Boolean">
+            <column name="dx_presbicia_nocorre_od" />
+        </property>
+        <property name="dxPresbiciaNocorreOi" type="java.lang.Boolean">
+            <column name="dx_presbicia_nocorre_oi" />
+        </property>
+        <property name="dxAmetropiaCorreOd" type="java.lang.Boolean">
+            <column name="dx_ametropia_corre_od" />
+        </property>
+        <property name="dxAmetropiaCorreOi" type="java.lang.Boolean">
+            <column name="dx_ametropia_corre_oi" />
+        </property>
+        <property name="dxAmetropiaNocorreOd" type="java.lang.Boolean">
+            <column name="dx_ametropia_nocorre_od" />
+        </property>
+        <property name="dxAmetropiaNocorreOi" type="java.lang.Boolean">
+            <column name="dx_ametropia_nocorre_oi" />
+        </property>
+        <property name="dxAmbiopiaOd" type="java.lang.Boolean">
+            <column name="dx_ambiopia_od" />
+        </property>
+        <property name="dxAmbiopiaOi" type="java.lang.Boolean">
+            <column name="dx_ambiopia_oi" />
+        </property>
+        <property name="dxOtroDesc" type="string">
+            <column name="dx_otro_desc" length="160" />
+        </property>
+        <property name="recomendaciones" type="string">
+            <column name="recomendaciones" length="240" not-null="true" />
+        </property>
+        <property name="idUsuario" type="int">
+            <column name="id_usuario" not-null="true" />
+        </property>
+        <property name="conclusiones" type="string">
+            <column name="conclusiones" length="500" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

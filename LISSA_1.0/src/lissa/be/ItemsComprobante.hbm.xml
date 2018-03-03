@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.ItemsComprobante" table="items_comprobante" schema="public" optimistic-lock="version">
+        <id name="iditemcomprobante" type="long">
+            <column name="iditemcomprobante" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="beneficio" class="lissa.be.Beneficio" fetch="select">
+            <column name="id_beneficio" />
+        </many-to-one>
+        <many-to-one name="comprobante" class="lissa.be.Comprobante" fetch="select">
+            <column name="id_boleta" />
+        </many-to-one>
+        <many-to-one name="medicoByIdMedicoDeriva" class="lissa.be.Medico" fetch="select">
+            <column name="id_medico_deriva" />
+        </many-to-one>
+        <many-to-one name="medicoByIdMedicoAtiende" class="lissa.be.Medico" fetch="select">
+            <column name="id_medico_atiende" />
+        </many-to-one>
+        <many-to-one name="procedimiento" class="lissa.be.Procedimiento" fetch="select">
+            <column name="id_procedimiento" />
+        </many-to-one>
+        <property name="montoProcedimiento" type="big_decimal">
+            <column name="monto_procedimiento" precision="16" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="250" />
+        </property>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+        <property name="montoAtencion" type="big_decimal">
+            <column name="monto_atencion" precision="16" />
+        </property>
+        <property name="montoDerivacion" type="big_decimal">
+            <column name="monto_derivacion" precision="16" />
+        </property>
+        <property name="montoPagado" type="big_decimal">
+            <column name="monto_pagado" precision="16">
+                <comment>almacena el monto que pagara el usuario, luego de descontar lo que cubre el seguro</comment>
+            </column>
+        </property>
+        <property name="importeAdicional" type="big_decimal">
+            <column name="importe_adicional" precision="16" />
+        </property>
+        <property name="observacion" type="string">
+            <column name="observacion" length="300" />
+        </property>
+        <property name="porcCubierto" type="int">
+            <column name="porc_cubierto" />
+        </property>
+        <property name="montoCubierto" type="big_decimal">
+            <column name="monto_cubierto" precision="16"/>
+        </property>
+        <property name="montoCubiertoSoles" type="big_decimal">
+            <column name="monto_cubierto_soles" precision="16"/>
+        </property>
+        <set name="servicioFondoSolidaridads" table="servicio_fondo_solidaridad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_item_boleta" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.ServicioFondoSolidaridad" />
+        </set>
+        <set name="medicoDerivaAtiendes" table="medico_deriva_atiende" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_itemcomprobante" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.MedicoDerivaAtiende" />
+        </set>
+    </class>
+</hibernate-mapping>

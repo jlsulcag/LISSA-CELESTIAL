@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoConclusiones" table="so_fmo_conclusiones" schema="public" optimistic-lock="version">
+        <id name="idsofmoconclusiones" type="int">
+            <column name="idsofmoconclusiones" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="evalPsicologica" type="string">
+            <column name="eval_psicologica" not-null="true" />
+        </property>
+        <property name="radiograficas" type="string">
+            <column name="radiograficas" not-null="true" />
+        </property>
+        <property name="hallazgosPatologicos" type="string">
+            <column name="hallazgos_patologicos" not-null="true" />
+        </property>
+        <property name="audiometria" type="string">
+            <column name="audiometria" not-null="true" />
+        </property>
+        <property name="espirometria" type="string">
+            <column name="espirometria" not-null="true" />
+        </property>
+        <property name="otros" type="string">
+            <column name="otros" not-null="true" />
+        </property>
+        <property name="condicion" type="string">
+            <column name="condicion" length="30" not-null="true" />
+        </property>
+        <property name="recomendacion" type="string">
+            <column name="recomendacion" not-null="true" />
+        </property>
+        <property name="concEvalPsicologicaPsicotecnico" type="string">
+            <column name="conc_eval_psicologica_psicotecnico" not-null="true" />
+        </property>
+        <property name="concOftalmologica" type="string">
+            <column name="conc_oftalmologica" not-null="true" />
+        </property>
+        <property name="concOsteomuscular" type="string">
+            <column name="conc_osteomuscular" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

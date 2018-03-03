@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.ServicioFondoSolidaridad" table="servicio_fondo_solidaridad" schema="public" optimistic-lock="version">
+        <id name="idServicioFs" type="int">
+            <column name="id_servicio_fs" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fondoSolidaridad" class="lissa.be.FondoSolidaridad" fetch="select">
+            <column name="id_fondo_solidaridad" not-null="true" />
+        </many-to-one>
+        <many-to-one name="itemsComprobante" class="lissa.be.ItemsComprobante" fetch="select">
+            <column name="id_item_boleta" not-null="true" />
+        </many-to-one>
+        <property name="fechaAtencion" type="date">
+            <column name="fecha_atencion" length="13" />
+        </property>
+    </class>
+</hibernate-mapping>

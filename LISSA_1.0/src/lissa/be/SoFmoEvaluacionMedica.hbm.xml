@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoEvaluacionMedica" table="so_fmo_evaluacion_medica" schema="public" optimistic-lock="version">
+        <id name="idsofmoevaluacionmedica" type="int">
+            <column name="idsofmoevaluacionmedica" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="anamnesis" type="string">
+            <column name="anamnesis" length="200" not-null="true" />
+        </property>
+        <property name="talla" type="java.lang.Double">
+            <column name="talla" precision="17" scale="17" />
+        </property>
+        <property name="peso" type="java.lang.Double">
+            <column name="peso" precision="17" scale="17" />
+        </property>
+        <property name="imc" type="java.lang.Double">
+            <column name="imc" precision="17" scale="17" />
+        </property>
+        <property name="perimetroAbdominal" type="java.lang.Double">
+            <column name="perimetro_abdominal" precision="17" scale="17" />
+        </property>
+        <property name="fr" type="java.lang.Double">
+            <column name="fr" precision="17" scale="17" />
+        </property>
+        <property name="fc" type="java.lang.Double">
+            <column name="fc" precision="17" scale="17" />
+        </property>
+        <property name="pa1" type="java.lang.Double">
+            <column name="pa1" precision="17" scale="17" />
+        </property>
+        <property name="pa2" type="java.lang.Double">
+            <column name="pa2" precision="17" scale="17" />
+        </property>
+        <property name="temperatura" type="java.lang.Double">
+            <column name="temperatura" precision="17" scale="17" />
+        </property>
+        <property name="ectoscopia" type="string">
+            <column name="ectoscopia" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

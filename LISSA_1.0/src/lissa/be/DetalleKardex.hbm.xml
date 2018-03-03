@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-sep-2016 12:44:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.DetalleKardex" table="detalle_kardex" schema="farmacia" optimistic-lock="version">
+        <id name="iddetallekardex" type="int">
+            <column name="iddetallekardex" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="kardex" class="lissa.be.Kardex" fetch="select">
+            <column name="id_kardex" not-null="true" />
+        </many-to-one>
+        <many-to-one name="producto" class="lissa.be.Producto" fetch="select">
+            <column name="id_producto" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+        <property name="stockAnt" type="int">
+            <column name="stock_ant"/>
+        </property>
+        <property name="stockActual" type="int">
+            <column name="stock_actual" />
+        </property>
+        <property name="merma" type="java.lang.Integer">
+            <column name="merma" />
+        </property>
+        <property name="stockActOrig" type="java.lang.Integer">
+            <column name="stock_act_orig" />
+        </property>
+        <property name="stockAntOrig" type="java.lang.Integer">
+            <column name="stock_ant_orig" />
+        </property>
+        <property name="numeroMovimiento" type="int">
+            <column name="numero_movimiento" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

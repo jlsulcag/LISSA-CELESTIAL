@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Paciente" table="paciente" schema="public" optimistic-lock="version">
+        <id name="idpaciente" type="int">
+            <column name="idpaciente" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="persona" class="lissa.be.Persona" fetch="select">
+            <column name="id_persona" not-null="true" />
+        </many-to-one>
+        <property name="fechaIngreso" type="date">
+            <column name="fecha_ingreso" length="13" not-null="true" />
+        </property>
+        <property name="numeroAtencion" type="java.lang.Integer">
+            <column name="numero_atencion" />
+        </property>
+        <property name="tipoIngreso" type="string">
+            <column name="tipo_ingreso" length="20" />
+        </property>
+        <property name="idHistoriaClinica" type="java.lang.Integer">
+            <column name="id_historia_clinica" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="20" />
+        </property>
+        <property name="horaIngreso" type="string">
+            <column name="hora_ingreso" length="20" />
+        </property>
+        <many-to-one name="especialidad" class="lissa.be.Especialidad" fetch="select">
+            <column name="id_especialidad" />
+        </many-to-one>
+        <many-to-one name="usuario" class="lissa.be.Usuario" fetch="select">
+            <column name="id_usuario" not-null="true"/>
+        </many-to-one>
+        <set name="comprobantes" table="comprobante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_paciente" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Comprobante" />
+        </set>
+    </class>
+</hibernate-mapping>

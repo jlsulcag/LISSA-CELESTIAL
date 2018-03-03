@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15/03/2017 09:10:11 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.MedicoDerivaAtiende" table="medico_deriva_atiende" schema="public" optimistic-lock="version">
+        <id name="idmedicoderivaatiende" type="int">
+            <column name="idmedicoderivaatiende" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="itemsComprobante" class="lissa.be.ItemsComprobante" fetch="select">
+            <column name="id_itemcomprobante" not-null="true" />
+        </many-to-one>
+        <many-to-one name="medico" class="lissa.be.Medico" fetch="select">
+            <column name="id_medico" not-null="true" />
+        </many-to-one>
+        <property name="monto" type="big_decimal">
+            <column name="monto" precision="18" not-null="true" />
+        </property>
+        <property name="estadoPago" type="string">
+            <column name="estado_pago" length="10" not-null="true">
+                <comment>PAGADO, DEBE</comment>
+            </column>
+        </property>
+        <property name="tipoMedico" type="string">
+            <column name="tipo_medico" length="20" not-null="true">
+                <comment>ATIENDE, DERIVA</comment>
+            </column>
+        </property>
+        <property name="idCajaafecto" type="java.lang.Integer">
+            <column name="id_cajaafecto" />
+        </property>
+    </class>
+</hibernate-mapping>

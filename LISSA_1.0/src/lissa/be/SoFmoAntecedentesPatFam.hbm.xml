@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoAntecedentesPatFam" table="so_fmo_antecedentes_pat_fam" schema="public" optimistic-lock="version">
+        <id name="idsofmoantecedentespatfam" type="int">
+            <column name="idsofmoantecedentespatfam" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="padre" type="string">
+            <column name="padre" length="80" not-null="true" />
+        </property>
+        <property name="madre" type="string">
+            <column name="madre" length="80" not-null="true" />
+        </property>
+        <property name="hermanos" type="string">
+            <column name="hermanos" length="80" not-null="true" />
+        </property>
+        <property name="esposoa" type="string">
+            <column name="esposoa" length="80" not-null="true" />
+        </property>
+        <property name="hijosVivos" type="string">
+            <column name="hijos_vivos" length="30" not-null="true" />
+        </property>
+        <property name="numHijosVivos" type="java.lang.Integer">
+            <column name="num_hijos_vivos" />
+        </property>
+        <property name="hijosFallecidos" type="string">
+            <column name="hijos_fallecidos" length="30" not-null="true" />
+        </property>
+        <property name="numHijosFallecidos" type="java.lang.Integer">
+            <column name="num_hijos_fallecidos" />
+        </property>
+    </class>
+</hibernate-mapping>

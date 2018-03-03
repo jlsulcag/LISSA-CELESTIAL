@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AtencionDiaria" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="2cfbdcce-99b2-4c91-af03-1a2584e30107">
+	<property name="ireport.zoom" value="8.954302432552469"/>
+	<property name="ireport.x" value="1109"/>
+	<property name="ireport.y" value="835"/>
+	<queryString>
+		<![CDATA[select row_number() OVER () as numeracion,
+c.id_comprobante,
+c.fecha_boleta,
+(per.nombre || ' ' || per.apellido_paterno || ' ' || per.apellido_materno) as paciente,
+c.numero_boleta,
+c.monto_total,
+tc.denominacion as comprobante
+from comprobante as c inner join paciente as pac on c.id_paciente = pac.idpaciente
+inner join persona as per on per.id_persona = pac.id_persona inner join tipo_comprobante tc
+on c.tipo_documento = tc.idtipocomprobante
+where c.fecha_boleta between '2018-01-01' and '2018-02-28'and c.estado = true
+order by c.numero_boleta asc]]>
+	</queryString>
+	<field name="numeracion" class="java.lang.Long"/>
+	<field name="id_comprobante" class="java.lang.Integer"/>
+	<field name="fecha_boleta" class="java.sql.Date"/>
+	<field name="paciente" class="java.lang.String"/>
+	<field name="numero_boleta" class="java.lang.Integer"/>
+	<field name="monto_total" class="java.math.BigDecimal"/>
+	<field name="comprobante" class="java.lang.String"/>
+	<group name="paciente">
+		<groupExpression><![CDATA[$F{paciente}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0356dd90-1450-4327-9931-17bd33d04c9d" x="0" y="0" width="539" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATENCION DETALLADA POR FECHA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="e4ceecc3-d3d9-40a9-b406-ea1e278d8291" x="0" y="0" width="539" height="15" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="cdd5e431-1bd5-40f7-b96c-e6df669a88ae" x="0" y="0" width="33" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f1525d7f-ff9e-425f-b69a-ff70713e2208" x="33" y="0" width="71" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="77abe715-e665-49d4-b053-445964a8e786" x="104" y="0" width="85" height="15"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Comprobante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e62168bf-440d-441c-8ffb-d391cea1e8a2" x="189" y="0" width="64" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe44cd37-d4e7-4a63-ab5a-98e409529a9b" x="253" y="0" width="236" height="15"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a22ce676-c3dd-41ca-902c-72f4bd498d18" x="489" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="8e544c44-ad88-4730-945c-f618382cfe9a" x="253" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="e4124bf9-5802-4772-a314-698918a65530" x="489" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="08326461-940c-44f9-8402-c882c8422cb5" x="188" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="f18f4399-bf6c-4795-80c1-d544fc94b49f" x="103" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="697f6140-cde9-41ba-b6a7-651fc5bfcca9" x="33" y="0" width="1" height="15"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="1a66272a-f2b2-4225-9f6a-e1fef3fe912e" x="0" y="0" width="539" height="15"/>
+			</rectangle>
+			<textField pattern="0000">
+				<reportElement uuid="be02a012-0f75-4b04-95c3-29e1ff123c75" x="0" y="0" width="33" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{numeracion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="66aca9b8-9088-4fb4-ad0a-de67338f6ef2" x="33" y="0" width="71" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_boleta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="00a4ee17-90b6-4a3c-8b1b-5c1dda3d2c09" x="104" y="0" width="85" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{comprobante}]]></textFieldExpression>
+			</textField>
+			<textField pattern="000000">
+				<reportElement uuid="8f4983df-16ae-407f-8caf-5da32e1f3759" x="189" y="0" width="64" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numero_boleta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f225b368-8d7f-4d18-b28b-1576f562947a" x="253" y="0" width="236" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6ac94c47-acae-4c50-96f0-b6c8f5861b46" x="489" y="0" width="50" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{monto_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="6498afd2-af70-4bb2-9edd-49487bdd5134" x="32" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="823bd9e8-bd18-4d2b-bbeb-91ed6c24ff98" x="102" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="212899e0-4765-4f82-8ade-9904d10e0ec2" x="188" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="0fdc8cec-2aaf-4ff5-a39d-6cc8924a47c5" x="253" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement uuid="e85a0ffd-c2af-459c-ac2b-2f8c8ff80762" x="489" y="0" width="1" height="15"/>
+			</line>
+		</band>
+		<band height="34">
+			<subreport>
+				<reportElement uuid="da6847b5-09ee-420a-a63d-d513270ab650" x="115" y="1" width="424" height="29"/>
+				<subreportParameter name="ID_COM">
+					<subreportParameterExpression><![CDATA[$F{id_comprobante}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["D:\\Repositorio\\Celestial\\LISSA_1.0\\src\\lissa\\reportes\\AtencionDiariaDetalle.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

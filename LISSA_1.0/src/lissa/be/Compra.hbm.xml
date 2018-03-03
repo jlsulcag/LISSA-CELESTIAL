@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10-oct-2016 10:03:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Compra" optimistic-lock="version" schema="farmacia" table="compra">
+        <id name="idcompra" type="int">
+            <column name="idcompra"/>
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="farComprobante" class="lissa.be.FarComprobante" fetch="select">
+            <column name="id_farcomprobante" />
+        </many-to-one>
+        <property name="numeroComprobante" type="string">
+            <column length="20" name="numero_comprobante"/>
+        </property>
+        <property name="fechaCompra" type="date">
+            <column length="13" name="fecha_compra"/>
+        </property>
+        <property name="idProveedor" type="java.lang.Integer">
+            <column name="id_proveedor"/>
+        </property>
+        <property name="serie" type="string">
+            <column length="10" name="serie" not-null="true"/>
+        </property>
+        <property name="horaReg" type="string">
+            <column length="15" name="hora_reg" not-null="true"/>
+        </property>
+        <property name="fechaReg" type="date">
+            <column length="13" name="fecha_reg" not-null="true"/>
+        </property>
+        <property name="valorNeto" type="big_decimal">
+            <column name="valor_neto" not-null="true" precision="18"/>
+        </property>
+        <property name="valorIgv" type="big_decimal">
+            <column name="valor_igv" not-null="true" precision="18"/>
+        </property>
+        <property name="valorBruto" type="big_decimal">
+            <column name="valor_bruto" not-null="true" precision="18"/>
+        </property>
+        <property name="estado" type="string">
+            <column length="30" name="estado" not-null="true">
+                <comment>ACTIVO, ANULADO</comment>
+            </column>
+        </property>
+        <property name="motivoAunulacion" type="string">
+            <column length="160" name="motivo_aunulacion" not-null="true"/>
+        </property>
+        <property name="numeroCompra" type="int">
+            <column name="numero_compra" not-null="true"/>
+        </property>
+        <property name="idUsuarioReg" type="int">
+            <column name="id_usuario_reg" not-null="true"/>
+        </property>
+        <property name="valorDescuento" type="big_decimal">
+            <column name="valor_descuento" not-null="true" precision="18"/>
+        </property>
+        <property name="valorTotal" type="big_decimal">
+            <column name="valor_total" precision="18"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="detalleCompras" table="detalle_compra">
+            <key>
+                <column name="id_compra" not-null="true"/>
+            </key>
+            <one-to-many class="lissa.be.DetalleCompra"/>
+        </set>
+    </class>
+</hibernate-mapping>

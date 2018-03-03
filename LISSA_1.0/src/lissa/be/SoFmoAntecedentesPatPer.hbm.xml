@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoAntecedentesPatPer" table="so_fmo_antecedentes_pat_per" schema="public" optimistic-lock="version">
+        <id name="idsofmoantedecentespatper" type="int">
+            <column name="idsofmoantedecentespatper" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="alergia" type="boolean">
+            <column name="alergia" not-null="true" />
+        </property>
+        <property name="diabetes" type="boolean">
+            <column name="diabetes" not-null="true" />
+        </property>
+        <property name="tbc" type="boolean">
+            <column name="tbc" not-null="true" />
+        </property>
+        <property name="hepatitisb" type="boolean">
+            <column name="hepatitisb" not-null="true" />
+        </property>
+        <property name="asma" type="boolean">
+            <column name="asma" not-null="true" />
+        </property>
+        <property name="hta" type="boolean">
+            <column name="hta" not-null="true" />
+        </property>
+        <property name="its" type="boolean">
+            <column name="its" not-null="true" />
+        </property>
+        <property name="tifoidea" type="boolean">
+            <column name="tifoidea" not-null="true" />
+        </property>
+        <property name="bronquitis" type="boolean">
+            <column name="bronquitis" not-null="true" />
+        </property>
+        <property name="neoplasia" type="boolean">
+            <column name="neoplasia" not-null="true" />
+        </property>
+        <property name="convulsiones" type="boolean">
+            <column name="convulsiones" not-null="true" />
+        </property>
+        <property name="otros" type="boolean">
+            <column name="otros" not-null="true" />
+        </property>
+        <property name="quemaduras" type="boolean">
+            <column name="quemaduras" not-null="true" />
+        </property>
+        <property name="cirugias" type="boolean">
+            <column name="cirugias" not-null="true" />
+        </property>
+        <property name="intoxicaciones" type="boolean">
+            <column name="intoxicaciones" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

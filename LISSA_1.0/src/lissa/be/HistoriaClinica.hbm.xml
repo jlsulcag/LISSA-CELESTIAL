@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.HistoriaClinica" table="historia_clinica" schema="public" optimistic-lock="version">
+        <id name="idhistoriaclinica" type="int">
+            <column name="idhistoriaclinica" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="persona" class="lissa.be.Persona" fetch="select">
+            <column name="id_persona" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoHistoriaClinica" class="lissa.be.TipoHistoriaClinica" fetch="select">
+            <column name="id_tipohc" />
+        </many-to-one>
+        <property name="numerohc" type="java.lang.Integer">
+            <column name="numerohc" />
+        </property>
+        <property name="fechaRegistro" type="date">
+            <column name="fecha_registro" length="13" />
+        </property>
+        <set name="atencionOcupacionals" table="atencion_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_historiaclinica" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.AtencionOcupacional" />
+        </set>
+        <set name="atencions" table="atencion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_hc" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Atencion" />
+        </set>
+        <set name="soFmoAntecedentesOcupacionaleses" table="so_fmo_antecedentes_ocupacionales" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_historiaclinica" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.SoFmoAntecedentesOcupacionales" />
+        </set>
+    </class>
+</hibernate-mapping>

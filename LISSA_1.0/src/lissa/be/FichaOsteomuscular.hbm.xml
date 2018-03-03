@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.FichaOsteomuscular" table="ficha_osteomuscular" schema="public" optimistic-lock="version">
+        <id name="idfichaosteomuscular" type="int">
+            <column name="idfichaosteomuscular" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencionOcupacional" class="lissa.be.AtencionOcupacional" fetch="select">
+            <column name="id_atencionocupacional" not-null="true" />
+        </many-to-one>
+        <property name="puesto" type="string">
+            <column name="puesto" length="61" />
+        </property>
+        <property name="postSedente" type="java.lang.Double">
+            <column name="post_sedente" precision="17" scale="17" />
+        </property>
+        <property name="postBipodestacion" type="java.lang.Double">
+            <column name="post_bipodestacion" precision="17" scale="17" />
+        </property>
+        <property name="postForzada" type="string">
+            <column name="post_forzada" length="5" />
+        </property>
+        <property name="movRepetitivos" type="string">
+            <column name="mov_repetitivos" length="5" />
+        </property>
+        <property name="movManualCarga" type="string">
+            <column name="mov_manual_carga" length="5" />
+        </property>
+        <property name="pesoDesde" type="java.lang.Double">
+            <column name="peso_desde" precision="17" scale="17" />
+        </property>
+        <property name="pesoHasta" type="java.lang.Double">
+            <column name="peso_hasta" precision="17" scale="17" />
+        </property>
+        <property name="metLevanta" type="boolean">
+            <column name="met_levanta" not-null="true" />
+        </property>
+        <property name="metEmpuja" type="boolean">
+            <column name="met_empuja" not-null="true" />
+        </property>
+        <property name="metArrastra" type="boolean">
+            <column name="met_arrastra" not-null="true" />
+        </property>
+        <property name="usuarioPvd" type="string">
+            <column name="usuario_pvd" length="5" />
+        </property>
+        <property name="horasDia" type="java.lang.Double">
+            <column name="horas_dia" precision="17" scale="17" />
+        </property>
+        <property name="dominanciaDiestro" type="boolean">
+            <column name="dominancia_diestro" not-null="true" />
+        </property>
+        <property name="dominanciaZurdo" type="boolean">
+            <column name="dominancia_zurdo" not-null="true" />
+        </property>
+        <property name="lordosisCervicalNormal" type="boolean">
+            <column name="lordosis_cervical_normal" not-null="true" />
+        </property>
+        <property name="lordosisCervicalIncrementada" type="boolean">
+            <column name="lordosis_cervical_incrementada" not-null="true" />
+        </property>
+        <property name="lordosisCervicalDisminuida" type="boolean">
+            <column name="lordosis_cervical_disminuida" not-null="true" />
+        </property>
+        <property name="cifosisNormal" type="boolean">
+            <column name="cifosis_normal" not-null="true" />
+        </property>
+        <property name="cifosisIncrementada" type="boolean">
+            <column name="cifosis_incrementada" not-null="true" />
+        </property>
+        <property name="cifosisDisminuida" type="boolean">
+            <column name="cifosis_disminuida" not-null="true" />
+        </property>
+        <property name="lordosisLumbarNormal" type="boolean">
+            <column name="lordosis_lumbar_normal" not-null="true" />
+        </property>
+        <property name="lordosisLumbarIncrementada" type="boolean">
+            <column name="lordosis_lumbar_incrementada" not-null="true" />
+        </property>
+        <property name="lordosisLumbarDisminuida" type="boolean">
+            <column name="lordosis_lumbar_disminuida" not-null="true" />
+        </property>
+        <property name="escoliosisDorsal" type="boolean">
+            <column name="escoliosis_dorsal" not-null="true" />
+        </property>
+        <property name="escoliosisLumbar" type="boolean">
+            <column name="escoliosis_lumbar" not-null="true" />
+        </property>
+        <property name="cervicalFlexion" type="boolean">
+            <column name="cervical_flexion" not-null="true" />
+        </property>
+        <property name="cervicalExtension" type="boolean">
+            <column name="cervical_extension" not-null="true" />
+        </property>
+        <property name="cervicalDer" type="boolean">
+            <column name="cervical_der" not-null="true" />
+        </property>
+        <property name="cervicalIzq" type="boolean">
+            <column name="cervical_izq" not-null="true" />
+        </property>
+        <property name="cervicalRotacion" type="boolean">
+            <column name="cervical_rotacion" not-null="true" />
+        </property>
+        <property name="lumbarFlexion" type="boolean">
+            <column name="lumbar_flexion" not-null="true" />
+        </property>
+        <property name="lumbarExtension" type="boolean">
+            <column name="lumbar_extension" not-null="true" />
+        </property>
+        <property name="lumbarDer" type="boolean">
+            <column name="lumbar_der" not-null="true" />
+        </property>
+        <property name="lumbarIzq" type="boolean">
+            <column name="lumbar_izq" not-null="true" />
+        </property>
+        <property name="lumbarRotacion" type="boolean">
+            <column name="lumbar_rotacion" not-null="true" />
+        </property>
+        <property name="movDolorObservacion" type="string">
+            <column name="mov_dolor_observacion" length="100" not-null="true" />
+        </property>
+        <property name="opofisisEspDolorosa" type="boolean">
+            <column name="opofisis_esp_dolorosa" not-null="true" />
+        </property>
+        <property name="opofisisEspDolorosaObser" type="string">
+            <column name="opofisis_esp_dolorosa_obser" length="160" not-null="true" />
+        </property>
+        <property name="contracturaMuscular" type="boolean">
+            <column name="contractura_muscular" not-null="true" />
+        </property>
+        <property name="contracturaMuscularObser" type="string">
+            <column name="contractura_muscular_obser" length="160" not-null="true" />
+        </property>
+        <property name="dolorEspalda" type="boolean">
+            <column name="dolor_espalda" not-null="true" />
+        </property>
+        <property name="dolorEspaldaObser" type="string">
+            <column name="dolor_espalda_obser" length="160" not-null="true" />
+        </property>
+        <property name="signoLasegueDer" type="string">
+            <column name="signo_lasegue_der" length="1" not-null="true" />
+        </property>
+        <property name="signoLasegueIzq" type="string">
+            <column name="signo_lasegue_izq" length="1" not-null="true" />
+        </property>
+        <property name="signoBragardDer" type="string">
+            <column name="signo_bragard_der" length="1" not-null="true" />
+        </property>
+        <property name="signoBragardIzq" type="string">
+            <column name="signo_bragard_izq" length="1" not-null="true" />
+        </property>
+        <property name="testPhalenDer" type="string">
+            <column name="test_phalen_der" length="1" not-null="true" />
+        </property>
+        <property name="testPhalenIzq" type="string">
+            <column name="test_phalen_izq" length="1" not-null="true" />
+        </property>
+        <property name="testTinelDer" type="string">
+            <column name="test_tinel_der" length="1" not-null="true" />
+        </property>
+        <property name="testTinelIzq" type="string">
+            <column name="test_tinel_izq" length="1" not-null="true" />
+        </property>
+        <property name="cavoDer" type="boolean">
+            <column name="cavo_der" not-null="true" />
+        </property>
+        <property name="cavoIzq" type="boolean">
+            <column name="cavo_izq" not-null="true" />
+        </property>
+        <property name="planoDer" type="boolean">
+            <column name="plano_der" not-null="true" />
+        </property>
+        <property name="planoIzq" type="boolean">
+            <column name="plano_izq" not-null="true" />
+        </property>
+        <property name="rotulianoDer" type="string">
+            <column name="rotuliano_der" length="5" not-null="true" />
+        </property>
+        <property name="rotulianoIzq" type="string">
+            <column name="rotuliano_izq" length="5" not-null="true" />
+        </property>
+        <property name="aquilioDer" type="string">
+            <column name="aquilio_der" length="5" not-null="true" />
+        </property>
+        <property name="aquilioIzq" type="string">
+            <column name="aquilio_izq" length="5" not-null="true" />
+        </property>
+        <property name="descAnomaliaNeg" type="string">
+            <column name="desc_anomalia_neg" length="250" not-null="true" />
+        </property>
+        <property name="idUser" type="int">
+            <column name="id_user" not-null="true" />
+        </property>
+        <property name="conclusion" type="string">
+            <column name="conclusion" length="500" not-null="true" />
+        </property>
+        <set name="articulacions" table="articulacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fichaosteomuscular" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Articulacion" />
+        </set>
+        <set name="diagnosticoOsteomusculars" table="diagnostico_osteomuscular" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fichaosteomuscular" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.DiagnosticoOsteomuscular" />
+        </set>
+    </class>
+</hibernate-mapping>

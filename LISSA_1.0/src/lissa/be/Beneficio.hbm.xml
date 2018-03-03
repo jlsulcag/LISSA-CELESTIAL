@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Beneficio" table="beneficio" schema="public" optimistic-lock="version">
+        <id name="idbeneficio" type="int">
+            <column name="idbeneficio" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="seguroVida" class="lissa.be.SeguroVida" fetch="select">
+            <column name="id_seguro" not-null="true" />
+        </many-to-one>
+        <property name="nombreBeneficio" type="string">
+            <column name="nombre_beneficio" length="50" />
+        </property>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+        <set name="itemsComprobantes" table="items_comprobante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_beneficio" />
+            </key>
+            <one-to-many class="lissa.be.ItemsComprobante" />
+        </set>
+        <set name="comprobantes" table="comprobante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_beneficio" />
+            </key>
+            <one-to-many class="lissa.be.Comprobante" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoExamenFisico" table="so_fmo_examen_fisico" schema="public" optimistic-lock="version">
+        <id name="idsofmoexamenfisico" type="int">
+            <column name="idsofmoexamenfisico" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="piel" type="boolean">
+            <column name="piel" not-null="true" />
+        </property>
+        <property name="pielDesc" type="string">
+            <column name="piel_desc" length="80" not-null="true" />
+        </property>
+        <property name="cabello" type="boolean">
+            <column name="cabello" not-null="true" />
+        </property>
+        <property name="cabelloDesc" type="string">
+            <column name="cabello_desc" length="80" not-null="true" />
+        </property>
+        <property name="ojos" type="boolean">
+            <column name="ojos" not-null="true" />
+        </property>
+        <property name="ojosDesc" type="string">
+            <column name="ojos_desc" length="80" not-null="true" />
+        </property>
+        <property name="oidos" type="boolean">
+            <column name="oidos" not-null="true" />
+        </property>
+        <property name="oidosDesc" type="string">
+            <column name="oidos_desc" length="80" not-null="true" />
+        </property>
+        <property name="nariz" type="boolean">
+            <column name="nariz" not-null="true" />
+        </property>
+        <property name="narizDesc" type="string">
+            <column name="nariz_desc" length="80" not-null="true" />
+        </property>
+        <property name="boca" type="boolean">
+            <column name="boca" not-null="true" />
+        </property>
+        <property name="bocaDesc" type="string">
+            <column name="boca_desc" length="80" not-null="true" />
+        </property>
+        <property name="faringe" type="boolean">
+            <column name="faringe" not-null="true" />
+        </property>
+        <property name="faringeDesc" type="string">
+            <column name="faringe_desc" length="80" not-null="true" />
+        </property>
+        <property name="cuello" type="boolean">
+            <column name="cuello" not-null="true" />
+        </property>
+        <property name="cuelloDesc" type="string">
+            <column name="cuello_desc" length="80" not-null="true" />
+        </property>
+        <property name="respiratorio" type="boolean">
+            <column name="respiratorio" not-null="true" />
+        </property>
+        <property name="respiratorioDesc" type="string">
+            <column name="respiratorio_desc" length="80" not-null="true" />
+        </property>
+        <property name="cardiovascular" type="boolean">
+            <column name="cardiovascular" not-null="true" />
+        </property>
+        <property name="cardiovascularDesc" type="string">
+            <column name="cardiovascular_desc" length="80" not-null="true" />
+        </property>
+        <property name="digestivo" type="boolean">
+            <column name="digestivo" not-null="true" />
+        </property>
+        <property name="digestivoDesc" type="string">
+            <column name="digestivo_desc" length="80" not-null="true" />
+        </property>
+        <property name="genitourinario" type="boolean">
+            <column name="genitourinario" not-null="true" />
+        </property>
+        <property name="genitourinarioDesc" type="string">
+            <column name="genitourinario_desc" length="80" not-null="true" />
+        </property>
+        <property name="locomotor" type="boolean">
+            <column name="locomotor" not-null="true" />
+        </property>
+        <property name="locomotorDesc" type="string">
+            <column name="locomotor_desc" length="80" not-null="true" />
+        </property>
+        <property name="marcha" type="boolean">
+            <column name="marcha" not-null="true" />
+        </property>
+        <property name="marchaDesc" type="string">
+            <column name="marcha_desc" length="80" not-null="true" />
+        </property>
+        <property name="columna" type="boolean">
+            <column name="columna" not-null="true" />
+        </property>
+        <property name="columnaDesc" type="string">
+            <column name="columna_desc" length="80" not-null="true" />
+        </property>
+        <property name="miembrosSuperiores" type="boolean">
+            <column name="miembros_superiores" not-null="true" />
+        </property>
+        <property name="miembrosSuperioresDesc" type="string">
+            <column name="miembros_superiores_desc" length="80" not-null="true" />
+        </property>
+        <property name="miembrosInferiores" type="boolean">
+            <column name="miembros_inferiores" not-null="true" />
+        </property>
+        <property name="miembrosInferioresDesc" type="string">
+            <column name="miembros_inferiores_desc" length="80" not-null="true" />
+        </property>
+        <property name="sistemaLinfatico" type="boolean">
+            <column name="sistema_linfatico" not-null="true" />
+        </property>
+        <property name="sistemaLinfaticoDesc" type="string">
+            <column name="sistema_linfatico_desc" length="80" not-null="true" />
+        </property>
+        <property name="sistemaNervioso" type="boolean">
+            <column name="sistema_nervioso" not-null="true" />
+        </property>
+        <property name="sistemaNerviosoDesc" type="string">
+            <column name="sistema_nervioso_desc" length="80" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

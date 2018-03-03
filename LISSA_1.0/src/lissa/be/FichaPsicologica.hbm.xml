@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.FichaPsicologica" table="ficha_psicologica" schema="public" optimistic-lock="version">
+        <id name="idfichapsicologica" type="int">
+            <column name="idfichapsicologica" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencionOcupacional" class="lissa.be.AtencionOcupacional" fetch="select">
+            <column name="id_atencionocupacional" not-null="true" />
+        </many-to-one>
+        <property name="motivoEvaluacion" type="string">
+            <column name="motivo_evaluacion" not-null="true" />
+        </property>
+        <property name="historiaFamiliar" type="string">
+            <column name="historia_familiar" not-null="true" />
+        </property>
+        <property name="accidenteEnfermedad" type="string">
+            <column name="accidente_enfermedad" not-null="true" />
+        </property>
+        <property name="habito" type="string">
+            <column name="habito" not-null="true" />
+        </property>
+        <property name="otraObservacion" type="string">
+            <column name="otra_observacion" not-null="true" />
+        </property>
+        <property name="presentacion" type="string">
+            <column name="presentacion" length="60" not-null="true" />
+        </property>
+        <property name="postura" type="string">
+            <column name="postura" length="60" not-null="true" />
+        </property>
+        <property name="discursoRitmo" type="string">
+            <column name="discurso_ritmo" length="60" not-null="true" />
+        </property>
+        <property name="discursoTono" type="string">
+            <column name="discurso_tono" length="60" not-null="true" />
+        </property>
+        <property name="discursoArt" type="string">
+            <column name="discurso_art" length="60" not-null="true" />
+        </property>
+        <property name="orientacionTiempo" type="string">
+            <column name="orientacion_tiempo" length="60" not-null="true" />
+        </property>
+        <property name="orientacionEspacio" type="string">
+            <column name="orientacion_espacio" length="60" not-null="true" />
+        </property>
+        <property name="orientacionPersona" type="string">
+            <column name="orientacion_persona" length="60" not-null="true" />
+        </property>
+        <property name="lucidoAtento" type="string">
+            <column name="lucido_atento" length="80" not-null="true" />
+        </property>
+        <property name="pensamiento" type="string">
+            <column name="pensamiento" length="80" not-null="true" />
+        </property>
+        <property name="percepcion" type="string">
+            <column name="percepcion" length="80" not-null="true" />
+        </property>
+        <property name="memoriaCp" type="string">
+            <column name="memoria_cp" length="30" not-null="true" />
+        </property>
+        <property name="memoriaMp" type="string">
+            <column name="memoria_mp" length="30" not-null="true" />
+        </property>
+        <property name="memoriaLp" type="string">
+            <column name="memoria_lp" length="30" not-null="true" />
+        </property>
+        <property name="inteligencia" type="string">
+            <column name="inteligencia" length="30" not-null="true" />
+        </property>
+        <property name="apetito" type="string">
+            <column name="apetito" length="80" not-null="true" />
+        </property>
+        <property name="suenio" type="string">
+            <column name="suenio" length="80" not-null="true" />
+        </property>
+        <property name="personalidad" type="string">
+            <column name="personalidad" length="80" not-null="true" />
+        </property>
+        <property name="afectividad" type="string">
+            <column name="afectividad" length="80" not-null="true" />
+        </property>
+        <property name="conductaSexual" type="string">
+            <column name="conducta_sexual" length="80" not-null="true" />
+        </property>
+        <property name="dxAreaCognitiva" type="string">
+            <column name="dx_area_cognitiva" length="80" not-null="true" />
+        </property>
+        <property name="dxAreaEmocional" type="string">
+            <column name="dx_area_emocional" length="80" not-null="true" />
+        </property>
+        <property name="fechaEvaluacion" type="date">
+            <column name="fecha_evaluacion" length="13" not-null="true" />
+        </property>
+        <property name="condicion" type="string">
+            <column name="condicion" length="30" not-null="true" />
+        </property>
+        <property name="idUsuario" type="int">
+            <column name="id_usuario" not-null="true" />
+        </property>
+        <property name="examenPsicolaboral" type="boolean">
+            <column name="examen_psicolaboral"/>
+        </property>
+        <property name="examenPsicotecnico" type="boolean">
+            <column name="examen_psicotecnico"/>
+        </property>
+        <set name="pacientePruebas" table="paciente_prueba" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_fichapsicologica" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.PacientePrueba" />
+        </set>
+    </class>
+</hibernate-mapping>

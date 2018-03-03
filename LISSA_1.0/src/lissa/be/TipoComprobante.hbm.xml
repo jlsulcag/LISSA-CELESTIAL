@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.TipoComprobante" table="tipo_comprobante" schema="public" optimistic-lock="version">
+        <id name="idtipocomprobante" type="int">
+            <column name="idtipocomprobante" />
+            <generator class="increment" />
+        </id>
+        <property name="denominacion" type="string">
+            <column name="denominacion" length="50" />
+        </property>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+        <set name="comprobantes" table="comprobante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tipo_documento" />
+            </key>
+            <one-to-many class="lissa.be.Comprobante" />
+        </set>
+    </class>
+</hibernate-mapping>

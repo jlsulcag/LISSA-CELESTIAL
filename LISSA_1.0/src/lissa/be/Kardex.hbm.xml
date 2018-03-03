@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-sep-2016 12:44:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Kardex" optimistic-lock="version" schema="farmacia" table="kardex">
+        <id name="idkardex" type="int">
+            <column name="idkardex"/>
+            <generator class="increment"/>
+        </id>
+        <many-to-one class="lissa.be.Almacen" fetch="select" name="almacenByIdOrigen">
+            <column name="id_origen"/>
+        </many-to-one>
+        <many-to-one class="lissa.be.Almacen" fetch="select" name="almacenByIdDestino">
+            <column name="id_destino"/>
+        </many-to-one>
+        <many-to-one class="lissa.be.Almacen" fetch="select" name="almacenByIdAlmacenAfectado">
+            <column name="id_almacen_afectado"/>
+        </many-to-one>
+        <property name="idFarcomprobante" type="int">
+            <column name="id_farcomprobante"/>
+        </property>
+        <property name="operacion" type="string">
+            <column length="40" name="operacion" not-null="true"/>
+        </property>
+        <property name="tipoOperacion" type="string">
+            <column length="30" name="tipo_operacion" not-null="true"/>
+        </property>
+        <property name="fechaMov" type="date">
+            <column length="13" name="fecha_mov" not-null="true"/>
+        </property>
+        <property name="horaMov" type="string">
+            <column length="15" name="hora_mov" not-null="true"/>
+        </property>
+        <property name="comprobante" type="string">
+            <column length="80" name="comprobante" not-null="true"/>
+        </property>
+        <property name="numComprobante" type="long">
+            <column name="num_comprobante" not-null="true"/>
+        </property>
+        <property name="numSerie" type="string">
+            <column length="40" name="num_serie" not-null="true"/>
+        </property>
+        <property name="personaOrigen" type="string">
+            <column length="80" name="persona_origen" not-null="true"/>
+        </property>
+        <property name="personaDestino" type="string">
+            <column length="80" name="persona_destino" not-null="true"/>
+        </property>
+        <property name="observacion" type="string">
+            <column length="150" name="observacion" not-null="true"/>
+        </property>
+        <property name="grupoNumeracion" type="int">
+            <column name="grupo_numeracion" not-null="true" />
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="detalleKardexes" table="detalle_kardex">
+            <key>
+                <column name="id_kardex" not-null="true"/>
+            </key>
+            <one-to-many class="lissa.be.DetalleKardex"/>
+        </set>
+    </class>
+</hibernate-mapping>

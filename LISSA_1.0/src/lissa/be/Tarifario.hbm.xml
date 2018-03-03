@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26/01/2018 10:52:57 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Tarifario" table="tarifario" schema="public" optimistic-lock="version">
+        <id name="idTarifario" type="int">
+            <column name="id_tarifario" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="60" />
+        </property>
+        <property name="estado" type="java.lang.Integer">
+            <column name="estado" />
+        </property>
+        <set name="servicios" table="servicio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_tarifario" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Servicio" />
+        </set>
+    </class>
+</hibernate-mapping>

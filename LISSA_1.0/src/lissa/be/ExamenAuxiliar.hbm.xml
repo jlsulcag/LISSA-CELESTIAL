@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.ExamenAuxiliar" table="examen_auxiliar" schema="public" optimistic-lock="version">
+        <id name="idexamenauxiliar" type="int">
+            <column name="idexamenauxiliar" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencion" class="lissa.be.Atencion" fetch="select">
+            <column name="id_atencion" />
+        </many-to-one>
+        <property name="examen" type="string">
+            <column name="examen" length="150" />
+        </property>
+        <property name="estado" type="java.lang.Boolean">
+            <column name="estado" />
+        </property>
+    </class>
+</hibernate-mapping>

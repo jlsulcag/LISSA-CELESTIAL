@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.SoFmoAbsentismo" table="so_fmo_absentismo" schema="public" optimistic-lock="version">
+        <id name="idsofmoabsentismo" type="int">
+            <column name="idsofmoabsentismo" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="fichaMedicoOcupacional" class="lissa.be.FichaMedicoOcupacional" fetch="select">
+            <column name="id_fichamedicoocupacional" not-null="true" />
+        </many-to-one>
+        <property name="enfermedadAccidente" type="string">
+            <column name="enfermedad_accidente" length="80" not-null="true" />
+        </property>
+        <property name="asociadoAlTrabajo" type="boolean">
+            <column name="asociado_al_trabajo" not-null="true" />
+        </property>
+        <property name="anio" type="java.lang.Integer">
+            <column name="anio" />
+        </property>
+        <property name="diasDescanso" type="java.lang.Integer">
+            <column name="dias_descanso" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.AtencionOcupacional" table="atencion_ocupacional" schema="public" optimistic-lock="version">
+        <id name="idatencionocupacional" type="int">
+            <column name="idatencionocupacional" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="evaluacionOcupacional" class="lissa.be.EvaluacionOcupacional" fetch="select">
+            <column name="id_evaluacion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="examenOcupacional" class="lissa.be.ExamenOcupacional" fetch="select">
+            <column name="id_tipo_examen" not-null="true" />
+        </many-to-one>
+        <many-to-one name="historiaClinica" class="lissa.be.HistoriaClinica" fetch="select">
+            <column name="id_historiaclinica" not-null="true" />
+        </many-to-one>
+        <property name="fechaCertificacion" type="date">
+            <column name="fecha_certificacion" length="13" not-null="true" />
+        </property>
+        <property name="horaCertificacion" type="string">
+            <column name="hora_certificacion" length="15" />
+        </property>
+        <property name="edadIngreso" type="java.lang.Integer">
+            <column name="edad_ingreso" />
+        </property>
+        <property name="idEmpresa" type="int">
+            <column name="id_empresa" not-null="true" />
+        </property>
+        <property name="idLugarTrabajo" type="java.lang.Integer">
+            <column name="id_lugar_trabajo" />
+        </property>
+        <property name="puestoPostula" type="string">
+            <column name="puesto_postula" length="80" />
+        </property>
+        <property name="idLugarExamen" type="java.lang.Integer">
+            <column name="id_lugar_examen" />
+        </property>
+        <property name="proyecto" type="string">
+            <column name="proyecto" length="80" not-null="true" />
+        </property>
+        <property name="residenciaTrabajo" type="string">
+            <column name="residencia_trabajo" length="80" />
+        </property>
+        <property name="tiempoResidencia" type="java.lang.Integer">
+            <column name="tiempo_residencia" />
+        </property>
+        <property name="mesAnioResidencia" type="string">
+            <column name="mes_anio_residencia" length="10" />
+        </property>
+        <property name="segEssalud" type="java.lang.Boolean">
+            <column name="seg_essalud" />
+        </property>
+        <property name="segEps" type="java.lang.Boolean">
+            <column name="seg_eps" />
+        </property>
+        <property name="segSctr" type="java.lang.Boolean">
+            <column name="seg_sctr" />
+        </property>
+        <property name="segOtro" type="java.lang.Boolean">
+            <column name="seg_otro" />
+        </property>
+        <property name="segOtro2" type="java.lang.Boolean">
+            <column name="seg_otro2" />
+        </property>
+        <set name="certificadoMedicoOcupacionals" table="certificado_medico_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.CertificadoMedicoOcupacional" />
+        </set>  
+        <set name="empresaActuals" table="empresa_actual" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.EmpresaActual" />
+        </set>      
+        <set name="fichaPsicologicaPsicotecnicos" table="ficha_psicologica_psicotecnico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaPsicologicaPsicotecnico" />
+        </set>
+        <set name="fichaPsicologicas" table="ficha_psicologica" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaPsicologica" />
+        </set>
+        <set name="fichaOftalmologicas" table="ficha_oftalmologica" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaOftalmologica" />
+        </set>
+        <set name="fichaMedicoOcupacionals" table="ficha_medico_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaMedicoOcupacional" />
+        </set>
+        <set name="fichaAudiometrias" table="ficha_audiometria" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaAudiometria" />
+        </set>
+        <set name="fichaOsteomusculars" table="ficha_osteomuscular" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FichaOsteomuscular" />
+        </set>
+        <set name="examenClinicos" table="examen_clinico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.ExamenClinico" />
+        </set>
+        <set name="informeMedicoOcupacionals" table="informe_medico_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.InformeMedicoOcupacional" />
+        </set>
+    </class>
+</hibernate-mapping>

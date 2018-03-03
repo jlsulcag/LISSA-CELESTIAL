@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="lissa.be.Cita" optimistic-lock="version" schema="public" table="cita">
+    <id name="idcita" type="int">
+      <column name="idcita"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one class="lissa.be.Medico" fetch="select" name="medico">
+      <column name="id_medico"/>
+    </many-to-one>
+    <many-to-one class="lissa.be.Persona" fetch="select" name="persona">
+      <column name="id_paciente"/>
+    </many-to-one>
+    <property name="idUsuario" type="java.lang.Integer">
+      <column name="id_usuario"/>
+    </property>
+    <property name="fecha" type="date">
+      <column length="13" name="fecha"/>
+    </property>
+    <property name="hora_inicio" type="string">
+      <column length="15" name="hora_inicio"/>
+    </property>
+    <property name="servicio" type="string">
+      <column length="160" name="servicio"/>
+    </property>
+    <property name="estado" type="string">
+      <column length="10" name="estado"/>
+    </property>
+    <property name="hora_fin" type="string">
+      <column length="15" name="hora_fin"/>
+    </property>
+    <property name="horaIni" type="java.lang.Integer">
+      <column name="hora_ini"/>
+    </property>
+    <property name="minutoIni" type="java.lang.Integer">
+      <column name="minuto_ini"/>
+    </property>
+    <property name="amPmIni" type="string">
+      <column length="10" name="am_pm_ini"/>
+    </property>
+    <property name="horaFn" type="java.lang.Integer">
+      <column name="hora_fn"/>
+    </property>
+    <property name="minutoFn" type="java.lang.Integer">
+      <column name="minuto_fn"/>
+    </property>
+    <property name="amPmFn" type="string">
+      <column length="10" name="am_pm_fn"/>
+    </property>
+  </class>
+</hibernate-mapping>

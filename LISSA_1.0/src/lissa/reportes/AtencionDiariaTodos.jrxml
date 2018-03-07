@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AtencionDiaria" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="2cfbdcce-99b2-4c91-af03-1a2584e30107">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AtencionDiariaTodos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="2cfbdcce-99b2-4c91-af03-1a2584e30107">
 	<property name="ireport.zoom" value="1.331000000000017"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="FECHA_INICIO" class="java.util.Date"/>
 	<parameter name="FECHA_FIN" class="java.util.Date"/>
-	<parameter name="ID_TIPO_DOC" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[select row_number() OVER () as numeracion,
 c.id_comprobante,
@@ -17,8 +16,8 @@ tc.denominacion as comprobante
 from comprobante as c inner join paciente as pac on c.id_paciente = pac.idpaciente
 inner join persona as per on per.id_persona = pac.id_persona inner join tipo_comprobante tc
 on c.tipo_documento = tc.idtipocomprobante
-where c.fecha_boleta between $P{FECHA_INICIO} and $P{FECHA_FIN} and c.estado = true and c.tipo_documento = $P{ID_TIPO_DOC}
-order by c.numero_boleta asc]]>
+where c.fecha_boleta between $P{FECHA_INICIO} and $P{FECHA_FIN} and c.estado = true
+order by tc.denominacion, c.numero_boleta asc]]>
 	</queryString>
 	<field name="numeracion" class="java.lang.Long"/>
 	<field name="id_comprobante" class="java.lang.Integer"/>
@@ -192,32 +191,28 @@ order by c.numero_boleta asc]]>
 					<subreportParameterExpression><![CDATA[$F{id_comprobante}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["D:\\Repositorio\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\SubReporte\\AtencionDiariaDetalle.jasper"
-]]></subreportExpression>
+				<subreportExpression><![CDATA["D:\\Repositorio\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\SubReporte\\AtencionDiariaDetalle.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="3" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="15" splitType="Stretch">
 			<textField>
-				<reportElement uuid="36a913fb-2b3b-47b0-a55c-f6a68d9941cb" mode="Opaque" x="0" y="0" width="498" height="13" backcolor="#E6E6E6"/>
+				<reportElement uuid="58811a5c-b1dc-4e77-b96e-06461a7a66ff" mode="Opaque" x="0" y="0" width="498" height="13" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Right">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
 			</textField>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement uuid="53926ff7-02ab-4245-8864-ddd27ca3691a" x="0" y="0" width="100" height="13" backcolor="#E6E6E6"/>
+				<reportElement uuid="9556f120-8858-4ee9-bc81-6e81ffe6d53b" x="0" y="0" width="100" height="13" backcolor="#E6E6E6"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement uuid="89f9102e-57ae-49b1-a4a4-ea303bc61896" mode="Opaque" x="498" y="0" width="40" height="13" backcolor="#E6E6E6"/>
+				<reportElement uuid="bf4a7e10-3550-446d-a876-faf83faec9e4" mode="Opaque" x="498" y="0" width="40" height="13" backcolor="#E6E6E6"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
@@ -226,21 +221,21 @@ order by c.numero_boleta asc]]>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="23" splitType="Stretch">
-			<staticText>
-				<reportElement uuid="01aea6c6-1421-46f7-b770-9237907c864e" x="436" y="0" width="53" height="20"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<text><![CDATA[Total S/.]]></text>
-			</staticText>
+		<band height="22">
 			<textField>
-				<reportElement uuid="63cc2450-1294-46e4-a6ae-4bf66116e2c8" x="490" y="0" width="49" height="20"/>
+				<reportElement uuid="22075e6f-ff7d-4555-b4c8-b751912b4366" x="489" y="0" width="49" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{TOTAL}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement uuid="95538461-6aa4-423e-a758-20771192fe02" x="435" y="0" width="53" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total S/.]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>

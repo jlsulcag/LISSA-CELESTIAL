@@ -45,13 +45,11 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
+        setTitle("Recaudación por fecha");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RECAUDACIÓN - DETALLADO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         cbxTipoDoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<SELECCIONE>", "GENERAL", "BOLETA", "FACTURA", "RECIBO" }));
-
-        jdcFechaDesde.setDateFormatString("dd/MM/yyyy");
 
         jLabel1.setText("Tipo de documento : ");
 
@@ -67,8 +65,6 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
 
         jLabel3.setText("Hasta :");
 
-        jdcFechaHasta.setDateFormatString("dd/MM/yyyy");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -81,13 +77,15 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbxTipoDoc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(10, 10, 10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jdcFechaDesde, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jdcFechaHasta, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
-                    .addComponent(cbxTipoDoc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(10, 10, 10)
+                        .addComponent(jdcFechaHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -95,28 +93,26 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(cbxTipoDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jdcFechaDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jdcFechaHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGenerar)
-                        .addGap(0, 4, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jLabel3)
+                            .addComponent(jdcFechaHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnGenerar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +171,7 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
             ds = new DSConeccion(root.getConfig());
             reportGenric = new ReportGeneric(ds.getConeccion());
             reportGenric.setReportParent("/lissa/reportes/");
-            reportPanel = reportGenric.mkReport("AtencionDiariaDetallado", new String[]{"FECHA_DESDE", "FECHA_HASTA"}, new Object[]{jdcFechaDesde.getDate(), jdcFechaHasta.getDate()});
+            reportPanel = reportGenric.mkReport("AtencionDiariaTodos", new String[]{"FECHA_INICIO", "FECHA_FIN"}, new Object[]{jdcFechaDesde.getDate(), jdcFechaHasta.getDate()});
             reportVisor = new JInternalFrame();
             reportVisor.setTitle("Reporte");
             reportVisor.setIconifiable(true);
@@ -197,11 +193,12 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
             ds = new DSConeccion(root.getConfig());
             reportGenric = new ReportGeneric(ds.getConeccion());
             reportGenric.setReportParent("/lissa/reportes/");
-            reportPanel = reportGenric.mkReport("AtencionDiariaDetalladoXFechaTipoDoc", new String[]{"FECHA_DESDE", "FECHA_HASTA", "TIPO_COMPROBANTE"}, new Object[]{jdcFechaDesde.getDate(), jdcFechaHasta.getDate(), tipo_comprobante});
+            reportPanel = reportGenric.mkReport("AtencionDiaria", new String[]{"FECHA_INICIO", "FECHA_FIN", "ID_TIPO_DOC"}, new Object[]{jdcFechaDesde.getDate(), jdcFechaHasta.getDate(), tipo_comprobante});
             reportVisor = new JInternalFrame();
             reportVisor.setTitle("Reportes");
             reportVisor.setIconifiable(true);
             reportVisor.setClosable(true);
+            reportVisor.setMaximizable(true);
             reportVisor.getContentPane().add(reportPanel);
             root.insertarInternalFrames(reportVisor);
             reportVisor.setMaximum(true);
@@ -234,5 +231,11 @@ public class JIF_Reporte_RecaudacionDiariaTipoDocFecha extends javax.swing.JInte
         Utilitarios.resetPaintCbx(cbxTipoDoc);
         Utilitarios.resetPaintJdc(jdcFechaDesde);
         Utilitarios.resetPaintJdc(jdcFechaHasta);
+    }
+
+    void iniciar() {
+        cbxTipoDoc.setSelectedIndex(0);
+        jdcFechaDesde.setDate(null);
+        jdcFechaHasta.setDate(null);
     }
 }

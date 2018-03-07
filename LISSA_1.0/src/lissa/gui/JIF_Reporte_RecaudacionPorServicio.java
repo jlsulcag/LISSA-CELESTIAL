@@ -3,6 +3,7 @@ package lissa.gui;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,8 +35,6 @@ public class JIF_Reporte_RecaudacionPorServicio extends javax.swing.JInternalFra
     public JIF_Reporte_RecaudacionPorServicio(JF_Principal root) {
         initComponents();
         this.root = root;
-        //cargarCbxServicios();
-        fechaActual();
     }
 
     @SuppressWarnings("unchecked")
@@ -200,26 +199,17 @@ public class JIF_Reporte_RecaudacionPorServicio extends javax.swing.JInternalFra
     }
 
     private void paintComconent() {
-//        Utilitarios.paintCbxVacio(cbxTipoDoc);
         Utilitarios.paintJdcVacio(jdcFechaDesde);
         Utilitarios.paintJdcVacio(jdcFechaHasta);
     }
 
     private void resetPaintComponent() {
-//        Utilitarios.resetPaintCbx(cbxTipoDoc);
         Utilitarios.resetPaintJdc(jdcFechaDesde);
         Utilitarios.resetPaintJdc(jdcFechaHasta);
     }
-
-//    private void cargarCbxServicios() {
-//        oBLServicio =  new ServicioBl();
-//        listServicio = oBLServicio.listar();
-//        cbxTipoDoc.removeAllItems();
-//        cbxTipoDoc.addItem("<SELECCIONE>");
-//        cbxTipoDoc.addItem("TODOS");
-//        for (Servicio tipoMedico : listServicio) {
-//            tipoMedico.setOp(Servicio.DATO);
-//            cbxTipoDoc.addItem(tipoMedico);
-//        }
-//    }
+    
+    void iniciar() {
+        jdcFechaDesde.setDate(new Date());
+        jdcFechaHasta.setDate(new Date());
+    }
 }

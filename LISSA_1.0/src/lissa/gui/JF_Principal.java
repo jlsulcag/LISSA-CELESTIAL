@@ -309,7 +309,6 @@ public class JF_Principal extends javax.swing.JFrame {
         jmi001 = new javax.swing.JMenuItem();
         jmi002 = new javax.swing.JMenuItem();
         jmi003 = new javax.swing.JMenuItem();
-        jmi004 = new javax.swing.JMenuItem();
         jmi005 = new javax.swing.JMenuItem();
         jmi006 = new javax.swing.JMenuItem();
         jmi007 = new javax.swing.JMenuItem();
@@ -550,21 +549,13 @@ public class JF_Principal extends javax.swing.JFrame {
         });
         jmReportes.add(jmi002);
 
-        jmi003.setText("Recaudación por Fecha  - Detallado");
+        jmi003.setText("Recaudación por Fecha");
         jmi003.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi003ActionPerformed(evt);
             }
         });
         jmReportes.add(jmi003);
-
-        jmi004.setText("Recaudación por Fecha  - Resumen");
-        jmi004.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi004ActionPerformed(evt);
-            }
-        });
-        jmReportes.add(jmi004);
 
         jmi005.setText("Recaudación por Médico");
         jmi005.addActionListener(new java.awt.event.ActionListener() {
@@ -819,6 +810,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jmi006ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi006ActionPerformed
         insertarInternalFrames(jifReporteRecaudacionXServicio);
+        jifReporteRecaudacionXServicio.iniciar();
     }//GEN-LAST:event_jmi006ActionPerformed
 
     private void jmi002ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi002ActionPerformed
@@ -827,14 +819,12 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jmi005ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi005ActionPerformed
         insertarInternalFrames(jifReporteRecaudacionPorMedico);
+        jifReporteRecaudacionPorMedico.iniciar();
     }//GEN-LAST:event_jmi005ActionPerformed
-
-    private void jmi004ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi004ActionPerformed
-        insertarInternalFrames(jifReporteRecaudacionResumen);
-    }//GEN-LAST:event_jmi004ActionPerformed
 
     private void jmi003ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi003ActionPerformed
         insertarInternalFrames(jifReporteCajaDiario);
+        jifReporteCajaDiario.iniciar();
     }//GEN-LAST:event_jmi003ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -932,7 +922,6 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi001;
     private javax.swing.JMenuItem jmi002;
     private javax.swing.JMenuItem jmi003;
-    private javax.swing.JMenuItem jmi004;
     private javax.swing.JMenuItem jmi005;
     private javax.swing.JMenuItem jmi006;
     private javax.swing.JMenuItem jmi007;
@@ -1082,10 +1071,9 @@ public class JF_Principal extends javax.swing.JFrame {
         jmReportes.add(jmi001);
         jmReportes.add(jmi002);
         jmReportes.add(jmi003);
-        jmReportes.add(jmi004);
         jmReportes.add(jmi005);
-        jmReportes.add(jmi006);
-        jmReportes.add(jmi007);
+        //jmReportes.add(jmi006);
+        //jmReportes.add(jmi007);
         //fin reportes
         jmbPrincipal.add(jmPersonal);
         jmbPrincipal.add(jmMiCuenta);
@@ -1118,10 +1106,9 @@ public class JF_Principal extends javax.swing.JFrame {
         jmbPrincipal.add(jmReportes);
         jmReportes.removeAll();
         jmReportes.add(jmi003);
-        jmReportes.add(jmi004);
         jmReportes.add(jmi005);
-        jmReportes.add(jmi006);
-        jmReportes.add(jmi007);
+        //jmReportes.add(jmi006);
+        //jmReportes.add(jmi007);
         //
         jmbPrincipal.add(jmPersonal);
         jmbPrincipal.add(jmMiCuenta);
@@ -1148,10 +1135,9 @@ public class JF_Principal extends javax.swing.JFrame {
         //Definir sus opciones del menu
         jmReportes.removeAll();
         jmReportes.add(jmi003);
-        jmReportes.add(jmi004);
         jmReportes.add(jmi005);
-        jmReportes.add(jmi006);
-        jmReportes.add(jmi007);
+        //jmReportes.add(jmi006);
+        //jmReportes.add(jmi007);
         //
         jmbPrincipal.add(jmPersonal);
         jmbPrincipal.add(jmMiCuenta);

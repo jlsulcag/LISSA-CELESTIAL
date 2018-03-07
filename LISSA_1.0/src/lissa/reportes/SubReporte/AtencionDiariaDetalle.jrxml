@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AtencionDiariaDetalle" language="groovy" pageWidth="453" pageHeight="842" columnWidth="453" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2d7d6364-be63-4778-b29e-e3ad90896387">
+	<property name="ireport.zoom" value="1.7715610000000048"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID_COM" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select row_number() OVER () as numeracion,
+c.denominacion procedimiento,
+s.denominacion servicio,
+c.costo,
+a.importe_adicional,
+a.monto_pagado
+from items_comprobante a inner join comprobante b
+on a.id_boleta = b.id_comprobante inner join procedimiento c
+on a.id_procedimiento = c.idprocedimiento inner join servicio s
+on c.id_servicio = s.idservicio
+where b.id_comprobante = $P{ID_COM}]]>
+	</queryString>
+	<field name="numeracion" class="java.lang.Long"/>
+	<field name="procedimiento" class="java.lang.String"/>
+	<field name="servicio" class="java.lang.String"/>
+	<field name="costo" class="java.math.BigDecimal"/>
+	<field name="importe_adicional" class="java.math.BigDecimal"/>
+	<field name="monto_pagado" class="java.math.BigDecimal"/>
+	<group name="Group1"/>
+	<group name="Group2"/>
+	<group name="Group4"/>
+	<background>
+		<band/>
+	</background>
+	<detail>
+		<band height="15">
+			<textField pattern="0000" isBlankWhenNull="true">
+				<reportElement uuid="0a17bb5e-0cb0-4d1c-b19a-141d4a620e50" x="0" y="0" width="43" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e6d0a660-46c5-4563-beed-84fb8e37fbdd" x="43" y="0" width="110" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="607a336b-8c8d-48e6-84a9-21364bc9e6a7" x="303" y="-1" width="50" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="af69f7c1-9ed1-42d9-b2ff-96eb98380a50" x="353" y="-1" width="50" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importe_adicional}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="c19e2508-0f07-4270-8353-5d26a8cd24c7" x="0" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="87b55824-518c-41a7-b537-91b6018d0709" x="153" y="-1" width="149" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{procedimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2f015bce-0619-44d6-8bca-b39b120c0eb8" x="403" y="-1" width="50" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monto_pagado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="6d118a43-53e0-48a5-ba16-94e4e298ddf1" x="452" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="f6ebac23-9552-42e9-99ae-ba8ec43736ae" x="402" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="ac716a04-315e-480e-8de4-d91e328d2d69" x="352" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="78eb93a0-6e01-4664-8181-98a6f36edb7b" x="0" y="14" width="453" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="919304bb-8165-4b7b-91c8-3b6d3335c40e" x="42" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="b5dd97ee-92f4-4ab0-9ad2-c4dae8ec68a9" x="152" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="62dccad5-fd83-4e5a-91bb-22c5a9bdc944" x="302" y="0" width="1" height="15"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1536,7 +1536,12 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             oItemComprobante.setEstado(true);
             oItemComprobante.setMedicoByIdMedicoDeriva(oMedicoD);
             oItemComprobante.setMedicoByIdMedicoAtiende(oMedicoA);
-            oItemComprobante.setImporteAdicional(montoAdicional);
+            if(!txfMontoAdicional.getText().trim().equals("")){
+                oItemComprobante.setImporteAdicional(new BigDecimal(txfMontoAdicional.getText().trim()));
+            }else{
+                oItemComprobante.setImporteAdicional(new BigDecimal("0.00"));
+            }
+            
             if (!txfMontoDerivado.getText().trim().equals("")) {
                 oItemComprobante.setMontoDerivacion(new BigDecimal(txfMontoDerivado.getText().trim()));
             } else {

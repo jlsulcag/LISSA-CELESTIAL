@@ -500,6 +500,8 @@ public final class JD_IniciarSesion extends javax.swing.JDialog {
         root.setoPersona(oPersona);
         root.setoRol(rol);
         root.setTitle("LISSA 1.0 - "+ oUsuario.getNombre());
+        //empieza de conteo de tiempo
+        
         //root.setVisible(true);
     }
 

@@ -252,18 +252,10 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmi003">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Recaudaci&#xf3;n por Fecha  - Detallado"/>
+                <Property name="text" type="java.lang.String" value="Recaudaci&#xf3;n por Fecha"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi003ActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmi004">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Recaudaci&#xf3;n por Fecha  - Resumen"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi004ActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmi005">

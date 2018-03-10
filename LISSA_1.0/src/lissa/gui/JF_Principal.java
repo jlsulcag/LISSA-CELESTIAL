@@ -161,6 +161,7 @@ public class JF_Principal extends javax.swing.JFrame {
     public JIF_NotaSalidaFar jifNotaSalidafar;
     public JIF_RegAreaConsumo jifRegAreaConsumo;
     public JIF_AdministrarServicio jifAdministrarServicio;
+    public JD_VisorHc jdVisorHc;
 
 //    private JD_BackUpDB_Creator_Sirec bcpc = null;
 //    private JD_BackUpDB_Restore_Sirec bcpr = null;
@@ -276,6 +277,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jifFormaPago = new JIF_FormaPago(this);
         jifRegAreaConsumo = new JIF_RegAreaConsumo(this);
         jifAdministrarServicio = new JIF_AdministrarServicio(this);
+        jdVisorHc = new JD_VisorHc(this);
 
     }
 

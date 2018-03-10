@@ -1353,32 +1353,32 @@ public final class Utilitarios extends JLabel implements Runnable {
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="GUI Font Util">
     public Font getErikaEdesscoTypeItalic(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Erika_Edessco_Italic.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Erika_Edessco_Italic.ttf", sz);
         //return getCustomFont("font/Erika_Type_Italic.ttf",sz);
     }
 
     public Font getErikaTypeItalic(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Erika_Type_Italic.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Erika_Type_Italic.ttf", sz);
         //return getCustomFont("font/Erika_Type_Italic.ttf",sz);
     }
 
     public Font getErikaTypeBoldItalic(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Erika_Type_Bold_Italic.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Erika_Type_Bold_Italic.ttf", sz);
         //return getCustomFont("font/Erika_Type_Bold_Italic.ttf",sz);
     }
 
     public Font getArialNormal(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Arial_Normal.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Arial_Normal.ttf", sz);
         //return getCustomFont("font/Arial_Normal.ttf",sz);
     }
 
     public Font getArialNarrowCursiva(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Arial_Narrow_Cursiva.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Arial_Narrow_Cursiva.ttf", sz);
         //return getCustomFont("font/Arial_Narrow_Cursiva.ttf",sz);
     }
 
     public Font getArialBlackNormal(float sz) {
-        return getCustomFont("/org/edessco/sisregcivil/resource/font/Arial_Black_Normal.ttf", sz);
+        return getCustomFont("/lissa/resources/font/Arial_Black_Normal.ttf", sz);
         //return getCustomFont("font/Arial_Black_Normal.ttf",sz);
     }
 

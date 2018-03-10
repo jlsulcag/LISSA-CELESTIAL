@@ -7,24 +7,26 @@
 	<parameter name="FECHA_HASTA" class="java.util.Date"/>
 	<queryString>
 		<![CDATA[select
-ser.categoria as "servicio",
-count(ser.categoria) "Cant de atenciones",
+ser.denominacion as servicio,
+count(ser.denominacion) "Cant de atenciones",
 sum(ic.monto_pagado) "Ingreso general",
 (
 select sum(m.monto)
 from medico_deriva_atiende m inner join items_comprobante ic2
 on m.id_itemcomprobante = ic2.iditemcomprobante inner join comprobante com
-on ic2.id_boleta = com.id_comprobante inner join servicio ser2
-on ic2.id_servicio = ser2.id_servicio
+on ic2.id_boleta = com.id_comprobante inner join procedimiento p2
+on ic.id_procedimiento = p.idprocedimiento inner join servicio ser2
+on p2.id_servicio = ser.idservicio
 where com.fecha_boleta BETWEEN $P{FECHA_DESDE} AND $P{FECHA_HASTA}
-and com.estado is true and m.estado_pago = 'PAGADO' and ser2.categoria = ser.categoria
+and com.estado is true and m.estado_pago = 'PAGADO' and ser2.denominacion = ser.denominacion
 ) as pagosmed
 from comprobante as c inner join items_comprobante as ic
-on c.id_comprobante = ic.id_boleta inner join servicio ser
-on ic.id_servicio = ser.id_servicio
+on c.id_comprobante = ic.id_boleta inner join procedimiento p
+on ic.id_procedimiento = p.idprocedimiento inner join servicio ser
+on p.id_servicio = ser.idservicio
 where c.fecha_boleta BETWEEN $P{FECHA_DESDE} AND $P{FECHA_HASTA}
 and c.estado is true
-GROUP BY ser.categoria]]>
+GROUP BY ser.denominacion, ic.id_procedimiento, p.idprocedimiento]]>
 	</queryString>
 	<field name="servicio" class="java.lang.String"/>
 	<field name="Cant de atenciones" class="java.lang.Long"/>
@@ -48,28 +50,28 @@ GROUP BY ser.categoria]]>
 			<staticText>
 				<reportElement uuid="2c19db29-c76c-4fad-ac2d-d063afa4d228" x="159" y="20" width="39" height="20" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="false"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DESDE :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="26c1585d-d848-4ccb-9fbb-7a9f2f6aa065" x="278" y="20" width="46" height="20" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="false"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[HASTA :]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="4ed369e9-ecd9-4e2e-b23a-57ef18fca2c0" x="198" y="20" width="74" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font size="9"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{FECHA_DESDE}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement uuid="e307e874-488a-4bce-9f90-d8bb17e528d9" x="324" y="20" width="91" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font size="9"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{FECHA_HASTA}]]></textFieldExpression>
 			</textField>
@@ -86,63 +88,63 @@ GROUP BY ser.categoria]]>
 			<staticText>
 				<reportElement uuid="61258885-070c-49bc-a9c0-7299b9704f7e" mode="Opaque" x="0" y="0" width="277" height="30" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Servicio]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8c4c68ae-9a97-4f01-bde6-0d06aef2271a" mode="Opaque" x="485" y="0" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ingreso]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="678b4ee0-fc50-4079-9fbf-f686ec426d58" mode="Opaque" x="415" y="0" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pago a]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="3f7c0a3d-74a8-4996-85c6-9d20e7445267" mode="Opaque" x="346" y="0" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ingreso]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="cb5075ee-125b-49a3-a2b7-9f14d873e0ee" mode="Opaque" x="277" y="0" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Cantidad de]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="99046b65-3f25-4ae3-9e74-5a2f6b71c3aa" mode="Opaque" x="485" y="15" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Neto]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="3ef4edba-70e0-407a-8289-2a8c28143ce4" mode="Opaque" x="277" y="15" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Atenciones]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="26a79e52-df86-4249-8df5-41fed2bf6158" mode="Opaque" x="415" y="15" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Medicos]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="a15ada48-18cb-47d9-b182-840731c57365" mode="Opaque" x="346" y="15" width="70" height="15" forecolor="#006699" backcolor="#E6E6E6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[General]]></text>
 			</staticText>

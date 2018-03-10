@@ -115,6 +115,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
     private ModeloDetalleAtencion oModeloDetalleAtencion;
     private ItemsComprobanteBl oItemsComprobanteBl;
     private ModeloServicioFondoS oModeloServicioFondoS;
+    private JP_Print_HistoriaClinica printHc;
 
     private Usuario userTemp;
     private Persona perTemp;
@@ -140,6 +141,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         oModeloDetalleAtencion = new ModeloDetalleAtencion();
         tblServicios.setModel(oModeloDetalleAtencion);
         oModeloServicioFondoS = new ModeloServicioFondoS();
+        printHc = new JP_Print_HistoriaClinica(root);
     }
 
     @SuppressWarnings("unchecked")
@@ -223,6 +225,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         jPanel12 = new javax.swing.JPanel();
         cbxTipoHCBusq = new javax.swing.JComboBox();
         btnAbrirAtenciones = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -839,6 +842,13 @@ public class JPanel_Admision extends javax.swing.JPanel {
             }
         });
 
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/Impresora.png"))); // NOI18N
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -852,6 +862,8 @@ public class JPanel_Admision extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAbrirAtenciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -888,7 +900,8 @@ public class JPanel_Admision extends javax.swing.JPanel {
                         .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAbrirAtenciones))
+                    .addComponent(btnAbrirAtenciones)
+                    .addComponent(btnImprimir))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -1029,6 +1042,10 @@ public class JPanel_Admision extends javax.swing.JPanel {
         personalizaVistaTabla();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        imprimir();
+    }//GEN-LAST:event_btnImprimirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbrirAtenciones;
@@ -1038,6 +1055,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnGenerarHC;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnQuitar;
     private javax.swing.JButton btnRegIngreso;
@@ -1905,6 +1923,42 @@ public class JPanel_Admision extends javax.swing.JPanel {
     private void resetPaintComponentesIngreso() {
         Utilitarios.resetPaintCbx(cbxTipoIngreso);
         Utilitarios.resetPaintCbx(cbxEspecialidad);
+    }
+
+    private void imprimir() {
+        if(isDatosValidosImpresion()){
+            root.jdVisorHc.setPrintHistoriaClinica(printHc);
+            root.jdVisorHc.clearData();
+            if(beanTablaPersona.getIdPersona() != 0 && oHistoriaClinica.getIdhistoriaclinica() != 0){
+                printHc.setFecha_registro(Utilitarios.formatFecha(new Date()));
+                printHc.setNumero_hc(oHistoriaClinica.getNumerohc().toString());
+                printHc.setApe_paterno(beanTablaPersona.getApellidoPaterno());
+                printHc.setApe_materno(beanTablaPersona.getApellidoMaterno());
+                printHc.setNombres(beanTablaPersona.getNombre());
+                if (beanTablaPersona.getSexo() != null && beanTablaPersona.getSexo().equals("MASCULINO")) {
+                    printHc.setSexo("M");
+                }else if(beanTablaPersona.getSexo() != null && beanTablaPersona.getSexo().equals("FEMENINO")){
+                    printHc.setSexo("F");
+                }
+                printHc.setFecha_nacimiento(beanTablaPersona.getFechaNacimiento()!= null?Utilitarios.formatFecha(beanTablaPersona.getFechaNacimiento()):"");
+                printHc.setEdad(Utilitarios.obtenerEdad(beanTablaPersona.getFechaNacimiento())+"");
+                printHc.setLugar_nacimiento(beanTablaPersona.getLugarNacimiento() != null?beanTablaPersona.getLugarNacimiento():"");
+                printHc.setProcedencia(beanTablaPersona.getLugarProcedencia() != null?beanTablaPersona.getLugarProcedencia():"");
+                printHc.setGrado_instruccion(beanTablaPersona.getGradoInstruccion() != null?beanTablaPersona.getGradoInstruccion():"");
+                printHc.setEstado_civil(beanTablaPersona.getPeEstadoCivil() != null ? beanTablaPersona.getPeEstadoCivil().getEstadoCivil():"");
+                printHc.setOcupacion(beanTablaPersona.getOcupacion() != null?beanTablaPersona.getOcupacion():"");
+                
+                root.jdVisorHc.pintarDatos();
+                root.jdVisorHc.setVisible(true);
+            }
+        }else{
+        
+        }
+    }
+
+    private boolean isDatosValidosImpresion() {
+        return (tblResultados.getRowSelectionAllowed()
+                );
     }
 
 }

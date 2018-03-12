@@ -136,10 +136,10 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         initComponents();
         this.root = root;
         oModeloPro = new ModeloProcedimientoMedico();
-        tblResultados.setModel(oModeloPro);        
+        tblResultados.setModel(oModeloPro);
         Utilitarios.fechaActual(jdcFechaComprobante);
         personalizaVistaTabla();
-        jTabbedPane1.setEnabledAt(1, false);        
+        jTabbedPane1.setEnabledAt(1, false);
     }
 
     @SuppressWarnings("unchecked")
@@ -1121,7 +1121,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             resetPaintComponent();
             personalizaVistaTabla();
             resetComponentDatosProcedimiento();
-        } else {            
+        } else {
             Mensajes.msjValidarIngreso();
             paintComponent();
         }
@@ -1182,7 +1182,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameClosing
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-        personalizaVistaTabla(); 
+        personalizaVistaTabla();
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void txfFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfFacturaActionPerformed
@@ -1227,7 +1227,12 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 //        if (!txfMontoAdicional.getText().trim().equals("")) {
 //            if (code == KeyEvent.VK_ENTER) {
         if (!txfMontoAdicional.getText().trim().equals("")) {
-            calcularMontoAPagar();
+            if (txfMontoAdicional.getText().trim().equals("-")) {
+                montoAdicional = new BigDecimal("0.00");
+                calcularMontoAPagar();
+            } else {
+                calcularMontoAPagar();
+            }
         } else {
             montoAdicional = new BigDecimal("0.00");
             calcularMontoAPagar();
@@ -1536,12 +1541,12 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             oItemComprobante.setEstado(true);
             oItemComprobante.setMedicoByIdMedicoDeriva(oMedicoD);
             oItemComprobante.setMedicoByIdMedicoAtiende(oMedicoA);
-            if(!txfMontoAdicional.getText().trim().equals("")){
+            if (!txfMontoAdicional.getText().trim().equals("")) {
                 oItemComprobante.setImporteAdicional(new BigDecimal(txfMontoAdicional.getText().trim()));
-            }else{
+            } else {
                 oItemComprobante.setImporteAdicional(new BigDecimal("0.00"));
             }
-            
+
             if (!txfMontoDerivado.getText().trim().equals("")) {
                 oItemComprobante.setMontoDerivacion(new BigDecimal(txfMontoDerivado.getText().trim()));
             } else {
@@ -1587,8 +1592,8 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             oMedicoDerivaAtiende = new MedicoDerivaAtiende();
             oMedicoDerivaAtiende.setItemsComprobante(oItemComprobante);
             oMedicoDerivaAtiende.setMedico(oMedicoD);
-            BigDecimal monto = txfMontoDerivado.getText().trim().equals("")?BigDecimal.ZERO:new BigDecimal(txfMontoDerivado.getText().trim());
-            oMedicoDerivaAtiende.setMonto(monto);            
+            BigDecimal monto = txfMontoDerivado.getText().trim().equals("") ? BigDecimal.ZERO : new BigDecimal(txfMontoDerivado.getText().trim());
+            oMedicoDerivaAtiende.setMonto(monto);
             oMedicoDerivaAtiende.setEstadoPago("DEBE");
             oMedicoDerivaAtiende.setTipoMedico("DERIVA");
             oMedicoDerivaAtiende.setIdCajaafecto(getOcaja().getIdcaja());
@@ -1598,13 +1603,13 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             oMedicoDerivaAtiende = new MedicoDerivaAtiende();
             oMedicoDerivaAtiende.setItemsComprobante(oItemComprobante);
             oMedicoDerivaAtiende.setMedico(oMedicoA);
-            BigDecimal monto = txfMontoAtencion.getText().trim().equals("")?BigDecimal.ZERO:new BigDecimal(txfMontoAtencion.getText().trim());
+            BigDecimal monto = txfMontoAtencion.getText().trim().equals("") ? BigDecimal.ZERO : new BigDecimal(txfMontoAtencion.getText().trim());
             oMedicoDerivaAtiende.setMonto(monto);
-            if(oMedicoA != null && oMedicoA.getTipoMedico().getNombre().trim().equals("PLANTA")){
+            if (oMedicoA != null && oMedicoA.getTipoMedico().getNombre().trim().equals("PLANTA")) {
                 oMedicoDerivaAtiende.setEstadoPago("NO SE PAGA");
-            }else{
+            } else {
                 oMedicoDerivaAtiende.setEstadoPago("DEBE");
-            }            
+            }
             oMedicoDerivaAtiende.setTipoMedico("ATIENDE");
             oMedicoDerivaAtiende.setIdCajaafecto(getOcaja().getIdcaja());
             listMedDA.add(oMedicoDerivaAtiende);
@@ -1637,7 +1642,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
                 txfNombrePersona.setText(oPersona.getApellidoPaterno().toUpperCase() + " " + oPersona.getApellidoMaterno().toUpperCase() + " " + oPersona.getNombre().toUpperCase());
                 txfFechaIngreso.setText(Utilitarios.formatFecha(oPaciente.getFechaIngreso()));
                 //Llenar los seguros con los que  cuenta el paciente
-                llenarComboSegurosPaciente();                
+                llenarComboSegurosPaciente();
                 //fin de busqueda
                 txfFechaIngreso.setBackground(Color.GREEN);
             } else {
@@ -1655,7 +1660,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         Calendar c = new GregorianCalendar();
         jdcFechaComprobante.setCalendar(c);
     }
-    
+
     private void llenarComboSegurosPaciente() {
         blSeguro = new SeguroBl();
         oBlSeguroPersona = new SeguroPersonaBl();
@@ -1890,7 +1895,6 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     }
 
-   
     private void cargarBeneficios() {
         oBeneficioBl = new BeneficioBl();
         cbxBeneficio.removeAllItems();
@@ -1905,9 +1909,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         }
     }
 
-
     private void calcularMontoAPagar() {
-//        montoReal = oServicio.getCosto();
         resetMontosCalculados();
         if (!txfMontoServicio.getText().trim().equals("")) {
             montoReal = new BigDecimal(txfMontoServicio.getText().trim());
@@ -1916,13 +1918,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         }
 
         cubierto = ((Integer) jsCubiertoSeguro.getValue());
-        if (txfMontoAdicional.getText().trim().equals("")) {
-            montoAdicional = new BigDecimal("0.00");
-        } else {
-            montoAdicional = new BigDecimal(txfMontoAdicional.getText().trim());
-        }
-        //montoDescuento = (Double.parseDouble("" + montoReal.multiply(new BigDecimal(cubierto)))) / 100;
-        //montoPagar = ((montoReal).add(montoAdicional)).subtract(new BigDecimal(montoCubiertoSeguro)).setScale(2, BigDecimal.ROUND_DOWN);
+        
         montoCubiertoSeguro = (montoReal.multiply(new BigDecimal(cubierto)).setScale(2, RoundingMode.HALF_UP)).divide(new BigDecimal(CIEN));
         montoPagar = ((montoReal.add(montoAdicional)).subtract(montoCubiertoSeguro)).setScale(2, RoundingMode.HALF_UP);
         txfMontoPagado.setText(montoPagar.toString());
@@ -2074,6 +2070,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         oProcedimiento = obj;
         txfServicio.setText(oProcedimiento.getDenominacion());
         txfMontoServicio.setText(oProcedimiento.getCosto().toString());
+        txfMontoPagado.setText(oProcedimiento.getCosto().toString());
     }
 
 }

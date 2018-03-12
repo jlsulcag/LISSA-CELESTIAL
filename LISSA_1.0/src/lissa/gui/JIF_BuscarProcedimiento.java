@@ -165,7 +165,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
             personalizaVistaTabla();
         } else {
             inicializar();
-            Mensajes.msjValidarIngreso();
+            //Mensajes.msjValidarIngreso();
         }
         
         
@@ -179,5 +179,6 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
     void inicializar() {
         txfBusqueda.setText("");
         oModeloProcedimiento.clear();
+        personalizaVistaTabla();
     }
 }

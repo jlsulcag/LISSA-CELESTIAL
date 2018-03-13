@@ -1242,6 +1242,10 @@ public class JPanel_Admision extends javax.swing.JPanel {
         oModeloFondoPrevisionTemp.clear();
         oModeloSeguro.clear();
         oModeloDetalleAtencion.clear();
+        oPersona = null;
+        beanTablaPersona = null;
+        oCaja = null;
+        oHistoriaClinica = null;
         personalizaVistaTabla();
     }
 
@@ -1929,7 +1933,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         if(isDatosValidosImpresion()){
             root.jdVisorHc.setPrintHistoriaClinica(printHc);
             root.jdVisorHc.clearData();
-            if(beanTablaPersona.getIdPersona() != 0 && oHistoriaClinica.getIdhistoriaclinica() != 0){
+            if(beanTablaPersona != null && oHistoriaClinica != null){
                 printHc.setFecha_registro(Utilitarios.formatFecha(new Date()));
                 printHc.setNumero_hc(oHistoriaClinica.getNumerohc().toString());
                 printHc.setApe_paterno(beanTablaPersona.getApellidoPaterno());
@@ -1941,7 +1945,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
                     printHc.setSexo("F");
                 }
                 printHc.setFecha_nacimiento(beanTablaPersona.getFechaNacimiento()!= null?Utilitarios.formatFecha(beanTablaPersona.getFechaNacimiento()):"");
-                printHc.setEdad(Utilitarios.obtenerEdad(beanTablaPersona.getFechaNacimiento())+"");
+                printHc.setEdad(beanTablaPersona.getFechaNacimiento() != null?Utilitarios.obtenerEdad(beanTablaPersona.getFechaNacimiento())+"":"");
                 printHc.setLugar_nacimiento(beanTablaPersona.getLugarNacimiento() != null?beanTablaPersona.getLugarNacimiento():"");
                 printHc.setProcedencia(beanTablaPersona.getLugarProcedencia() != null?beanTablaPersona.getLugarProcedencia():"");
                 printHc.setGrado_instruccion(beanTablaPersona.getGradoInstruccion() != null?beanTablaPersona.getGradoInstruccion():"");
@@ -1952,7 +1956,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
                 root.jdVisorHc.setVisible(true);
             }
         }else{
-        
+            Mensajes.hcSeleccionePersona();
         }
     }
 

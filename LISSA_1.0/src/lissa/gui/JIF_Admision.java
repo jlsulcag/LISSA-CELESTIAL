@@ -31,8 +31,8 @@ public class JIF_Admision extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
 
         setClosable(true);
-        setTitle("ADMISIÓN");
-        setPreferredSize(new java.awt.Dimension(1300, 642));
+        setTitle("Admisión");
+        setPreferredSize(new java.awt.Dimension(1300, 600));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }

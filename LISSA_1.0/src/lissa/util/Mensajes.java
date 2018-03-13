@@ -85,4 +85,8 @@ public class Mensajes {
     public static void msjErrorgenerico(Class<PaqueteFondoDetalle> aClass) {
         JOptionPane.showMessageDialog(null, "Error general en :"+ aClass.getName(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+    public static void hcSeleccionePersona() {
+        JOptionPane.showMessageDialog(null, "Seleccione un paciente", "Error", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

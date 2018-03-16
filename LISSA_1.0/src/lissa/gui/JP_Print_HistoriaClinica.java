@@ -51,7 +51,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
 
         jLabel1 = new PrintDataActa();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/hc.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/hc5.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,7 +61,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -78,7 +78,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
 //            Utilitarios.imprimirSilencioso(this);
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/acta_blanca_recurso.png")));
             Utilitarios.imprimirDialogo((Printable) this);
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/hc.jpg")));
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/hc5.jpg")));
         } catch (PrinterException ex) {
             Logger.getLogger(JP_Print_HistoriaClinica.class.getName()).log(Level.SEVERE, null, ex);
         }

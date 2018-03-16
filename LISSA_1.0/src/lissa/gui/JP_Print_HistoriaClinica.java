@@ -239,7 +239,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
             super.paintComponent(g);
                 
                 Graphics2D g2D = (Graphics2D) g;
-                g2D.setFont(util.getArialNormal(25f)); 
+                g2D.setFont(util.getArialNormal(20f)); //25
                 //g2D.setFont(util.getErikaEdesscoTypeItalic(22f)); 
                 aplicarNitidez(g2D);
                        

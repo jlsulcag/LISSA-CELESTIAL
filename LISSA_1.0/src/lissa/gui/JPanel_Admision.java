@@ -1951,6 +1951,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
                 printHc.setGrado_instruccion(beanTablaPersona.getGradoInstruccion() != null?beanTablaPersona.getGradoInstruccion():"");
                 printHc.setEstado_civil(beanTablaPersona.getPeEstadoCivil() != null ? beanTablaPersona.getPeEstadoCivil().getEstadoCivil():"");
                 printHc.setOcupacion(beanTablaPersona.getOcupacion() != null?beanTablaPersona.getOcupacion():"");
+                printHc.setDni(beanTablaPersona.getNumeroDocumento() != null?beanTablaPersona.getNumeroDocumento():"");
                 
                 root.jdVisorHc.pintarDatos();
                 root.jdVisorHc.setVisible(true);

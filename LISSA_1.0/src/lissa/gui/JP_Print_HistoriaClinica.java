@@ -28,6 +28,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
     private String grado_instruccion;
     private String estado_civil;
     private String ocupacion;
+    private String dni;
     
     private RenderingHints render1 = new RenderingHints(RenderingHints.KEY_ALPHA_INTERPOLATION,RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
     private RenderingHints render2 = new RenderingHints(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
@@ -98,6 +99,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
         setGrado_instruccion("");
         setEstado_civil("");
         setOcupacion("");
+        setDni("");
     }
 
     public String getFecha_registro() {
@@ -224,6 +226,14 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
         return Utilitarios.imprimir(graphics, pageFormat, pageIndex, this);
     }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
     
     public class PrintDataActa extends JLabel{
         private int xT = 0;
@@ -239,25 +249,30 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
             super.paintComponent(g);
                 
                 Graphics2D g2D = (Graphics2D) g;
+                //Graphics2D g2Dhc = (Graphics2D) g;
                 g2D.setFont(util.getArialNormal(20f)); //25
+                //g2Dhc.setFont(util.getArialNormal(25f)); //25
+                
                 //g2D.setFont(util.getErikaEdesscoTypeItalic(22f)); 
                 aplicarNitidez(g2D);
+                //aplicarNitidez(g2Dhc);
                        
                 int ref_x = 22,ref_y=-2;
                 String raya="--";
                 ////////////////////////////////////////
-                g2D.drawString(getFecha_registro().toUpperCase(),ref_x+200,ref_y+250);
-                g2D.drawString(getNumero_hc().toUpperCase(),ref_x+1200,ref_y+250);
-                g2D.drawString(getApe_paterno().toUpperCase()+" "+getApe_materno().toUpperCase(),ref_x+60,ref_y+390);
-                g2D.drawString(getNombres().toUpperCase(),ref_x+490,ref_y+390);
-                g2D.drawString(getSexo().toUpperCase(),ref_x+1110,ref_y+350);
-                g2D.drawString(getEdad().toUpperCase(),ref_x+1350,ref_y+355);
-                g2D.drawString(getFecha_nacimiento().toUpperCase(),ref_x+1110,ref_y+390);
-                g2D.drawString(getLugar_nacimiento().toUpperCase(),ref_x+60,ref_y+460);
-                g2D.drawString(getProcedencia().toUpperCase(),ref_x+490,ref_y+460);
-                g2D.drawString(getGrado_instruccion().toUpperCase(),ref_x+60,ref_y+530);
-                g2D.drawString(getEstado_civil().toUpperCase(),ref_x+490,ref_y+530);
-                g2D.drawString(getOcupacion().toUpperCase(),ref_x+970,ref_y+530);
+                g2D.drawString(getFecha_registro().toUpperCase(),ref_x+190,ref_y+270);
+                g2D.drawString(getNumero_hc().toUpperCase(),ref_x+1200,ref_y+270);
+                g2D.drawString(getApe_paterno().toUpperCase()+" "+getApe_materno().toUpperCase(),ref_x+30,ref_y+405);
+                g2D.drawString(getNombres().toUpperCase(),ref_x+470,ref_y+405);
+                g2D.drawString(getSexo().toUpperCase(),ref_x+1110,ref_y+375);
+                g2D.drawString(getEdad().toUpperCase(),ref_x+1350,ref_y+365);
+                g2D.drawString(getFecha_nacimiento().toUpperCase(),ref_x+1110,ref_y+405);
+                g2D.drawString(getLugar_nacimiento().toUpperCase(),ref_x+30,ref_y+475);
+                g2D.drawString(getProcedencia().toUpperCase(),ref_x+470,ref_y+475);
+                g2D.drawString(getGrado_instruccion().toUpperCase(),ref_x+30,ref_y+545);
+                g2D.drawString(getEstado_civil().toUpperCase(),ref_x+470,ref_y+545);
+                g2D.drawString(getOcupacion().toUpperCase(),ref_x+950,ref_y+545);
+                g2D.drawString(getDni().toUpperCase(), ref_x+620, ref_y+620);
         }
 
         public int getxT() {

@@ -50,7 +50,7 @@ public class JIF_RegistrarUsuario extends javax.swing.JInternalFrame {
 
     public JIF_RegistrarUsuario(JF_Principal root) throws Exception {
         initComponents();
-        adaptarMovimiento(this);
+        //adaptarMovimiento(this);
         this.root = root;
         tabMD = new TModeloRol();
         tabMA = new TModeloRol();

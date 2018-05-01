@@ -7,7 +7,7 @@ package lissa.table;
 
 import lissa.be.Producto;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 /**
  *

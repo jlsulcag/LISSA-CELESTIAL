@@ -71,4 +71,9 @@ public class ProcedimientoBl extends AbstractBL<Procedimiento>{
         dao = new ProcedimientoDao();
         return dao.listarRef(ref);
     }
+
+    public List<Procedimiento> listarLaboratorio() {
+        dao = new ProcedimientoDao();
+        return dao.listarLaboratorio();
+    }
 }

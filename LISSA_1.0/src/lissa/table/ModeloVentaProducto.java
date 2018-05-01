@@ -4,7 +4,7 @@ package lissa.table;
 import java.math.BigDecimal;
 import lissa.be.DetalleVenta;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloVentaProducto extends AbstractTableModel<DetalleVenta>{
     

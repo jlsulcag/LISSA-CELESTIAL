@@ -18,6 +18,8 @@ public class Procedimiento  implements java.io.Serializable {
      private BigDecimal costo;
      private String estado;
      private Set<ItemsComprobante> itemsComprobantes = new HashSet<ItemsComprobante>(0);
+     
+     private boolean seleccionado; 
 
     public Procedimiento() {
     }
@@ -80,6 +82,14 @@ public class Procedimiento  implements java.io.Serializable {
     
     public void setItemsComprobantes(Set<ItemsComprobante> itemsComprobantes) {
         this.itemsComprobantes = itemsComprobantes;
+    }
+
+    public boolean isSeleccionado() {
+        return seleccionado;
+    }
+
+    public void setSeleccionado(boolean seleccionado) {
+        this.seleccionado = seleccionado;
     }
 
 

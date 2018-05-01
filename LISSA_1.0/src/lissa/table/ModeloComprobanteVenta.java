@@ -5,7 +5,7 @@ import lissa.be.Persona;
 import lissa.be.Venta;
 import lissa.bl.PersonaBl;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 /**
  *

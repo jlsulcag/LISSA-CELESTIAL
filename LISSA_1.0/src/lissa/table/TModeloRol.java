@@ -1,6 +1,6 @@
 package lissa.table;
 import lissa.be.Rol;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 import static org.rx.cr.util.Utilitarios.*;
 
 public class TModeloRol extends AbstractTableModel<Rol> {

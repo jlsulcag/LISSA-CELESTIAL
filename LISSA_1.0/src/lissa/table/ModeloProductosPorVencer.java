@@ -5,7 +5,7 @@ package lissa.table;
 import java.util.Date;
 import lissa.be.AlmacenProducto;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloProductosPorVencer extends AbstractTableModel<AlmacenProducto>{
 

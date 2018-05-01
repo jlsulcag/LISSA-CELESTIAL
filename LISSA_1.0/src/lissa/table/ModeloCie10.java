@@ -2,7 +2,7 @@
 package lissa.table;
 
 import lissa.be.Cie10;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloCie10 extends AbstractTableModel<Cie10>{
 

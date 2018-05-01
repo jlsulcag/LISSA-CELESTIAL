@@ -6,6 +6,7 @@ import lissa.be.Laboratorio;
 import lissa.bl.LaboratorioBl;
 import lissa.gui.JF_Principal;
 import lissa.table.ModeloLaboratorio;
+import lissa.table.ModeloLaboratorioAd;
 import lissa.util.Mensajes;
 import lissa.util.Utilitarios;
 

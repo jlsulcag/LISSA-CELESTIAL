@@ -3,7 +3,7 @@ package lissa.table;
 import lissa.be.Persona;
 import lissa.be.Usuario;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloPersonal extends AbstractTableModel<Usuario>{
 

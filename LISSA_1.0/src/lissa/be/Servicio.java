@@ -16,6 +16,8 @@ public class Servicio implements java.io.Serializable {
     private Set<Procedimiento> procedimientos = new HashSet<Procedimiento>(0);
     public static final int DEFECTO = 1, DATO = 3;
     private int op = -1;
+    
+    private boolean seleccionado; 
 
     public Servicio() {
     }
@@ -91,6 +93,14 @@ public class Servicio implements java.io.Serializable {
             default:
                 return "<Seleccione>";
         }
+    }
+
+    public boolean isSeleccionado() {
+        return seleccionado;
+    }
+
+    public void setSeleccionado(boolean seleccionado) {
+        this.seleccionado = seleccionado;
     }
 
 }

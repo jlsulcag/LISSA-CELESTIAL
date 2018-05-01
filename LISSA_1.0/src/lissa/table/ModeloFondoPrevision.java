@@ -2,7 +2,7 @@
 package lissa.table;
 import lissa.be.FondoSolidaridad;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloFondoPrevision extends AbstractTableModel<FondoSolidaridad>{
 

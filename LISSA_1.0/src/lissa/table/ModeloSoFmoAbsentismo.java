@@ -3,7 +3,7 @@ package lissa.table;
 
 import lissa.be.SoFmoAbsentismo;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloSoFmoAbsentismo extends AbstractTableModel<SoFmoAbsentismo>{
     

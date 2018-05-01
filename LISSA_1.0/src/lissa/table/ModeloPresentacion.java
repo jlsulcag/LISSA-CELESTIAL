@@ -2,7 +2,7 @@
 package lissa.table;
 import lissa.util.Utilitarios;
 import lissa.be.Presentacion;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 
 public class ModeloPresentacion extends AbstractTableModel<Presentacion>{

@@ -4,7 +4,7 @@ import lissa.be.Compra;
 import lissa.be.Proveedor;
 import lissa.bl.ProveedorBl;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloDocCompra extends AbstractTableModel<Compra> {
 

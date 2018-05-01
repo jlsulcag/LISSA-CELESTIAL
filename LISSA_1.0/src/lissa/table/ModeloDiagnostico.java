@@ -2,7 +2,7 @@
 package lissa.table;
 
 import lissa.be.Diagnostico;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloDiagnostico extends AbstractTableModel<Diagnostico>{
     public ModeloDiagnostico() {

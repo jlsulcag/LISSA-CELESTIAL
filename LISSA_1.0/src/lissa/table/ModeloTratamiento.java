@@ -3,7 +3,7 @@ package lissa.table;
 
 import lissa.be.Tratamiento;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModeloTratamiento extends AbstractTableModel<Tratamiento>{
     public ModeloTratamiento() {

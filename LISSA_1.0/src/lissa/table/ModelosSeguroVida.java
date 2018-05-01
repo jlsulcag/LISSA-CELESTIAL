@@ -3,7 +3,7 @@ package lissa.table;
 import lissa.be.Persona;
 import lissa.be.SeguroVida;
 import lissa.util.Utilitarios;
-import org.rx.cr.table.AbstractTableModel;
+import org.rx.cr.gui.table.AbstractTableModel;
 
 public class ModelosSeguroVida extends AbstractTableModel<SeguroVida>{
 

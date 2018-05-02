@@ -196,7 +196,22 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblResultadosKeyPressed
 
     private void tblLaboratorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaboratorioMouseClicked
-        seleccionaProcedimiento(evt);
+        //seleccionaProcedimiento(evt);
+        //try {
+            oProcedimiento = new Procedimiento();
+            if (tblLaboratorio.getColumnModel().getColumn(4).getCellEditor().getCellEditorValue().equals(true)) {
+                oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
+                if(oProcedimiento != null){
+                    System.out.println("procedimiento " + oProcedimiento.getCosto());
+                }else{
+                    System.out.println("false...");
+                }
+                
+            }else{System.out.println("..........");}
+//        } catch (Exception e) {
+//            System.out.println("Error de seleccion :" + e);
+//            e.printStackTrace();
+//        }
     }//GEN-LAST:event_tblLaboratorioMouseClicked
 
 
@@ -253,7 +268,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
 
 
     private void seleccionaProcedimiento(MouseEvent evt) {
-        try {
+        //try {
             oProcedimiento = new Procedimiento();
             if (tblLaboratorio.getColumnModel().getColumn(4).getCellEditor().getCellEditorValue().equals(true)) {
                 oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
@@ -264,9 +279,9 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
                 }
                 
             }
-        } catch (Exception e) {
-            System.out.println("Error de seleccion :" + e);
-            e.printStackTrace();
-        }
+//        } catch (Exception e) {
+//            System.out.println("Error de seleccion :" + e);
+//            e.printStackTrace();
+//        }
     }
 }

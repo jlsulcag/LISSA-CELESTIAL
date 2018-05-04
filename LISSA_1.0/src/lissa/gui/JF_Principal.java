@@ -321,9 +321,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jmMiCuenta = new javax.swing.JMenu();
         JMCambiarContrasenia = new javax.swing.JMenuItem();
         jmConfiguracion = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jmAyuda = new javax.swing.JMenu();
         Ayuda = new javax.swing.JMenuItem();
         JMAcercaDe = new javax.swing.JMenuItem();
@@ -639,9 +637,6 @@ public class JF_Principal extends javax.swing.JFrame {
         jmConfiguracion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jmConfiguracion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        jMenuItem2.setText("Servicio");
-        jmConfiguracion.add(jMenuItem2);
-
         jMenuItem3.setText("Procedimiento");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -649,9 +644,6 @@ public class JF_Principal extends javax.swing.JFrame {
             }
         });
         jmConfiguracion.add(jMenuItem3);
-
-        jMenuItem5.setText("Especialidad");
-        jmConfiguracion.add(jMenuItem5);
 
         jmbPrincipal.add(jmConfiguracion);
 
@@ -901,10 +893,8 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
@@ -1113,6 +1103,11 @@ public class JF_Principal extends javax.swing.JFrame {
         //jmReportes.add(jmi007);
         //
         jmbPrincipal.add(jmPersonal);
+        //Menu configuraciones
+        jmbPrincipal.add(jmConfiguracion);
+        //jmConfiguracion.removeAll();
+        
+        //
         jmbPrincipal.add(jmMiCuenta);
         jmbPrincipal.add(Box.createHorizontalGlue());
         jmbPrincipal.add(jmAyuda);

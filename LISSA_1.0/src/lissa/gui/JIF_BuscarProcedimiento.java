@@ -2,9 +2,13 @@ package lissa.gui;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JCheckBox;
+import lissa.be.ItemsComprobante;
 import lissa.be.Procedimiento;
 import lissa.bl.ProcedimientoBl;
+import lissa.render.TCellEditorLaboratorio;
 import lissa.table.ModeloLaboratorioAd;
 import lissa.table.ModeloProcedimiento;
 import lissa.util.Mensajes;
@@ -18,6 +22,8 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
     private ProcedimientoBl oProcedimientoBl;
     private ModeloLaboratorioAd oModeloLaboratorioAd = null;
     private List<Procedimiento> listLaboratorio;
+    private List<ItemsComprobante> listItemComprobante;
+    private List<Procedimiento> listProcedimiento;
 
     public JIF_BuscarProcedimiento(JF_Principal root) {
         initComponents();
@@ -26,6 +32,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         tblResultados.setModel(oModeloProcedimiento);
         oModeloLaboratorioAd = new ModeloLaboratorioAd();
         tblLaboratorio.setModel(oModeloLaboratorioAd);
+        listProcedimiento = new LinkedList<>();
     }
 
     @SuppressWarnings("unchecked")
@@ -42,6 +49,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblLaboratorio = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Buscar Procedimiento");
@@ -105,7 +113,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Laboratorio", jPanel3);
+        jTabbedPane1.addTab("Procedimiento", jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -127,21 +135,33 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tblLaboratorio);
 
+        jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
         jTabbedPane1.addTab("Laboratorio", jPanel4);
@@ -197,25 +217,33 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
 
     private void tblLaboratorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaboratorioMouseClicked
         //seleccionaProcedimiento(evt);
-        //try {
+        try {
             oProcedimiento = new Procedimiento();
             if (tblLaboratorio.getColumnModel().getColumn(4).getCellEditor().getCellEditorValue().equals(true)) {
                 oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
-                if(oProcedimiento != null){
-                    System.out.println("procedimiento " + oProcedimiento.getCosto());
-                }else{
-                    System.out.println("false...");
+                if (oProcedimiento != null) {
+                    listProcedimiento.add(oProcedimiento);
                 }
-                
-            }else{System.out.println("..........");}
-//        } catch (Exception e) {
-//            System.out.println("Error de seleccion :" + e);
-//            e.printStackTrace();
-//        }
+
+            }else{
+                oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
+                if (oProcedimiento != null) {
+                    listProcedimiento.remove(oProcedimiento);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error de seleccion :" + e);
+            //e.printStackTrace();
+        }
     }//GEN-LAST:event_tblLaboratorioMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        enviaProcedimientos();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
@@ -254,6 +282,8 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         oModeloLaboratorioAd.clear();
         listarLaboratorioFull();
         personalizaVistaTabla();
+        listProcedimiento.clear();
+        tblLaboratorio.getColumnModel().getColumn(4).setCellEditor(new TCellEditorLaboratorio(new JCheckBox()));
     }
 
     private void listarLaboratorioFull() {
@@ -266,22 +296,28 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         }
     }
 
-
     private void seleccionaProcedimiento(MouseEvent evt) {
         //try {
-            oProcedimiento = new Procedimiento();
-            if (tblLaboratorio.getColumnModel().getColumn(4).getCellEditor().getCellEditorValue().equals(true)) {
-                oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
-                if(oProcedimiento != null){
-                    System.out.println("procedimiento " + oProcedimiento.getCosto());
-                }else{
-                    System.out.println("false...");
-                }
-                
+        oProcedimiento = new Procedimiento();
+        if (tblLaboratorio.getColumnModel().getColumn(4).getCellEditor().getCellEditorValue().equals(true)) {
+            oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
+            if (oProcedimiento != null) {
+                System.out.println("procedimiento " + oProcedimiento.getCosto());
+            } else {
+                System.out.println("false...");
             }
+
+        }
 //        } catch (Exception e) {
 //            System.out.println("Error de seleccion :" + e);
 //            e.printStackTrace();
 //        }
+    }
+
+    private void enviaProcedimientos() {
+        if(!listProcedimiento.isEmpty()){
+            root.jifEmitirComprobante.enviaListProcedimientos(listProcedimiento);
+            this.doDefaultCloseAction();
+        }
     }
 }

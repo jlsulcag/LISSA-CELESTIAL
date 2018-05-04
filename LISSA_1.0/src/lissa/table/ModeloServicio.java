@@ -8,7 +8,7 @@ import org.rx.cr.gui.table.AbstractTableModel;
 public class ModeloServicio extends AbstractTableModel<Servicio>{
 
     public ModeloServicio() {
-        super.setTitles(new String[]{"ID", "SubCategoria", "Servicio", "Importe", "Tarifario"});
+        super.setTitles(new String[]{"ID", "Tarifario", "Servicio", "Procedimiento", "Monto"});
     }
     @Override
     public Object getObjectCell(int fil, int col)  {

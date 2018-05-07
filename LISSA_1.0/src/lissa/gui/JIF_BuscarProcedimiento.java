@@ -284,6 +284,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         personalizaVistaTabla();
         listProcedimiento.clear();
         tblLaboratorio.getColumnModel().getColumn(4).setCellEditor(new TCellEditorLaboratorio(new JCheckBox()));
+        jTabbedPane1.setSelectedIndex(0);
     }
 
     private void listarLaboratorioFull() {

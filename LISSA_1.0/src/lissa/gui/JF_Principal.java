@@ -23,6 +23,7 @@ import lissa.be.Rol;
 import lissa.be.Usuario;
 import lissa.bl.CajaBl;
 import lissa.conf.FileConf;
+import lissa.gui.clinica.JIF_ServicioAdd;
 import lissa.gui.farmacia.JIF_AdminFormaFarmaceutica;
 import lissa.gui.farmacia.JIF_AdminLaboratorio;
 import lissa.gui.farmacia.JIF_AdminPresentacion;
@@ -162,6 +163,7 @@ public class JF_Principal extends javax.swing.JFrame {
     public JIF_RegAreaConsumo jifRegAreaConsumo;
     public JIF_AdministrarServicio jifAdministrarServicio;
     public JD_VisorHc jdVisorHc;
+    public JIF_ServicioAdd jifServicioAdd;
 
 //    private JD_BackUpDB_Creator_Sirec bcpc = null;
 //    private JD_BackUpDB_Restore_Sirec bcpr = null;
@@ -278,6 +280,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jifRegAreaConsumo = new JIF_RegAreaConsumo(this);
         jifAdministrarServicio = new JIF_AdministrarServicio(this);
         jdVisorHc = new JD_VisorHc(this);
+        jifServicioAdd = new JIF_ServicioAdd(this);
 
     }
 

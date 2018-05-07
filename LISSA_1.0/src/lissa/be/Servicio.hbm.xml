@@ -6,7 +6,7 @@
     <class name="lissa.be.Servicio" table="servicio" schema="public" optimistic-lock="version">
         <id name="idservicio" type="int">
             <column name="idservicio" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <many-to-one name="tarifario" class="lissa.be.Tarifario" fetch="select">
             <column name="id_tarifario" not-null="true" />

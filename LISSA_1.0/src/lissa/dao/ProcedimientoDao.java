@@ -59,7 +59,7 @@ public class ProcedimientoDao extends AbstractDA<Procedimiento>{
     }
 
     public List<Procedimiento> listarLaboratorio() {
-        String hql = "select a from Procedimiento a left join fetch a.servicio b where b.idservicio = 24";
+        String hql = "select a from Procedimiento a left join fetch a.servicio b where b.denominacion = 'LABORATORIO'";
         return listar(hql);
     }
     

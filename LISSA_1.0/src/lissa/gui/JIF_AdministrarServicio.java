@@ -53,6 +53,7 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         cbxtarifario = new javax.swing.JComboBox();
         cbxServicio = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -140,6 +141,13 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
 
         cbxServicio.setEnabled(false);
 
+        jButton1.setText("+");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -158,7 +166,10 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txfCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 205, Short.MAX_VALUE))
-                    .addComponent(cbxServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(cbxServicio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +181,8 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(cbxServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -288,6 +300,10 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
         cargarCbxServicio();
     }//GEN-LAST:event_cbxtarifarioItemStateChanged
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        insertarServicioAdd();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
@@ -296,6 +312,7 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox cbxServicio;
     private javax.swing.JComboBox cbxtarifario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -325,7 +342,7 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
         oProcedimientoBl = null;
     }
 
-    private void cargarCbxTarifario() {
+    public void cargarCbxTarifario() {
         oTarifarioCtrl = new TarifarioCtrl(root);
         oTarifarioCtrl.rellenaCbx(cbxtarifario);
     }
@@ -468,5 +485,12 @@ public class JIF_AdministrarServicio extends javax.swing.JInternalFrame {
         }else{
             oModeloProcedimiento.clear();
         }
+    }
+
+    private void insertarServicioAdd() {
+        root.insertarInternalFrames(root.jifServicioAdd);
+        root.jifServicioAdd.iniciar();
+        root.jifServicioAdd.enviaJif(this);
+        
     }
 }

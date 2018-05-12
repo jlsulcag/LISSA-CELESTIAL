@@ -1,0 +1,2019 @@
+<XMLDiagram>
+  <TDBADiagramController Locked="0">
+    <Elements>
+      <TDBADiagramObject id="1" propertiesclass="TDiagramMetaTableProperties" objectname="public.comprobante">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="580" width="200" height="300"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="2" propertiesclass="TDiagramMetaTableProperties" objectname="public.tipo_comprobante">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="450" width="200" height="90"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="3" propertiesclass="TDiagramForeignKeyProperties" objectname="public.comprobante.boleta_tipo_documento_fkey">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="48" top="48" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1850" y="730"/>
+                <Point x="1850" y="491"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="6" propertiesclass="TDiagramMetaTableProperties" objectname="public.especialidad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="1060" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="7" propertiesclass="TDiagramMetaTableProperties" objectname="public.fondo_solidaridad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1000" top="1150" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="8" propertiesclass="TDiagramMetaTableProperties" objectname="public.historia_clinica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="210" width="200" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="10" propertiesclass="TDiagramMetaTableProperties" objectname="public.items_comprobante">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2030" top="750" width="200" height="300"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="11" propertiesclass="TDiagramForeignKeyProperties" objectname="public.items_comprobante.FK_items_boleta_boleta">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="176" top="176" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2110" y="845"/>
+                <Point x="1880" y="830"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="12" propertiesclass="TDiagramMetaTableProperties" objectname="public.medico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1280" top="800" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="14" propertiesclass="TDiagramForeignKeyProperties" objectname="public.items_comprobante.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="224" top="224" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2090" y="975"/>
+                <Point x="2110" y="890"/>
+                <Point x="1380" y="890"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="17" propertiesclass="TDiagramMetaTableProperties" objectname="public.medico_especialidad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="930" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="18" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico_especialidad.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="288" top="288" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1850" y="970"/>
+                <Point x="1850" y="910"/>
+                <Point x="1510" y="910"/>
+                <Point x="1380" y="910"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="19" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico_especialidad.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="304" top="304" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1850" y="971"/>
+                <Point x="1850" y="1120"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="20" propertiesclass="TDiagramMetaTableProperties" objectname="public.persona">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1000" top="470" width="200" height="470"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="22" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico.FK_medico_persona">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="352" top="352" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1380" y="860"/>
+                <Point x="1380" y="730"/>
+                <Point x="1110" y="730"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="23" propertiesclass="TDiagramMetaTableProperties" objectname="public.persona_juridica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="370" top="30" width="240" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="25" propertiesclass="TDiagramMetaTableProperties" objectname="public.rol">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="40" top="480" width="230" height="110"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="26" propertiesclass="TDiagramMetaTableProperties" objectname="public.seguro_vida">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="1130" width="230" height="100"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="27" propertiesclass="TDiagramMetaTableProperties" objectname="public.seguro_vida_usa_persona">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="910" width="200" height="120"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="29" propertiesclass="TDiagramForeignKeyProperties" objectname="public.seguro_vida_usa_persona.fk_id_seguro_vida1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="464" top="464" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="750" y="970"/>
+                <Point x="750" y="1180"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="33" propertiesclass="TDiagramMetaTableProperties" objectname="public.servicio_fondo_solidaridad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1980" top="1160" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="34" propertiesclass="TDiagramForeignKeyProperties" objectname="public.servicio_fondo_solidaridad.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="544" top="544" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2080" y="1210"/>
+                <Point x="1370" y="1130"/>
+                <Point x="1100" y="1210"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="39" propertiesclass="TDiagramMetaTableProperties" objectname="public.tipo_medico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1310" top="1040" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="40" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico.fk_medico_tipo_medico">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="640" top="640" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1380" y="860"/>
+                <Point x="1410" y="1080"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="43" propertiesclass="TDiagramMetaTableProperties" objectname="public.usuario">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="380" top="270" width="230" height="140"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="45" propertiesclass="TDiagramMetaTableProperties" objectname="public.usuario_rol">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="30" top="270" width="230" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="46" propertiesclass="TDiagramForeignKeyProperties" objectname="public.usuario_rol.FK_usurio_rol_rol">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="736" top="736" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="145" y="335"/>
+                <Point x="155" y="540"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="47" propertiesclass="TDiagramForeignKeyProperties" objectname="public.usuario_rol.FK_usurio_rol_usuario">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="752" top="752" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="145" y="335"/>
+                <Point x="495" y="341"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="49" propertiesclass="TDiagramMetaTableProperties" objectname="public.cie10">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3660" top="30" width="200" height="120"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="35" propertiesclass="TDiagramForeignKeyProperties" objectname="public.servicio_fondo_solidaridad.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="832" top="832" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2120" y="1220"/>
+                <Point x="2120" y="985"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="53" propertiesclass="TDiagramMetaTableProperties" objectname="public.tarifario">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2290" top="650" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="54" propertiesclass="TDiagramMetaTableProperties" objectname="public.fondo_prevision_temp">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="40" top="30" width="230" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="55" propertiesclass="TDiagramMetaTableProperties" objectname="public.atencion">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3250" top="330" width="200" height="160"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="41" propertiesclass="TDiagramMetaTableProperties" objectname="public.paciente">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1280" top="250" width="200" height="190"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="56" propertiesclass="TDiagramMetaTableProperties" objectname="public.antecedente">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2680" top="30" width="200" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="57" propertiesclass="TDiagramMetaTableProperties" objectname="public.diagnostico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3680" top="360" width="200" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="50" propertiesclass="TDiagramForeignKeyProperties" objectname="public.diagnostico.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="896" top="896" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3770" y="460"/>
+                <Point x="3770" y="110"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="9" propertiesclass="TDiagramForeignKeyProperties" objectname="public.comprobante.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="912" top="912" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1830" y="700"/>
+                <Point x="1710" y="690"/>
+                <Point x="1710" y="370"/>
+                <Point x="1390" y="340"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="52" propertiesclass="TDiagramForeignKeyProperties" objectname="public.atencion.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="928" top="928" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3300" y="460"/>
+                <Point x="2630" y="460"/>
+                <Point x="1930" y="240"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="60" propertiesclass="TDiagramForeignKeyProperties" objectname="public.diagnostico.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="960" top="960" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3770" y="420"/>
+                <Point x="3410" y="420"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="5" propertiesclass="TDiagramForeignKeyProperties" objectname="public.paciente.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="912" top="912" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1380" y="330"/>
+                <Point x="1230" y="360"/>
+                <Point x="1120" y="710"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="4" propertiesclass="TDiagramForeignKeyProperties" objectname="public.items_comprobante.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="896" top="896" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2070" y="975"/>
+                <Point x="2090" y="870"/>
+                <Point x="1420" y="870"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="13" propertiesclass="TDiagramForeignKeyProperties" objectname="public.seguro_vida_usa_persona.fk_id_persona">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="880" top="880" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="750" y="980"/>
+                <Point x="1090" y="720"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="16" propertiesclass="TDiagramForeignKeyProperties" objectname="public.historia_clinica.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="848" top="848" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1820" y="290"/>
+                <Point x="1230" y="210"/>
+                <Point x="1090" y="680"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="21" propertiesclass="TDiagramMetaTableProperties" objectname="public.beneficio">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="980" top="1310" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="28" propertiesclass="TDiagramForeignKeyProperties" objectname="public.beneficio.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="880" top="880" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1050" y="1360"/>
+                <Point x="740" y="1180"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="32" propertiesclass="TDiagramForeignKeyProperties" objectname="public.items_comprobante.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="880" top="880" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2200" y="975"/>
+                <Point x="2200" y="1330"/>
+                <Point x="1120" y="1340"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="61" propertiesclass="TDiagramMetaTableProperties" objectname="public.forma_pago">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1640" top="1370" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="62" propertiesclass="TDiagramMetaTableProperties" objectname="public.alergia">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3060" top="600" width="200" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="63" propertiesclass="TDiagramMetaTableProperties" objectname="public.funcion_vital">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2920" top="30" width="190" height="190"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="64" propertiesclass="TDiagramMetaTableProperties" objectname="public.anamnesis">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3310" top="590" width="200" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="65" propertiesclass="TDiagramMetaTableProperties" objectname="public.examen_auxiliar">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3560" top="590" width="200" height="110"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="66" propertiesclass="TDiagramMetaTableProperties" objectname="public.tratamiento">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3410" top="30" width="200" height="160"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="67" propertiesclass="TDiagramMetaTableProperties" objectname="public.dato_adicional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3160" top="30" width="200" height="170"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="75" propertiesclass="TDiagramMetaTableProperties" objectname="public.cita">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1470" top="450" width="190" height="320"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="77" propertiesclass="TDiagramMetaTableProperties" objectname="public.pago">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1940" top="1370" width="200" height="139"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="42" propertiesclass="TDiagramForeignKeyProperties" objectname="public.pago.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1216" top="1216" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1990" y="1420"/>
+                <Point x="2560" y="1420"/>
+                <Point x="2560" y="620"/>
+                <Point x="1860" y="630"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="44" propertiesclass="TDiagramForeignKeyProperties" objectname="public.pago.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1232" top="1232" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2000" y="1420"/>
+                <Point x="1750" y="1420"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="59" propertiesclass="TDiagramForeignKeyProperties" objectname="public.alergia.foreign_key11">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1232" top="1232" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3160" y="690"/>
+                <Point x="3290" y="450"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="69" propertiesclass="TDiagramForeignKeyProperties" objectname="public.anamnesis.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1248" top="1248" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3370" y="670"/>
+                <Point x="3370" y="420"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="58" propertiesclass="TDiagramForeignKeyProperties" objectname="public.antecedente.foreign_key04">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1248" top="1248" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2780" y="120"/>
+                <Point x="2780" y="380"/>
+                <Point x="3270" y="380"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="73" propertiesclass="TDiagramForeignKeyProperties" objectname="public.cita.foreign_key07">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1248" top="1248" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1555" y="630"/>
+                <Point x="1160" y="560"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="74" propertiesclass="TDiagramForeignKeyProperties" objectname="public.cita.foreign_key09">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1248" top="1248" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1565" y="610"/>
+                <Point x="1570" y="850"/>
+                <Point x="1380" y="850"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="51" propertiesclass="TDiagramForeignKeyProperties" objectname="public.usuario.foreign_key011">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1248" top="1248" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="500" y="350"/>
+                <Point x="1080" y="600"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="79" propertiesclass="TDiagramForeignKeyProperties" objectname="public.fondo_solidaridad.foreign_key10">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1264" top="1264" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1100" y="1210"/>
+                <Point x="1100" y="890"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="38" propertiesclass="TDiagramMetaTableProperties" objectname="public.caja">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="380" top="1290" width="190" height="230"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="80" propertiesclass="TDiagramForeignKeyProperties" objectname="public.caja.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1280" top="1280" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="470" y="1410"/>
+                <Point x="470" y="360"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="81" propertiesclass="TDiagramForeignKeyProperties" objectname="public.comprobante.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1296" top="1296" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1860" y="610"/>
+                <Point x="2590" y="600"/>
+                <Point x="2590" y="1560"/>
+                <Point x="480" y="1470"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="82" propertiesclass="TDiagramForeignKeyProperties" objectname="public.comprobante.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1312" top="1312" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1880" y="650"/>
+                <Point x="2530" y="640"/>
+                <Point x="2530" y="1350"/>
+                <Point x="1050" y="1360"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDiagramTextBox id="15" propertiesclass="TDiagramTextBoxProperties">
+        <TDiagramTextBoxProperties>
+          <Glyph>
+            <Geometry left="960" top="60" width="150" height="60"/>
+            <Font name="Verdana" color="0" size="20"/>
+          </Glyph>
+          <Text>
+AL 10-02-2016          </Text>
+        </TDiagramTextBoxProperties>
+      </TDiagramTextBox>
+      <TDBADiagramObject id="76" propertiesclass="TDiagramMetaTableProperties" objectname="public.atencion_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4700" top="990" width="190" height="330"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="85" propertiesclass="TDiagramMetaTableProperties" objectname="public.tipo_historia_clinica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1750" top="30" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="86" propertiesclass="TDiagramForeignKeyProperties" objectname="public.historia_clinica.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1376" top="1376" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1850" y="270"/>
+                <Point x="1850" y="80"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="87" propertiesclass="TDiagramMetaTableProperties" objectname="public.evaluacion_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3900" top="970" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="88" propertiesclass="TDiagramMetaTableProperties" objectname="public.examen_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3660" top="980" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="89" propertiesclass="TDiagramMetaTableProperties" objectname="public.tipo_doc_identidad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="530" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="90" propertiesclass="TDiagramMetaTableProperties" objectname="public.ubigeo">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="940" top="30" width="200" height="139"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="91" propertiesclass="TDiagramForeignKeyProperties" objectname="public.persona.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1456" top="1456" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1060" y="550"/>
+                <Point x="1060" y="120"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="92" propertiesclass="TDiagramForeignKeyProperties" objectname="public.persona.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1472" top="1472" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1110" y="680"/>
+                <Point x="740" y="570"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="93" propertiesclass="TDiagramForeignKeyProperties" objectname="public.atencion_ocupacional.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1488" top="1488" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4770" y="1130"/>
+                <Point x="3960" y="1130"/>
+                <Point x="3960" y="1020"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="94" propertiesclass="TDiagramForeignKeyProperties" objectname="public.atencion_ocupacional.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1504" top="1504" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4770" y="1150"/>
+                <Point x="3740" y="1150"/>
+                <Point x="3740" y="1030"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="95" propertiesclass="TDiagramMetaTableProperties" objectname="public.pe_estado_civil">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="630" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="96" propertiesclass="TDiagramForeignKeyProperties" objectname="public.persona.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1536" top="1536" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1070" y="700"/>
+                <Point x="760" y="670"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="68" propertiesclass="TDiagramMetaTableProperties" objectname="public.persona_empresa">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="700" top="230" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="24" propertiesclass="TDiagramForeignKeyProperties" objectname="public.persona_empresa.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1472" top="1472" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="750" y="280"/>
+                <Point x="520" y="90"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="70" propertiesclass="TDiagramForeignKeyProperties" objectname="public.persona_empresa.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1488" top="1488" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="780" y="290"/>
+                <Point x="1060" y="580"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="72" propertiesclass="TDiagramForeignKeyProperties" objectname="public.atencion_ocupacional.foreign_key11">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1520" top="1520" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4755" y="1175"/>
+                <Point x="2630" y="1180"/>
+                <Point x="2630" y="520"/>
+                <Point x="1930" y="280"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="71" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_oftalmologica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3690" top="1360" width="200" height="1230"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="83" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_osteomuscular">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3950" top="1360" width="240" height="980"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="84" propertiesclass="TDiagramMetaTableProperties" objectname="public.articulacion">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4260" top="1350" width="210" height="1440"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="97" propertiesclass="TDiagramMetaTableProperties" objectname="public.diagnostico_osteomuscular">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="3960" top="2480" width="240" height="90"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="99" propertiesclass="TDiagramForeignKeyProperties" objectname="public.articulacion.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1584" top="1584" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4350" y="1950"/>
+                <Point x="4100" y="1950"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="98" propertiesclass="TDiagramForeignKeyProperties" objectname="public.diagnostico_osteomuscular.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1584" top="1584" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4080" y="2515"/>
+                <Point x="4080" y="2150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="100" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_osteomuscular.foreign_key07">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1600" top="1600" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4070" y="1700"/>
+                <Point x="4070" y="1230"/>
+                <Point x="4750" y="1230"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="101" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_audiometria">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4140" top="540" width="200" height="517"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="102" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_audiometria.foreign_key019">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1632" top="1632" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4220" y="770"/>
+                <Point x="4220" y="1110"/>
+                <Point x="4770" y="1110"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="103" propertiesclass="TDiagramMetaTableProperties" objectname="public.certificado_medico_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5090" top="1350" width="230" height="160"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="104" propertiesclass="TDiagramForeignKeyProperties" objectname="public.certificado_medico_ocupacional.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1664" top="1664" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5190" y="1460"/>
+                <Point x="5190" y="1190"/>
+                <Point x="4820" y="1190"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="105" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_medico_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4630" top="630" width="230" height="110"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="106" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_antecedentes_ocupacionales">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2200" top="30" width="260" height="200"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="107" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_antecedentes_pat_per">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4590" top="160" width="250" height="300"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="108" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_habitos">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4040" top="180" width="240" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="109" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_antecedentes_pat_fam">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5190" top="160" width="240" height="181"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="110" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_absentismo">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4970" top="830" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="111" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_evaluacion_medica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4330" top="170" width="200" height="240"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="112" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_examen_fisico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5490" top="160" width="230" height="601"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="113" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_conclusiones">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4890" top="160" width="270" height="240"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="114" propertiesclass="TDiagramMetaTableProperties" objectname="public.so_fmo_diagnosticos">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5210" top="790" width="200" height="139"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="119" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_antecedentes_pat_fam.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="1904" top="1904" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5330" y="290"/>
+                <Point x="5330" y="640"/>
+                <Point x="4760" y="645"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="125" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_psicologica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4580" top="1350" width="190" height="520"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="127" propertiesclass="TDiagramMetaTableProperties" objectname="public.paciente_prueba">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4580" top="2010" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="129" propertiesclass="TDiagramForeignKeyProperties" objectname="public.paciente_prueba.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2064" top="2064" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4680" y="2070"/>
+                <Point x="4675" y="1475"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="131" propertiesclass="TDiagramForeignKeyProperties" objectname="public.funcion_vital.foreign_key05">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2096" top="2096" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3010" y="130"/>
+                <Point x="3010" y="360"/>
+                <Point x="3340" y="360"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="132" propertiesclass="TDiagramForeignKeyProperties" objectname="public.dato_adicional.foreign_key09">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2112" top="2112" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3230" y="130"/>
+                <Point x="3332" y="403"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="133" propertiesclass="TDiagramForeignKeyProperties" objectname="public.examen_auxiliar.foreign_key16">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2128" top="2128" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3660" y="660"/>
+                <Point x="3660" y="460"/>
+                <Point x="3380" y="460"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="134" propertiesclass="TDiagramForeignKeyProperties" objectname="public.tratamiento.foreign_key06">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2144" top="2144" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3510" y="110"/>
+                <Point x="3350" y="410"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="135" propertiesclass="TDiagramMetaTableProperties" objectname="public.ficha_psicologica_psicotecnico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4810" top="1350" width="230" height="350"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="137" propertiesclass="TDiagramMetaTableProperties" objectname="public.habito_nocivo">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4050" top="40" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="138" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_habitos.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2208" top="2208" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4130" y="240"/>
+                <Point x="4130" y="90"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="78" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_absentismo.foreign_key91">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2080" top="2080" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5070" y="890"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="116" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_habitos.foreign_key151">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2064" top="2064" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4160" y="240"/>
+                <Point x="4350" y="460"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="117" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_evaluacion_medica.foreign_key131">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2080" top="2080" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4430" y="290"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="118" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_antecedentes_pat_per.foreign_key71">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2096" top="2096" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4715" y="314"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="120" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_conclusiones.foreign_key101">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2112" top="2112" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5025" y="280"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="121" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_psicologica_psicotecnico.foreign_key41">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2128" top="2128" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4930" y="1530"/>
+                <Point x="4930" y="1220"/>
+                <Point x="4795" y="1215"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="122" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_examen_fisico.foreign_key141">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2144" top="2144" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5610" y="460"/>
+                <Point x="5400" y="680"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="123" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_psicologica.foreign_key31">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2160" top="2160" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4675" y="1615"/>
+                <Point x="4795" y="1155"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="124" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_oftalmologica.foreign_key21">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2176" top="2176" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="3790" y="1974"/>
+                <Point x="3780" y="1210"/>
+                <Point x="4780" y="1210"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="130" propertiesclass="TDiagramForeignKeyProperties" objectname="public.ficha_medico_ocupacional.foreign_key08">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2192" top="2192" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4750" y="685"/>
+                <Point x="4795" y="1155"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="136" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_diagnosticos.foreign_key121">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2208" top="2208" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5310" y="860"/>
+                <Point x="4750" y="685"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="139" propertiesclass="TDiagramMetaTableProperties" objectname="public.examen_clinico">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5280" top="1040" width="200" height="210"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="140" propertiesclass="TDiagramForeignKeyProperties" objectname="public.examen_clinico.foreign_key100">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2240" top="2240" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5430" y="1140"/>
+                <Point x="4810" y="1140"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="126" propertiesclass="TDiagramMetaTableProperties" objectname="public.empresa_actual">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="4460" top="770" width="190" height="160"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="128" propertiesclass="TDiagramForeignKeyProperties" objectname="public.empresa_actual.foreign_key0115">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2240" top="2240" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="4555" y="854"/>
+                <Point x="4795" y="1160"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="115" propertiesclass="TDiagramForeignKeyProperties" objectname="public.so_fmo_antecedentes_ocupacionales.foreign_key0147">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2240" top="2240" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2330" y="130"/>
+                <Point x="1890" y="230"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="36" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.forma_farmaceutica">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="290" top="1700" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="37" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.presentacion">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="10" top="1720" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="141" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.laboratorio">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="10" top="1820" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="142" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.producto">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="290" top="1840" width="200" height="181"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="143" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.producto.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2288" top="2288" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="390" y="1930"/>
+                <Point x="110" y="1860"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="144" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.producto.foreign_key03">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2304" top="2304" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="390" y="1930"/>
+                <Point x="390" y="1740"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="145" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.producto.foreign_key04">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2320" top="2320" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="390" y="1930"/>
+                <Point x="110" y="1760"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="148" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.compra">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="450" top="2220" width="190" height="310"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="149" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.detalle_compra">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="170" top="2110" width="200" height="230"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="150" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_compra.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2400" top="2400" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="240" y="2205"/>
+                <Point x="360" y="1950"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="151" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_compra.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2416" top="2416" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="270" y="2225"/>
+                <Point x="525" y="2370"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="152" propertiesclass="TDiagramMetaTableProperties" objectname="public.informe_medico_ocupacional">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="5340" top="1350" width="240" height="380"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="153" propertiesclass="TDiagramForeignKeyProperties" objectname="public.informe_medico_ocupacional.foreign_key11">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2448" top="2448" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="5460" y="1540"/>
+                <Point x="5460" y="1310"/>
+                <Point x="5220" y="1310"/>
+                <Point x="5220" y="1160"/>
+                <Point x="4800" y="1160"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="154" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.detalle_kardex">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="1880" width="200" height="190"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="155" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.kardex">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="920" top="1860" width="210" height="270"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="156" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.almacen">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="930" top="1720" width="200" height="69"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="157" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.almacen_producto">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="640" top="1590" width="200" height="240"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="158" propertiesclass="TDiagramMetaTableProperties" objectname="public.area_caja">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="90" top="1400" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="159" propertiesclass="TDiagramForeignKeyProperties" objectname="public.caja.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2544" top="2544" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="470" y="1430"/>
+                <Point x="170" y="1450"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="162" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.kardex.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2592" top="2592" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="990" y="2005"/>
+                <Point x="970" y="1770"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="163" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.kardex.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2608" top="2608" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1000" y="2005"/>
+                <Point x="990" y="1760"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="164" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_kardex.foreign_key01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2624" top="2624" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="730" y="1992"/>
+                <Point x="990" y="2015"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="165" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_kardex.foreign_key02">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2640" top="2640" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="740" y="1992"/>
+                <Point x="420" y="1950"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="160" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.almacen_producto.foreign_key111">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2624" top="2624" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="740" y="1711"/>
+                <Point x="390" y="1930"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="161" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.almacen_producto.foreign_key22">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2640" top="2640" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="740" y="1711"/>
+                <Point x="1030" y="1750"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="166" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.venta">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1150" top="2200" width="210" height="320"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="167" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.detalle_venta">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="760" top="2160" width="200" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="168" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_venta.detalleventa_venta_pk1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2688" top="2688" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="880" y="2240"/>
+                <Point x="1230" y="2375"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="169" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.detalle_venta.detalle_venta_producto_pk01">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2704" top="2704" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="860" y="2244"/>
+                <Point x="360" y="1930"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="172" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.far_forma_pago">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1150" top="2590" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="175" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.tipo_operacion">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1180" top="1680" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="146" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.far_comprobante">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="770" top="2390" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="147" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.venta.foreign_key016">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2800" top="2800" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1230" y="2425"/>
+                <Point x="890" y="2440"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="176" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.compra.foreign_key0123">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2816" top="2816" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="540" y="2300"/>
+                <Point x="840" y="2440"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="174" propertiesclass="TDiagramMetaTableProperties" objectname="public.medico_deriva_atiende">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1700" top="1190" width="200" height="140"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="177" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico_deriva_atiende.foreign_key0111">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2832" top="2832" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1800" y="1258"/>
+                <Point x="2130" y="905"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="178" propertiesclass="TDiagramForeignKeyProperties" objectname="public.medico_deriva_atiende.foreign_key01234">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2848" top="2848" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1800" y="1258"/>
+                <Point x="1380" y="860"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="181" propertiesclass="TDiagramMetaTableProperties" objectname="public.permiso">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="120" top="680" width="200" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="182" propertiesclass="TDiagramForeignKeyProperties" objectname="public.permiso.foreign_key0123">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2912" top="2912" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="230" y="750"/>
+                <Point x="460" y="330"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="183" propertiesclass="TDiagramMetaTableProperties" objectname="public.paquete_fondo_solidaridad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1300" top="1380" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="184" propertiesclass="TDiagramMetaTableProperties" objectname="public.paquete_fondo_detalle">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1290" top="1520" width="200" height="110"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="185" propertiesclass="TDiagramForeignKeyProperties" objectname="public.paquete_fondo_detalle.fk_paq_fondo">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2960" top="2960" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1410" y="1590"/>
+                <Point x="1370" y="1430"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="186" propertiesclass="TDiagramMetaTableProperties" objectname="public.servicios_fondo_solidaridad">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1310" top="1170" width="240" height="130"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="187" propertiesclass="TDiagramForeignKeyProperties" objectname="public.servicios_fondo_solidaridad.fk_fondos">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2992" top="2992" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1410" y="1240"/>
+                <Point x="1100" y="1210"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="188" propertiesclass="TDiagramForeignKeyProperties" objectname="public.servicios_fondo_solidaridad.fk_paquete">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3008" top="3008" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1400" y="1270"/>
+                <Point x="1420" y="1420"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="171" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.venta.fk_formapago">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2992" top="2992" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1240" y="2440"/>
+                <Point x="1240" y="2640"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="170" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.cuentaxcobrar">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1430" top="2200" width="200" height="300"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="173" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.cuentaxcobrar.fk_venta">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="2976" top="2976" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1530" y="2350"/>
+                <Point x="1260" y="2360"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="179" propertiesclass="TDiagramMetaTableProperties" objectname="public.historial_atencion_fps">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="930" top="1510" width="200" height="181"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="180" propertiesclass="TDiagramForeignKeyProperties" objectname="public.historial_atencion_fps.fk_fps">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3008" top="3008" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1030" y="1600"/>
+                <Point x="1100" y="1210"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="189" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.area_consumo">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1160" top="2070" width="200" height="69"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="190" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.nota_salida">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1400" top="1870" width="200" height="223"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="191" propertiesclass="TDiagramMetaTableProperties" objectname="farmacia.nota_salida_detalle">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1540" top="1910" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="193" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.nota_salida.fk_areaconsumo">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3088" top="3088" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1530" y="1970"/>
+                <Point x="1230" y="2100"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="194" propertiesclass="TDiagramForeignKeyProperties" objectname="farmacia.venta.fk_areaconsumo">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3104" top="3104" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1240" y="2410"/>
+                <Point x="1250" y="2100"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="192" propertiesclass="TDiagramMetaTableProperties" objectname="public.procedimiento">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2290" top="920" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="195" propertiesclass="TDiagramMetaTableProperties" objectname="public.servicio">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="2290" top="780" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="30" propertiesclass="TDiagramForeignKeyProperties" objectname="public.procedimiento.fk_servicio">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3088" top="3088" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2350" y="980"/>
+                <Point x="2350" y="830"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="31" propertiesclass="TDiagramForeignKeyProperties" objectname="public.servicio.fk_tarifario">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3104" top="3104" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2360" y="830"/>
+                <Point x="2350" y="700"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="48" propertiesclass="TDiagramForeignKeyProperties" objectname="public.items_comprobante.fk_proc_comp">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="3120" top="3120" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="2130" y="900"/>
+                <Point x="2340" y="970"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="196" propertiesclass="TDiagramMetaTableProperties" objectname="public.empresa">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="680" top="30" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+    </Elements>
+    <Surface zoom="100" scrollx="1956" scrolly="477"/>
+  </TDBADiagramController>
+</XMLDiagram>

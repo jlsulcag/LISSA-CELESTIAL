@@ -850,6 +850,7 @@ public class JF_Principal extends javax.swing.JFrame {
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         insertarInternalFrames(jifCitaMedica);
         jifCitaMedica.cargarDatosUser(user, oPersona, oRol);
+        jifCitaMedica.iniciar();
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jmi007ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi007ActionPerformed

@@ -46,14 +46,8 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
     public JIF_CitaMedica(JF_Principal root) {
         initComponents();
         this.root = root;
-        fechaActual();
-        //inicioHora();
-        cargarCbxMedicos();
-        cargarCbxMedicos1();
         oModeloCita = new ModeloCita();
         tblCitas.setModel(oModeloCita);
-        //oTextAutoCompleter = new TextAutoCompleter(txfPaciente);
-        //listarPersonas();
     }
 
     @SuppressWarnings("unchecked")
@@ -100,6 +94,9 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         setTitle("Administración de citas");
         setFont(new java.awt.Font("Adobe Arabic", 1, 10)); // NOI18N
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
@@ -113,12 +110,9 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
             }
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
             }
-            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameOpened(evt);
-            }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Búsqueda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jLabel1.setText("Fecha :");
 
@@ -260,7 +254,7 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
             .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cita", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Paciente :");
@@ -492,6 +486,7 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         }else{
             oModeloCita.clear();
         }
+        personalizarTabla();
     }//GEN-LAST:event_txfBusquedaPacienteKeyReleased
 
     private void tblCitasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCitasMouseReleased
@@ -545,9 +540,7 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txfServicio;
     // End of variables declaration//GEN-END:variables
 
-    private void fechaActual() {
-        Utilitarios.fechaActual(jdcFechaBusqueda);
-    }
+    
 
     private void cargarCbxMedicos() {
         ctrl = new MedicoCtrl(root);
@@ -571,34 +564,6 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         ctrl.rellenaMedico(cbxMedico);
     }
 
-//    private void inicioHora() {
-//        //fecha de sistema
-//        jdcFechaBusqueda.setCalendar(calendar);
-//        Date inicio = calendar.getTime();
-//        //Indicamos año hasta -100 del actual
-//        calendar.add(Calendar.YEAR, -100);
-//        //Guardamos la configuración en un DATE
-//        Date fechaAnterior = calendar.getTime();
-//        //Indicamos año hasta +200 del actual
-//        calendar.add(Calendar.YEAR, 200);
-//        //Guardamos la configuración en un DATE
-//        Date fechaPosterior = calendar.getTime();
-//        //Usamos el contructor de abajo para crear un modelo para el Spinner
-//        //SpinnerDateModel(Date value, Comparable start, Comparable end, int calendarField)
-//        //Utilizamos los datos que creamos más arriba
-//        //Para fecha utilizamos Calendar.YEAR y para hora Calendar.HOUR, el resto puede ser igual
-//        SpinnerModel fechaModel = new SpinnerDateModel(inicio, fechaAnterior, fechaPosterior, Calendar.YEAR);
-//        SpinnerModel horaModel = new SpinnerDateModel(inicio, fechaAnterior, fechaPosterior, Calendar.HOUR);
-//        SpinnerModel sp = new SpinnerDateModel();
-//        //Indicamos el model para cada Spinner además del formato de fecha y hora según corresponda.
-////        fecha.setModel(fechaModel);
-////        fecha.setEditor(new JSpinner.DateEditor(fecha, "dd/MM/yyyy"));
-//        jsHoraInicio.setModel(horaModel);
-//        jsHoraInicio.setEditor(new JSpinner.DateEditor(jsHoraInicio, "HH:mm"));
-//
-//        jsHoraFin.setModel(horaModel);
-//        jsHoraFin.setEditor(new JSpinner.DateEditor(jsHoraFin, "HH:mm"));
-//    }
 
     private void configuraNuevo() {
         banBoton = 1;
@@ -645,7 +610,9 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
     }
 
     private boolean isDatosValidos() {
-        return true;
+        return (Opersona != null
+                && cbxMedico.getSelectedIndex()>0
+                && jdcFecha.getDate() != null);
     }
 
     private Cita registrar() {
@@ -754,7 +721,7 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
             oModeloCita.clear();
             JOptionPane.showMessageDialog(null, "No tiene ninguna Cita", "ATENCIÓN", JOptionPane.INFORMATION_MESSAGE);
         }
-
+        personalizarTabla();
     }
 
     
@@ -847,5 +814,11 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         Utilitarios.formateaColumna(2, tblCitas, 80);
         Utilitarios.formateaColumna(3, tblCitas, 80);
         Utilitarios.formateaColumna(7, tblCitas, 50);
+    }
+
+    void iniciar() {        
+        cargarCbxMedicos();
+        cargarCbxMedicos1();
+        personalizarTabla();
     }
 }

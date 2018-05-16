@@ -224,8 +224,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
                 if (oProcedimiento != null) {
                     listProcedimiento.add(oProcedimiento);
                 }
-
-            }else{
+            } else {
                 oProcedimiento = oModeloLaboratorioAd.get(Utilitarios.seleccionarFila(evt));
                 if (oProcedimiento != null) {
                     listProcedimiento.remove(oProcedimiento);
@@ -316,7 +315,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
     }
 
     private void enviaProcedimientos() {
-        if(!listProcedimiento.isEmpty()){
+        if (!listProcedimiento.isEmpty()) {
             root.jifEmitirComprobante.enviaListProcedimientos(listProcedimiento);
             this.doDefaultCloseAction();
         }

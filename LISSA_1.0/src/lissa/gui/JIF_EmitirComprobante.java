@@ -169,7 +169,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         jLabel29 = new javax.swing.JLabel();
         jdcFechaComprobante = new com.toedter.calendar.JDateChooser();
         jPanel6 = new javax.swing.JPanel();
-        txfMontoServicio = new javax.swing.JTextField();
+        txfMontoProcedTarifario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -434,11 +434,11 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         jPanel6.setBackground(new java.awt.Color(204, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Servicio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        txfMontoServicio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txfMontoServicio.setEnabled(false);
-        txfMontoServicio.addKeyListener(new java.awt.event.KeyAdapter() {
+        txfMontoProcedTarifario.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txfMontoProcedTarifario.setEnabled(false);
+        txfMontoProcedTarifario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txfMontoServicioKeyReleased(evt);
+                txfMontoProcedTarifarioKeyReleased(evt);
             }
         });
 
@@ -584,7 +584,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfMontoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txfMontoProcedTarifario, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel33))
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -640,7 +640,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1)
                                 .addComponent(txfServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel4)
-                                .addComponent(txfMontoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txfMontoProcedTarifario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jsCubiertoSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6)
                                 .addComponent(txfMontoPagado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -958,14 +958,14 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_cbxComprobanteItemStateChanged
 
-    private void txfMontoServicioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfMontoServicioKeyReleased
-        if (!txfMontoServicio.getText().trim().equals("")) {
+    private void txfMontoProcedTarifarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfMontoProcedTarifarioKeyReleased
+        if (!txfMontoProcedTarifario.getText().trim().equals("")) {
             calcularMontoAPagar();
         } else {
             resetMontosCalculados();
             calcularMontoAPagar();
         }
-    }//GEN-LAST:event_txfMontoServicioKeyReleased
+    }//GEN-LAST:event_txfMontoProcedTarifarioKeyReleased
 
     private void cbxTipoPacienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxTipoPacienteItemStateChanged
         if (cbxTipoPaciente.getSelectedItem().toString().trim().equals("SEGURO")) {
@@ -1072,7 +1072,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txfMontoDerivado;
     private javax.swing.JTextField txfMontoIGV;
     private javax.swing.JTextField txfMontoPagado;
-    private javax.swing.JTextField txfMontoServicio;
+    private javax.swing.JTextField txfMontoProcedTarifario;
     private javax.swing.JTextField txfMontoTotal;
     private javax.swing.JTextField txfNombrePersona;
     private javax.swing.JTextField txfNumComprobante;
@@ -1124,20 +1124,20 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         } else if (cbxComprobante.getSelectedItem().equals("FACTURA")) {
             jlbTituloComprobante.setText("FACTURA");
             oComprobante.setTipoComprobante(new TipoComprobante(1));
-            oComprobante.setGrupoNumeracion(1);
+            oComprobante.setGrupoNumeracion(2);
             //estadoObjMontos(true);
             txfNumComprobante.setText("" + Utilitarios.numberFormat(generarNumeracionComprobante(), "##########"));
             tipoComprobante = "Factura";
         } else if (cbxComprobante.getSelectedItem().equals("RECIBO")) {
             jlbTituloComprobante.setText("RECIBO");
             oComprobante.setTipoComprobante(new TipoComprobante(3));
-            oComprobante.setGrupoNumeracion(2);
+            oComprobante.setGrupoNumeracion(3);
             //estadoObjMontos(false);
             txfNumComprobante.setText("" + Utilitarios.numberFormat(generarNumeracionComprobante(), "##########"));
             tipoComprobante = "OtrosComprobantes";
         } else if (cbxComprobante.getSelectedItem().equals("PROFORMA")) {
             jlbTituloComprobante.setText("PROFORMA");
-            oComprobante.setGrupoNumeracion(3);
+            oComprobante.setGrupoNumeracion(4);
             oComprobante.setTipoComprobante(new TipoComprobante(4));
             //estadoObjMontos(false);
             txfNumComprobante.setText("" + Utilitarios.numberFormat(generarNumeracionComprobante(), "##########"));
@@ -1156,7 +1156,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             oComprobante.setTipoComprobante(new TipoComprobante(0));
         }
     }
-
+    //Genera la numeracion correlativa de acuerdo al tipo de documento especificado
     private Integer generarNumeracionComprobante() {
         oBLBoleta = new BoletaBl();
         return oBLBoleta.obtenerUltNumero(oComprobante.getGrupoNumeracion()) + 1;
@@ -1509,7 +1509,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     private void emitirComprobante() {
         try {
             //ds = new DSConeccion("localhost", "5432", "lissadb", "postgres", "12345678");
-            if (cbxComprobante.getSelectedItem().toString().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().equals("BOLETA")) {
+            if (cbxComprobante.getSelectedItem().toString().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().equals("BOLETA") || cbxComprobante.getSelectedItem().toString().equals("RECIBO")) {
                 ds = new lissa.ds.DSConeccion(root.getConfig());
                 reportGenric = new ReportGeneric(ds.getConeccion());
                 reportGenric.setReportParent("/lissa/reportes/");
@@ -1540,7 +1540,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         this.txfFacturarA.setText("");
         this.txfFactura.setText("");
         this.txfServicio.setText("");
-        this.txfMontoServicio.setText("");
+        this.txfMontoProcedTarifario.setText("");
         this.oModeloPro.clear();
         this.txfSubTotal.setText("0.00");
         this.txfMontoIGV.setText("0.00");
@@ -1598,7 +1598,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     }
 
     private void calcularMontoaPagoServicio() {
-        if (oServicio != null && !txfMontoServicio.getText().trim().equals("")) {
+        if (oServicio != null && !txfMontoProcedTarifario.getText().trim().equals("")) {
             calcularMontoAPagar();
             if (cubierto != 0) {
                 txfMontoPagado.setText("" + montoPagar);
@@ -1625,14 +1625,19 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     private void calcularMontoAPagar() {
         resetMontosCalculados();
-        if (!txfMontoServicio.getText().trim().equals("")) {
-            montoReal = new BigDecimal(txfMontoServicio.getText().trim());
+        if (!txfMontoProcedTarifario.getText().trim().equals("")) {
+            montoReal = new BigDecimal(txfMontoProcedTarifario.getText().trim());
         } else {
             montoReal = BigDecimal.ZERO;
         }
 
         cubierto = ((Integer) jsCubiertoSeguro.getValue());
-
+        if(txfMontoAdicional.getText().trim().equals("-")){
+            montoAdicional = BigDecimal.ZERO;
+        }else{
+            montoAdicional = !txfMontoAdicional.getText().trim().equals("")?new BigDecimal(txfMontoAdicional.getText().trim()):BigDecimal.ZERO;
+        }
+        
         montoCubiertoSeguro = (montoReal.multiply(new BigDecimal(cubierto)).setScale(2, RoundingMode.HALF_UP)).divide(new BigDecimal(CIEN));
         montoPagar = ((montoReal.add(montoAdicional)).subtract(montoCubiertoSeguro)).setScale(2, RoundingMode.HALF_UP);
         txfMontoPagado.setText(montoPagar.toString());
@@ -1654,7 +1659,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 //        txfEmpresaOcupacional.setEnabled(b);
 //        txfRucOcupacional.setEnabled(b);
         txfServicio.setEnabled(b);
-        txfMontoServicio.setEnabled(b);
+        txfMontoProcedTarifario.setEnabled(b);
         txfMontoPagado.setEnabled(b);
     }
 
@@ -1702,7 +1707,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     private void resetComponentDatosProcedimiento() {
         txfServicio.setText("");
-        txfMontoServicio.setText("");
+        txfMontoProcedTarifario.setText("");
         txfMedicoDerivador.setText("");
         txfMedicoTratante.setText("");
         txfMontoDerivado.setText("");
@@ -1719,8 +1724,8 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     private void calcularMontosParticular() {
         resetMontosCalculados();
-        if (!txfMontoServicio.getText().trim().equals("")) {
-            montoReal = new BigDecimal(txfMontoServicio.getText().trim());
+        if (!txfMontoProcedTarifario.getText().trim().equals("")) {
+            montoReal = new BigDecimal(txfMontoProcedTarifario.getText().trim());
         } else {
             montoReal = BigDecimal.ZERO;
         }
@@ -1738,8 +1743,8 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     private void calcularMontosSeguro() {
         resetMontosCalculados();
-        if (!txfMontoServicio.getText().trim().equals("")) {
-            montoReal = new BigDecimal(txfMontoServicio.getText().trim());
+        if (!txfMontoProcedTarifario.getText().trim().equals("")) {
+            montoReal = new BigDecimal(txfMontoProcedTarifario.getText().trim());
         } else {
             montoReal = BigDecimal.ZERO;
         }
@@ -1757,8 +1762,8 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
 
     private void calcularMontosSocio() {
         resetMontosCalculados();
-        if (!txfMontoServicio.getText().trim().equals("")) {
-            montoReal = new BigDecimal(txfMontoServicio.getText().trim());
+        if (!txfMontoProcedTarifario.getText().trim().equals("")) {
+            montoReal = new BigDecimal(txfMontoProcedTarifario.getText().trim());
         } else {
             montoReal = BigDecimal.ZERO;
         }
@@ -1783,7 +1788,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     void enviaDatosProcedimiento(Procedimiento obj) {
         oProcedimiento = obj;
         txfServicio.setText(oProcedimiento.getDenominacion());
-        txfMontoServicio.setText(oProcedimiento.getCosto().toString());
+        txfMontoProcedTarifario.setText(oProcedimiento.getCosto().toString());
         txfMontoPagado.setText(oProcedimiento.getCosto().toString());
     }
 

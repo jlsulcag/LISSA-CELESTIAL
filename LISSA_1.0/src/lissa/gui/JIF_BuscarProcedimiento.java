@@ -272,7 +272,10 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
 
     private void personalizaVistaTabla() {
         Utilitarios.formateaAnchoColumnaTabla(0, tblResultados, 80);
-        Utilitarios.formateaAnchoColumnaTabla(3, tblResultados, 80);
+        Utilitarios.formateaAnchoColumnaTabla(1, tblResultados, 100);
+        Utilitarios.formateaAnchoColumnaTabla(4, tblResultados, 60);
+        
+        Utilitarios.alinearDatosColumnaTablaDerecha(4, tblResultados);
     }
 
     void inicializar() {

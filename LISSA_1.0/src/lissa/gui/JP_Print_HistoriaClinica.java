@@ -29,6 +29,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
     private String estado_civil;
     private String ocupacion;
     private String dni;
+    private String celular;
     
     private RenderingHints render1 = new RenderingHints(RenderingHints.KEY_ALPHA_INTERPOLATION,RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
     private RenderingHints render2 = new RenderingHints(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
@@ -234,6 +235,14 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
     public void setDni(String dni) {
         this.dni = dni;
     }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
     
     public class PrintDataActa extends JLabel{
         private int xT = 0;
@@ -273,6 +282,7 @@ public class JP_Print_HistoriaClinica extends javax.swing.JPanel implements Prin
                 g2D.drawString(getEstado_civil().toUpperCase(),ref_x+470,ref_y+545);
                 g2D.drawString(getOcupacion().toUpperCase(),ref_x+950,ref_y+545);
                 g2D.drawString(getDni().toUpperCase(), ref_x+620, ref_y+620);
+                g2D.drawString(getCelular().toUpperCase(), ref_x+950, ref_y+620);
         }
 
         public int getxT() {

@@ -584,7 +584,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
 
         jLabel17.setText("Tipo Ingreso :");
 
-        cbxTipoIngreso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<SELECCIONE>", "CONSULTA", "RE-EVALUACION", "OCUPACIONAL", "OTROS" }));
+        cbxTipoIngreso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<SELECCIONE>", "CONSULTA", "RE-EVALUACION", "LABORATORIO", "OTROS" }));
         cbxTipoIngreso.setEnabled(false);
         cbxTipoIngreso.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -1952,9 +1952,12 @@ public class JPanel_Admision extends javax.swing.JPanel {
                 printHc.setEstado_civil(beanTablaPersona.getPeEstadoCivil() != null ? beanTablaPersona.getPeEstadoCivil().getEstadoCivil():"");
                 printHc.setOcupacion(beanTablaPersona.getOcupacion() != null?beanTablaPersona.getOcupacion():"");
                 printHc.setDni(beanTablaPersona.getNumeroDocumento() != null?beanTablaPersona.getNumeroDocumento():"");
+                printHc.setCelular(beanTablaPersona.getTelefono() != null?"Telefono : "+beanTablaPersona.getTelefono():"");
                 
                 root.jdVisorHc.pintarDatos();
                 root.jdVisorHc.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "No cuenta con HC", "Atención", JOptionPane.ERROR_MESSAGE);
             }
         }else{
             Mensajes.hcSeleccionePersona();

@@ -756,7 +756,7 @@
                 <StringItem index="0" value="&lt;SELECCIONE&gt;"/>
                 <StringItem index="1" value="CONSULTA"/>
                 <StringItem index="2" value="RE-EVALUACION"/>
-                <StringItem index="3" value="OCUPACIONAL"/>
+                <StringItem index="3" value="LABORATORIO"/>
                 <StringItem index="4" value="OTROS"/>
               </StringArray>
             </Property>

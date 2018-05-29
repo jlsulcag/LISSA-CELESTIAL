@@ -56,7 +56,7 @@ where c.id_comprobante = $P{P_ID_BOLETA}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="106" splitType="Stretch">
+		<band height="95" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="e9d8e8b7-9379-49bf-ba35-3de4c3df28c2" x="0" y="0" width="177" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -65,7 +65,7 @@ where c.id_comprobante = $P{P_ID_BOLETA}]]>
 				<text><![CDATA[CARDIOMEDIC CELESTIAL S.R.L.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="5c42dc30-c580-4643-86c3-797db0d8c25b" x="0" y="62" width="177" height="14" forecolor="#000000"/>
+				<reportElement uuid="5c42dc30-c580-4643-86c3-797db0d8c25b" x="0" y="50" width="177" height="14" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
@@ -79,14 +79,14 @@ where c.id_comprobante = $P{P_ID_BOLETA}]]>
 				<text><![CDATA[DIRECCION: Psje. Cáceres N° 120 Ayac-Hga-Ayac]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="7ea14cba-c7bb-4a37-a460-59c48a203b8b" x="0" y="90" width="39" height="13" forecolor="#000000"/>
+				<reportElement uuid="7ea14cba-c7bb-4a37-a460-59c48a203b8b" x="0" y="78" width="39" height="13" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<text><![CDATA[NUM-OP: ]]></text>
 			</staticText>
 			<textField pattern="0000000000" isBlankWhenNull="true">
-				<reportElement uuid="8a5bc471-1455-4055-92e8-730f2821870a" x="39" y="90" width="138" height="13" forecolor="#000000"/>
+				<reportElement uuid="8a5bc471-1455-4055-92e8-730f2821870a" x="39" y="78" width="138" height="13" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
@@ -99,7 +99,7 @@ where c.id_comprobante = $P{P_ID_BOLETA}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{tipo_documento}.equals(1) ? "TICKET FACTURA ":
     ($F{tipo_documento}.equals( 2 ) ? "TICKET BOLETA ":
-        ($F{tipo_documento}.equals( 3 ) ? "RECIBO " : "PROFORMA ")
+        ($F{tipo_documento}.equals( 3 ) ? "TICKET " : "PROFORMA ")
     )
 )]]></textFieldExpression>
 			</textField>
@@ -118,18 +118,11 @@ where c.id_comprobante = $P{P_ID_BOLETA}]]>
 				<textFieldExpression><![CDATA[$F{numero_boleta}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="c6ae5ddd-f13d-4963-ad02-09bf0f00e22b" x="0" y="48" width="177" height="14" forecolor="#000000"/>
+				<reportElement uuid="bb5f5e23-ee80-42d0-b79d-e74d46eee244" x="0" y="64" width="177" height="14" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
-				<text><![CDATA[N° AUTORIZACIÓN SUNAT :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="bb5f5e23-ee80-42d0-b79d-e74d46eee244" x="0" y="76" width="177" height="14" forecolor="#000000"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial Narrow" size="9"/>
-				</textElement>
-				<text><![CDATA[N° DE SERIE    ]]></text>
+				<text><![CDATA[N° DE SERIE    : FFCF295609]]></text>
 			</staticText>
 		</band>
 	</title>

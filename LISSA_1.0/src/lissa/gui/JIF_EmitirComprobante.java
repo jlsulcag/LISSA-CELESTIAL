@@ -240,7 +240,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
         jPanel12.setBackground(new java.awt.Color(204, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        cbxComprobante.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccione>", "BOLETA", "FACTURA", "RECIBO", "ORDEN DE ATENCION" }));
+        cbxComprobante.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<Seleccione>", "BOLETA", "FACTURA", "TICKET", "ORDEN DE ATENCION" }));
         cbxComprobante.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxComprobanteItemStateChanged(evt);
@@ -951,7 +951,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txfMontoAdicionalKeyReleased
 
     private void cbxComprobanteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxComprobanteItemStateChanged
-        if (cbxComprobante.getSelectedItem().toString().trim().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().trim().equals("RECIBO")) {
+        if (cbxComprobante.getSelectedItem().toString().trim().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().trim().equals("TICKET")) {
             btnBuscarFacturar.setEnabled(true);
         } else {
             btnBuscarFacturar.setEnabled(false);
@@ -1128,8 +1128,8 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
             //estadoObjMontos(true);
             txfNumComprobante.setText("" + Utilitarios.numberFormat(generarNumeracionComprobante(), "##########"));
             tipoComprobante = "Factura";
-        } else if (cbxComprobante.getSelectedItem().equals("RECIBO")) {
-            jlbTituloComprobante.setText("RECIBO");
+        } else if (cbxComprobante.getSelectedItem().equals("TICKET")) {
+            jlbTituloComprobante.setText("TICKET");
             oComprobante.setTipoComprobante(new TipoComprobante(3));
             oComprobante.setGrupoNumeracion(3);
             //estadoObjMontos(false);
@@ -1509,7 +1509,7 @@ public class JIF_EmitirComprobante extends javax.swing.JInternalFrame {
     private void emitirComprobante() {
         try {
             //ds = new DSConeccion("localhost", "5432", "lissadb", "postgres", "12345678");
-            if (cbxComprobante.getSelectedItem().toString().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().equals("BOLETA") || cbxComprobante.getSelectedItem().toString().equals("RECIBO")) {
+            if (cbxComprobante.getSelectedItem().toString().equals("FACTURA") || cbxComprobante.getSelectedItem().toString().equals("BOLETA") || cbxComprobante.getSelectedItem().toString().equals("TICKET")) {
                 ds = new lissa.ds.DSConeccion(root.getConfig());
                 reportGenric = new ReportGeneric(ds.getConeccion());
                 reportGenric.setReportParent("/lissa/reportes/");

@@ -323,17 +323,8 @@ public class JIF_BuscarPersonaNatural extends javax.swing.JInternalFrame {
             case JIF_EMITIR_COMPROBANTE:
                 root.jifEmitirComprobante.cargarDatosPersona(beanTabla);
                 break;
-            case JIF_LABORATORIO:
-                root.jifOrdenLaboratorio.cargarDatosPersona(beanTabla);
-                break;
-            case JIF_HCOCUPACIONAL:
-                root.jifHistoriaClinicaOcupacional.cargarDatosPersona(beanTabla);
-                break;
             case JIF_USUARIO:
                 root.jifRegistrarUsuario.cargarDatosPersona(beanTabla);
-                break;
-            case JIF_BUSCAR_COMPROBANTE_VENTA:
-                root.jifBuscarComprobanteVenta.cargarDatosPersona(beanTabla);
                 break;
         }
     }

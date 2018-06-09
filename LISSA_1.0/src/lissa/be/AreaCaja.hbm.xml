@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 07-dic-2016 10:43:53 by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.AreaCaja" table="area_caja" schema="public" optimistic-lock="version">
         <id name="idareacaja" type="int">
             <column name="idareacaja" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="modulo" type="string">
             <column name="modulo" length="30" not-null="true" />

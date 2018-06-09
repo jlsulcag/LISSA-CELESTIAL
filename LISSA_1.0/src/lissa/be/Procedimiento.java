@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 26/01/2018 10:52:52 AM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;

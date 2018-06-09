@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 26/01/2018 10:52:52 AM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,10 +14,9 @@ public class Servicio implements java.io.Serializable {
     private String denominacion;
     private String estado;
     private Set<Procedimiento> procedimientos = new HashSet<Procedimiento>(0);
+
     public static final int DEFECTO = 1, DATO = 3;
     private int op = -1;
-    
-    private boolean seleccionado; 
 
     public Servicio() {
     }
@@ -84,23 +83,15 @@ public class Servicio implements java.io.Serializable {
     public void setOp(int op) {
         this.op = op;
     }
-    
+
     @Override
     public String toString() {
         switch (op) {
             case DATO:
                 return getDenominacion();
             default:
-                return "<Seleccione>";
+                return "<SELECCIONE>";
         }
-    }
-
-    public boolean isSeleccionado() {
-        return seleccionado;
-    }
-
-    public void setSeleccionado(boolean seleccionado) {
-        this.seleccionado = seleccionado;
     }
 
 }

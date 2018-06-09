@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -18,7 +18,7 @@ public class PersonaJuridica  implements java.io.Serializable {
      private String telefono;
      private String actividadEcon;
      private Set<PersonaEmpresa> personaEmpresas = new HashSet<PersonaEmpresa>(0);
-     private Set<Proveedor> proveedors = new HashSet<Proveedor>(0);
+
     public PersonaJuridica() {
     }
 
@@ -26,7 +26,7 @@ public class PersonaJuridica  implements java.io.Serializable {
     public PersonaJuridica(int idPersonaJuridica) {
         this.idPersonaJuridica = idPersonaJuridica;
     }
-    public PersonaJuridica(int idPersonaJuridica, String razonSocial, String numeroRuc, String direccion, String telefono, String actividadEcon, Set<PersonaEmpresa> personaEmpresas,Set<Proveedor> proveedors) {
+    public PersonaJuridica(int idPersonaJuridica, String razonSocial, String numeroRuc, String direccion, String telefono, String actividadEcon, Set<PersonaEmpresa> personaEmpresas) {
        this.idPersonaJuridica = idPersonaJuridica;
        this.razonSocial = razonSocial;
        this.numeroRuc = numeroRuc;
@@ -34,7 +34,6 @@ public class PersonaJuridica  implements java.io.Serializable {
        this.telefono = telefono;
        this.actividadEcon = actividadEcon;
        this.personaEmpresas = personaEmpresas;
-       this.proveedors = proveedors;
     }
    
     public int getIdPersonaJuridica() {
@@ -87,16 +86,8 @@ public class PersonaJuridica  implements java.io.Serializable {
         this.personaEmpresas = personaEmpresas;
     }
 
-    
-    //----------------------------------
-    public Set<Proveedor> getProveedors() {
-        return this.proveedors;
-    }
-    
-    public void setProveedors(Set<Proveedor> proveedors) {
-        this.proveedors = proveedors;
-    }
-    //----------------------------------
+
+
 
 }
 

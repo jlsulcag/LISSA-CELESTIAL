@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +15,7 @@ public class Beneficio implements java.io.Serializable {
     private Boolean estado;
     private Set<ItemsComprobante> itemsComprobantes = new HashSet<ItemsComprobante>(0);
     private Set<Comprobante> comprobantes = new HashSet<Comprobante>(0);
+
     public static final int DEFECTO = -1, DATO = 3;
     private int op = -1;
 
@@ -97,7 +98,7 @@ public class Beneficio implements java.io.Serializable {
             case DATO:
                 return getNombreBeneficio();
             default:
-                return "<Seleccione>";
+                return "<SELECCIONE>";
         }
     }
 

@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,9 +17,7 @@ public class HistoriaClinica  implements java.io.Serializable {
      private TipoHistoriaClinica tipoHistoriaClinica;
      private Integer numerohc;
      private Date fechaRegistro;
-     private Set<AtencionOcupacional> atencionOcupacionals = new HashSet<AtencionOcupacional>(0);
-     private Set<Atencion> atencions = new HashSet<Atencion>(0);     
-     private Set<SoFmoAntecedentesOcupacionales> soFmoAntecedentesOcupacionaleses = new HashSet<SoFmoAntecedentesOcupacionales>(0);
+     private Set<Atencion> atencions = new HashSet<Atencion>(0);
 
     public HistoriaClinica() {
     }
@@ -29,13 +27,12 @@ public class HistoriaClinica  implements java.io.Serializable {
         this.idhistoriaclinica = idhistoriaclinica;
         this.persona = persona;
     }
-    public HistoriaClinica(int idhistoriaclinica, Persona persona, TipoHistoriaClinica tipoHistoriaClinica, Integer numerohc, Date fechaRegistro, Set<AtencionOcupacional> atencionOcupacionals, Set<Atencion> atencions) {
+    public HistoriaClinica(int idhistoriaclinica, Persona persona, TipoHistoriaClinica tipoHistoriaClinica, Integer numerohc, Date fechaRegistro, Set<Atencion> atencions) {
        this.idhistoriaclinica = idhistoriaclinica;
        this.persona = persona;
        this.tipoHistoriaClinica = tipoHistoriaClinica;
        this.numerohc = numerohc;
        this.fechaRegistro = fechaRegistro;
-       this.atencionOcupacionals = atencionOcupacionals;
        this.atencions = atencions;
     }
    
@@ -74,13 +71,6 @@ public class HistoriaClinica  implements java.io.Serializable {
     public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
-    public Set<AtencionOcupacional> getAtencionOcupacionals() {
-        return this.atencionOcupacionals;
-    }
-    
-    public void setAtencionOcupacionals(Set<AtencionOcupacional> atencionOcupacionals) {
-        this.atencionOcupacionals = atencionOcupacionals;
-    }
     public Set<Atencion> getAtencions() {
         return this.atencions;
     }
@@ -88,14 +78,8 @@ public class HistoriaClinica  implements java.io.Serializable {
     public void setAtencions(Set<Atencion> atencions) {
         this.atencions = atencions;
     }
-    
-    public Set<SoFmoAntecedentesOcupacionales> getSoFmoAntecedentesOcupacionaleses() {
-        return this.soFmoAntecedentesOcupacionaleses;
-    }
-    
-    public void setSoFmoAntecedentesOcupacionaleses(Set<SoFmoAntecedentesOcupacionales> soFmoAntecedentesOcupacionaleses) {
-        this.soFmoAntecedentesOcupacionaleses = soFmoAntecedentesOcupacionaleses;
-    }
+
+
 
 
 }

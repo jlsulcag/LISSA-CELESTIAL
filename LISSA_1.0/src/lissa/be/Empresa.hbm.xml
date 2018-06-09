@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Empresa" table="empresa" schema="public" optimistic-lock="version">
+        <id name="idempresa" type="int">
+            <column name="idempresa" />
+            <generator class="increment" />
+        </id>
+        <property name="razonSocial" type="string">
+            <column name="razon_social" length="100" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" not-null="true" />
+        </property>
+        <property name="autorizacionSunat" type="string">
+            <column name="autorizacion_sunat" length="30" />
+        </property>
+        <property name="ruc" type="string">
+            <column name="ruc" length="30" not-null="true" />
+        </property>
+        <property name="serieTicketera" type="string">
+            <column name="serie_ticketera" length="30" not-null="true" />
+        </property>
+        <property name="logo" type="binary">
+            <column name="logo" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="telefono_fijo" length="30" />
+        </property>
+        <property name="telefonoCel" type="string">
+            <column name="telefono_cel" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

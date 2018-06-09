@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +13,7 @@ public class TipoMedico implements java.io.Serializable {
     private String nombre;
     private String descripcion;
     private Set<Medico> medicos = new HashSet<Medico>(0);
+
     public static final int DEFECTO = -1, DATO = 3;
     private int op = -1;
 

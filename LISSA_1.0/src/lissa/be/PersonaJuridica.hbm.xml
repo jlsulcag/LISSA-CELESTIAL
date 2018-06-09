@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.PersonaJuridica" table="persona_juridica" schema="public" optimistic-lock="version">
         <id name="idPersonaJuridica" type="int">
@@ -28,12 +28,6 @@
                 <column name="id_persona_juridica" not-null="true" />
             </key>
             <one-to-many class="lissa.be.PersonaEmpresa" />
-        </set>
-        <set name="proveedors" table="proveedor" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="id_persona_juridica" not-null="true" />
-            </key>
-            <one-to-many class="lissa.be.Proveedor" />
         </set>
     </class>
 </hibernate-mapping>

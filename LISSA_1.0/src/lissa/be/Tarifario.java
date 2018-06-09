@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 26/01/2018 10:52:52 AM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -69,14 +69,14 @@ public class Tarifario implements java.io.Serializable {
     public void setOp(int op) {
         this.op = op;
     }
-    
+
     @Override
     public String toString() {
         switch (op) {
             case DATO:
                 return getNombre();
             default:
-                return "<Seleccione>";
+                return "<SELECCIONE>";
         }
     }
 

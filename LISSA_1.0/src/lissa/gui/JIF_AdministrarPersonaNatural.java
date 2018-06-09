@@ -620,9 +620,6 @@ public class JIF_AdministrarPersonaNatural extends javax.swing.JInternalFrame {
             case JIF_USUARIO:
                 root.jifRegistrarUsuario.cargarDatosPersona(beanTabla);
                 break;
-            case JIF_VENTAS:
-                root.jifRegVentas.cargarDatosPersona(beanTabla);
-                break;
         }
 
     }

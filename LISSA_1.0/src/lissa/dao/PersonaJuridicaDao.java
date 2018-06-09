@@ -1,7 +1,6 @@
 package lissa.dao;
 
 import java.util.ArrayList;
-import lissa.be.AtencionOcupacional;
 import lissa.be.PersonaJuridica;
 import lissa.utiles.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -78,18 +77,5 @@ public class PersonaJuridicaDao {
     private void manejaExcepcion(HibernateException he) throws HibernateException {
         tx.rollback();
         throw new HibernateException("Ocurrió un error en la capa de acceso a datos", he);
-    }
-
-    public PersonaJuridica buscarxId(AtencionOcupacional oAtencionOcupacional) {
-        obj = new PersonaJuridica();
-        try {
-            iniciarOperacion();
-            String hql = "from PersonaJuridica as pj where pj.idPersonaJuridica=" + oAtencionOcupacional.getIdEmpresa();
-            Query query = sesion.createQuery(hql);
-            obj = (PersonaJuridica) query.uniqueResult();
-        } catch (HibernateException e) {
-            manejaExcepcion(e);
-        }       
-        return obj;
     }
 }

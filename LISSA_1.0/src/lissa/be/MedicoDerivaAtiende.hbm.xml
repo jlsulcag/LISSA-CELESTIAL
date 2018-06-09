@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 15/03/2017 09:10:11 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.MedicoDerivaAtiende" table="medico_deriva_atiende" schema="public" optimistic-lock="version">
         <id name="idmedicoderivaatiende" type="int">
@@ -27,8 +27,8 @@
                 <comment>ATIENDE, DERIVA</comment>
             </column>
         </property>
-        <property name="idCajaafecto" type="java.lang.Integer">
-            <column name="id_cajaafecto" />
+        <property name="idCajaafecto" type="int">
+            <column name="id_cajaafecto" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

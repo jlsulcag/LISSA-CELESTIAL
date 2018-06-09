@@ -1,53 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="lissa.be.Cita" optimistic-lock="version" schema="public" table="cita">
-    <id name="idcita" type="int">
-      <column name="idcita"/>
-      <generator class="increment"/>
-    </id>
-    <many-to-one class="lissa.be.Medico" fetch="select" name="medico">
-      <column name="id_medico"/>
-    </many-to-one>
-    <many-to-one class="lissa.be.Persona" fetch="select" name="persona">
-      <column name="id_paciente"/>
-    </many-to-one>
-    <property name="idUsuario" type="java.lang.Integer">
-      <column name="id_usuario"/>
-    </property>
-    <property name="fecha" type="date">
-      <column length="13" name="fecha"/>
-    </property>
-    <property name="hora_inicio" type="string">
-      <column length="15" name="hora_inicio"/>
-    </property>
-    <property name="servicio" type="string">
-      <column length="160" name="servicio"/>
-    </property>
-    <property name="estado" type="string">
-      <column length="10" name="estado"/>
-    </property>
-    <property name="hora_fin" type="string">
-      <column length="15" name="hora_fin"/>
-    </property>
-    <property name="horaIni" type="java.lang.Integer">
-      <column name="hora_ini"/>
-    </property>
-    <property name="minutoIni" type="java.lang.Integer">
-      <column name="minuto_ini"/>
-    </property>
-    <property name="amPmIni" type="string">
-      <column length="10" name="am_pm_ini"/>
-    </property>
-    <property name="horaFn" type="java.lang.Integer">
-      <column name="hora_fn"/>
-    </property>
-    <property name="minutoFn" type="java.lang.Integer">
-      <column name="minuto_fn"/>
-    </property>
-    <property name="amPmFn" type="string">
-      <column length="10" name="am_pm_fn"/>
-    </property>
-  </class>
+    <class name="lissa.be.Cita" table="cita" schema="public" optimistic-lock="version">
+        <id name="idcita" type="int">
+            <column name="idcita" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="medico" class="lissa.be.Medico" fetch="select">
+            <column name="id_medico" />
+        </many-to-one>
+        <many-to-one name="persona" class="lissa.be.Persona" fetch="select">
+            <column name="id_paciente" />
+        </many-to-one>
+        <property name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="fecha" length="13" />
+        </property>
+        <property name="horaInicio" type="string">
+            <column name="hora_inicio" length="15" />
+        </property>
+        <property name="servicio" type="string">
+            <column name="servicio" length="160" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="10" />
+        </property>
+        <property name="horaFin" type="string">
+            <column name="hora_fin" length="15" />
+        </property>
+        <property name="asunto" type="string">
+            <column name="asunto" length="100" />
+        </property>
+        <property name="nota" type="string">
+            <column name="nota" length="100" />
+        </property>
+        <property name="sintomas" type="string">
+            <column name="sintomas" length="100" />
+        </property>
+        <property name="estadoPago" type="string">
+            <column name="estado_pago" length="30" />
+        </property>
+        <property name="costo" type="java.lang.Double">
+            <column name="costo" precision="17" scale="17" />
+        </property>
+        <property name="horaIni" type="java.lang.Integer">
+            <column name="hora_ini" />
+        </property>
+        <property name="minutoIni" type="java.lang.Integer">
+            <column name="minuto_ini" />
+        </property>
+        <property name="amPmIni" type="string">
+            <column name="am_pm_ini" length="10" />
+        </property>
+        <property name="horaFn" type="java.lang.Integer">
+            <column name="hora_fn" />
+        </property>
+        <property name="minutoFn" type="java.lang.Integer">
+            <column name="minuto_fn" />
+        </property>
+        <property name="amPmFn" type="string">
+            <column name="am_pm_fn" length="10" />
+        </property>
+    </class>
 </hibernate-mapping>

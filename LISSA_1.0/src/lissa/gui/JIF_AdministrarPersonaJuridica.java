@@ -8,11 +8,9 @@ import javax.swing.JOptionPane;
 import lissa.be.Persona;
 import lissa.be.PersonaEmpresa;
 import lissa.be.PersonaJuridica;
-import lissa.be.Proveedor;
 import lissa.bl.PersonaBl;
 import lissa.bl.PersonaEmpresaBl;
 import lissa.bl.PersonaJuridicaBl;
-import lissa.bl.ProveedorBl;
 import lissa.dao.PersonaEmpresaDao;
 import lissa.table.ModeloPersonaJuridica;
 import lissa.util.Mensajes;
@@ -24,8 +22,6 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
 
     private PersonaJuridica oPersonaJuridica;
     private PersonaJuridicaBl oPersonaJuridicaBl;
-    private Proveedor oProveedor;
-    private ProveedorBl oProveedorBl;
     private Persona oPersona;
     private PersonaBl oPersonaBl;
     private ModeloPersonaJuridica oModeloPersonaJuridica;
@@ -503,17 +499,7 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
         this.txfActividadEconomica.setText(beanTabla.getActividadEcon());
         this.txfDireccion.setText(beanTabla.getDireccion());
         this.txfTelefono.setText(beanTabla.getTelefono());
-        if (beanTabla.getProveedors().size() > 0) {
-            for (Proveedor bean : beanTabla.getProveedors()) {
-                if (bean.getEstado().trim().equals("ACT")) {
-                    chbxProveedor.setSelected(true);
-                } else {
-                    chbxProveedor.setSelected(false);
-                }
-            }
-        } else {
-            chbxProveedor.setSelected(false);
-        }
+        
 
     }
 
@@ -526,9 +512,6 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
         switch (getInvocador()) {
             case JIF_EMITIR_COMPROBANTE:
                 root.jifEmitirComprobante.cargarDatosPersonaJuridica(beanTabla);
-                break;
-            case JIF_VENTAS:
-                root.jifRegVentas.cargarDatosPersonaJuridica(beanTabla);
                 break;
         }
     }
@@ -611,30 +594,20 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
     private void registrar() {
         oPersonaJuridica = registrarEmpresa();
         if (oPersonaJuridica != null) {
-            //Registrar si esta empresa es proveedor
-            if (oPersonaJuridica != null && chbxProveedor.isSelected()) {
-                oProveedor = registrarProveedor();
-            }
+            //Registrar si esta empresa es proveedor            
             Mensajes.msjRegCorrecta();
         } else {
             Mensajes.msjRegError();
-        }
-//        registrarEmpresa();
-//        if(registrarPersonaEmpresa() != null){
-//            JOptionPane.showMessageDialog(null, Mensajes.getRegCorrecto(), Mensajes.getTituloAtencion(), JOptionPane.INFORMATION_MESSAGE);
-//        }        
+        }      
     }
 
     private void actualizar() {
-        //actualizarPersona();
         int res = actualizarPersonaJuridica();
         if (res == 1) {
-            actualizarProveedor();
             Mensajes.msjActCorrecta();
         } else {
             Mensajes.msjActErronea();
         }
-        //actualizarPersonaEmpresa();
     }
 
     private void configuraNuevo() {
@@ -685,38 +658,6 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
             return oPersonaJuridica;
         }
 
-    }
-
-    private Proveedor registrarProveedor() {
-        oProveedor = new Proveedor();
-        oProveedorBl = new ProveedorBl();
-
-        oProveedor.setPersonaJuridica(oPersonaJuridica);
-        oProveedor.setEstado("ACT");
-
-        return oProveedorBl.registrar(oProveedor);
-    }
-
-    private PersonaEmpresa registrarPersonaEmpresa() {
-        oPersonaEmpresa = new PersonaEmpresa();
-        oPersonaEmpresaBl = new PersonaEmpresaBl();
-
-        oPersonaEmpresa.setPersona(oPersona);
-        oPersonaEmpresa.setPersonaJuridica(oPersonaJuridica);
-        oPersonaEmpresa.setFechaRegistro(new Date());
-
-        oPersonaEmpresa = oPersonaEmpresaBl.registrar(oPersonaEmpresa);
-        return oPersonaEmpresa;
-    }
-
-    private PersonaEmpresa buscarPersonaEmpresa(int id) {
-        oPersonaEmpresaBl = new PersonaEmpresaBl();
-        return oPersonaEmpresaBl.buscarXidPersJur(id);
-    }
-
-    private Persona buscarRepresentante(int id) {
-        oPersonaBl = new PersonaBl();
-        return oPersonaBl.buscarPersonaXid(id);
     }
 
     private int actualizarPersonaJuridica() {
@@ -781,27 +722,5 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
             Mensajes.msjResultVacio();
         }
         personalizarTabla();
-    }
-
-    private void actualizarProveedor() {
-        oProveedor = new Proveedor();
-        oProveedorBl = new ProveedorBl();
-        if (beanTabla.getProveedors().isEmpty()) {
-            oProveedor.setPersonaJuridica(beanTabla);
-            oProveedor.setEstado("ACT");
-            oProveedorBl.registrar(oProveedor);
-        } else {
-            for (Proveedor obj : beanTabla.getProveedors()) {
-                oProveedor.setIdproveedor(obj.getIdproveedor());
-            }
-            oProveedor.setPersonaJuridica(beanTabla);
-            if (chbxProveedor.isSelected()) {
-                oProveedor.setEstado("ACT");
-            } else {
-                oProveedor.setEstado("ANU");
-            }
-            oProveedorBl.actualizar(oProveedor);
-        }
-
     }
 }

@@ -24,46 +24,10 @@ import lissa.be.Usuario;
 import lissa.bl.CajaBl;
 import lissa.conf.FileConf;
 import lissa.gui.clinica.JIF_ServicioAdd;
-import lissa.gui.farmacia.JIF_AdminFormaFarmaceutica;
-import lissa.gui.farmacia.JIF_AdminLaboratorio;
-import lissa.gui.farmacia.JIF_AdminPresentacion;
-import lissa.gui.farmacia.JIF_AdminProducto;
-import lissa.gui.farmacia.JIF_RegistroMovimiento;
-import lissa.gui.farmacia.JIF_BuscarComprobanteCompras;
-import lissa.gui.farmacia.JIF_BuscarComprobanteVenta;
-import lissa.gui.farmacia.JIF_BusqProductos;
-import lissa.gui.farmacia.JIF_BusqProveedor;
-import lissa.gui.farmacia.JIF_CantidadVenta;
-import lissa.gui.farmacia.JIF_CerrarCajaFar;
-import lissa.gui.farmacia.JIF_Compras;
-import lissa.gui.farmacia.JIF_ConsultaFPS;
-import lissa.gui.farmacia.JIF_FormaPago;
-import lissa.gui.farmacia.JIF_KardexAlmacen;
-import lissa.gui.farmacia.JIF_Migrar;
-import lissa.gui.farmacia.JIF_NotaSalidaFar;
-import lissa.gui.farmacia.JIF_NuevoProducto;
-import lissa.gui.farmacia.JIF_ProductosVencidos;
-import lissa.gui.farmacia.JIF_ProductosXVencer;
-import lissa.gui.farmacia.JIF_RegAreaConsumo;
-import lissa.gui.farmacia.JIF_RegFormaFarmaceutica;
-import lissa.gui.farmacia.JIF_RegPresentacion;
-import lissa.gui.farmacia.JIF_RegLaboratorio;
-import lissa.gui.farmacia.JIF_RegVentas;
-import lissa.gui.farmacia.JIF_StockActual;
 import lissa.gui.rep.JIF_ComprasResumen;
 import lissa.gui.rep.JIF_RecaudacionTipoPaciente;
 import lissa.gui.rep.JIF_RepVentas;
 import lissa.gui.rep.JIF_SalidasXFecha;
-import lissa.gui.saludocupacional.JIF_HistoriaClinicaOcupacional;
-import lissa.gui.saludocupacional.JPanel_Certificado;
-import lissa.gui.saludocupacional.JPanel_EvaluacionAudiometrica;
-import lissa.gui.saludocupacional.JPanel_EvaluacionOftalmologica;
-import lissa.gui.saludocupacional.JPanel_EvaluacionOsteomuscular;
-import lissa.gui.saludocupacional.JPanel_EvaluacionPsicologica;
-import lissa.gui.saludocupacional.JPanel_FichaMedicoOcupacional;
-import lissa.gui.saludocupacional.JPanel_InformeMedicoOcupacional;
-import lissa.gui.saludocupacional.JPanel_Triaje;
-import lissa.util.Mensajes;
 import lissa.util.Reportes;
 import lissa.util.Utilitarios;
 import lissa.utiles.Background;
@@ -100,67 +64,22 @@ public class JF_Principal extends javax.swing.JFrame {
     public JIF_AdministrarMedico jifAdministrarMedico = null;
     public JIF_BuscarMedico jifBuscarMedico = null;
     public JIF_BuscarFondoPrevisionTemp jifBuscarFondoPrevTemp = null;
-    public JIF_BuscarHistoriaClinica jifBuscarHC = null;
-    public JIF_RegistrarDiagnostico jifRegistrarDiagnostico = null;
-    public JIF_AdminCie10 jifAdminCie10 = null;
     public JIF_Reporte_RecaudacionDiariaXMedico jifReporteRecaudacionPorMedico = null;
     public JIF_Reporte_RecaudacionResumen jifReporteRecaudacionResumen = null;
     public JIF_Reporte_RecaudacionPorServicio jifReporteRecaudacionXServicio = null;
-    public JIF_OrdenLaboratorio jifOrdenLaboratorio = null;
-    public JIF_HistoriaClinica jifHistoriaClinica = null;
-    public JPanel_HistoriaClinica jPanel_HistoriaClinica = null;
     public JIF_AbrirCaja jifAbrirCaja = null;
     public JIF_CerrarCaja jifCerrarCaja = null;
     public JIF_BuscarCajeros jifBuscarCajeros = null;
     public JIF_AtencionFondoPrev jifAtencionFondoPrev = null;
     public JIF_RepTurno jifRepTurno = null;
-    public JIF_HistoriaClinicaOcupacional jifHistoriaClinicaOcupacional = null;
     public JIF_Admision jifAdmision = null;
-    public JPanel_EvaluacionOftalmologica jpEvalOftalmologica = null;
-    public JPanel_EvaluacionOsteomuscular jpEvalOsteomuscular = null;
-    public JPanel_EvaluacionAudiometrica jpEvalAudiometrica = null;
-    public JPanel_Certificado jpCertificado = null;
-    public JPanel_FichaMedicoOcupacional jpFichaMedicoOcupacional = null;
-    public JPanel_EvaluacionPsicologica jpEvalPsicologica = null;
-    public JPanel_Triaje jpTriaje = null;
     public JIF_CitaMedica jifCitaMedica = null;
     public JPanel_Admision jpAdmision;
     public JIF_AddEspecialidad jifAddEspecialidad;
-    public JPanel_InformeMedicoOcupacional jpInformeMedicoOcupacional;
     public JIF_AdministrarSeguro jifAdministrarSeguro;
-    public JIF_PagoMedicos jifPagoMedicos;
-    //JIF para el modulo de farmacia
-    public JIF_RegFormaFarmaceutica jifFormaFarmaceutica;
-    public JIF_RegPresentacion jifRegPresentacion;
-    public JIF_AdminProducto jifAdminProducto;
-    public JIF_NuevoProducto jifNuevoProducto;
-    public JIF_RegLaboratorio jifRegLaboratorio;
-    public JIF_Compras jifCompras;
-    public JIF_BusqProductos jifBusqProductos;
-    public JIF_RegistroMovimiento jifAlmacen;
-    public JIF_AdminPresentacion jifAdminPresentacion;
-    public JIF_AdminFormaFarmaceutica jifAdminFormaFarmaceutica;
-    public JIF_AdminLaboratorio jifAdminLaboratorio;
-    public JIF_KardexAlmacen jifKardexAlmacen;
-    public JIF_StockActual jifStockActual;
-    public JIF_CerrarCajaFar jifCerrarCajaFar;
-    
-    public JIF_RegVentas jifRegVentas;
+    public JIF_PagoMedicos jifPagoMedicos;    
     public JIF_ComprasResumen jifComprasResumen;
-    public JIF_RepVentas jifRepVentas;
-    public JIF_ProductosXVencer jifProductosXVencer;
-    public JIF_RecaudacionTipoPaciente jifRecaudaciobTipoPaciente;
-    public JIF_BusqProveedor jifBusqProveedor;
-    public JIF_Migrar jifMigrar;
-    public JIF_CantidadVenta jifCantidadVenta;
-    public JIF_ProductosVencidos jifProductosVencidos;
-    public JIF_ConsultaFPS jifConsultaFPS;
-    public JIF_BuscarComprobanteVenta jifBuscarComprobanteVenta;
-    public JIF_FormaPago jifFormaPago;
-    public JIF_SalidasXFecha jifSalidasXFecha;
-    public JIF_BuscarComprobanteCompras jifBuscarComprobantesCompras;
-    public JIF_NotaSalidaFar jifNotaSalidafar;
-    public JIF_RegAreaConsumo jifRegAreaConsumo;
+    public JIF_RepVentas jifRepVentas;    
     public JIF_AdministrarServicio jifAdministrarServicio;
     public JD_VisorHc jdVisorHc;
     public JIF_ServicioAdd jifServicioAdd;
@@ -192,33 +111,8 @@ public class JF_Principal extends javax.swing.JFrame {
 //            bcpr.validaRestauracionBackUp();
         }
         //fin configuracion
-
-        jifAdminFormaFarmaceutica = new JIF_AdminFormaFarmaceutica(this);
-        jifAdminLaboratorio = new JIF_AdminLaboratorio(this);
-        jifAdminPresentacion = new JIF_AdminPresentacion(this);
-        jifAdminProducto = new JIF_AdminProducto(this);
-        jifAlmacen = new JIF_RegistroMovimiento(this);
-        jifBusqProductos = new JIF_BusqProductos(this);
-        jifBusqProveedor = new JIF_BusqProveedor(this);
-        jifCantidadVenta = new JIF_CantidadVenta(this);
-        jifCerrarCajaFar = new JIF_CerrarCajaFar(this);
-        jifCompras = new JIF_Compras(this);
-        jifConsultaFPS = new JIF_ConsultaFPS(this);
-        jifKardexAlmacen = new JIF_KardexAlmacen(this);
-        jifMigrar = new JIF_Migrar(this);
-        jifNuevoProducto = new JIF_NuevoProducto(this);
-        jifProductosXVencer = new JIF_ProductosXVencer(this);
-        jifProductosVencidos = new JIF_ProductosVencidos(this);
-        jifFormaFarmaceutica = new JIF_RegFormaFarmaceutica(this);
-        jifRegLaboratorio = new JIF_RegLaboratorio(this);
-        jifRegPresentacion = new JIF_RegPresentacion(this);
-        jifRegVentas = new JIF_RegVentas(this);
-        jifStockActual = new JIF_StockActual(this);
         jifComprasResumen = new JIF_ComprasResumen(this);
-        jifRepVentas = new JIF_RepVentas(this);
-        jifBuscarComprobanteVenta = new JIF_BuscarComprobanteVenta(this);
-        jifBuscarComprobantesCompras = new JIF_BuscarComprobanteCompras(this);
-        jifNotaSalidafar = new JIF_NotaSalidaFar(this);
+        jifRepVentas = new JIF_RepVentas(this);        
         jifBuscarProcedimiento = new JIF_BuscarProcedimiento(this);
 
         //carga de iniciar sesion
@@ -244,40 +138,22 @@ public class JF_Principal extends javax.swing.JFrame {
         jifAdministrarMedico = new JIF_AdministrarMedico(this);
         jifBuscarMedico = new JIF_BuscarMedico(this);
         jifBuscarFondoPrevTemp = new JIF_BuscarFondoPrevisionTemp(this);
-        jifBuscarHC = new JIF_BuscarHistoriaClinica(this);
-        jifRegistrarDiagnostico = new JIF_RegistrarDiagnostico(this);
-        jifAdminCie10 = new JIF_AdminCie10(this);
         jifReporteRecaudacionPorMedico = new JIF_Reporte_RecaudacionDiariaXMedico(this);
         jifReporteRecaudacionResumen = new JIF_Reporte_RecaudacionResumen(this);
         jifReporteRecaudacionXServicio = new JIF_Reporte_RecaudacionPorServicio(this);
         jdContactenos = new JD_Contactenos(this);
-        jifOrdenLaboratorio = new JIF_OrdenLaboratorio(this);
-        jifHistoriaClinica = new JIF_HistoriaClinica(this);
-        jPanel_HistoriaClinica = new JPanel_HistoriaClinica(this);
         jifAbrirCaja = new JIF_AbrirCaja(this);
         jifCerrarCaja = new JIF_CerrarCaja(this);
         jifBuscarCajeros = new JIF_BuscarCajeros(this);
         jifAtencionFondoPrev = new JIF_AtencionFondoPrev(this);
         jifRepTurno = new JIF_RepTurno(this);
-        jifHistoriaClinicaOcupacional = new JIF_HistoriaClinicaOcupacional(this);
         jifAdmision = new JIF_Admision(this);
-        jpEvalOftalmologica = new JPanel_EvaluacionOftalmologica(this);
-        jpEvalOsteomuscular = new JPanel_EvaluacionOsteomuscular(this);
-        jpEvalAudiometrica = new JPanel_EvaluacionAudiometrica(this);
-        jpCertificado = new JPanel_Certificado(this);
-        jpFichaMedicoOcupacional = new JPanel_FichaMedicoOcupacional(this);
-        jpEvalPsicologica = new JPanel_EvaluacionPsicologica(this);
-        jpTriaje = new JPanel_Triaje(this);
         jifAdministrarSeguro = new JIF_AdministrarSeguro(this);
         jifCitaMedica = new JIF_CitaMedica(this);
         jifBuscarPersonaJuridica = new JIF_BuscarPersonaJuridica(this);
         jpAdmision = new JPanel_Admision(this);
         jifAddEspecialidad = new JIF_AddEspecialidad(this);
-        jifRecaudaciobTipoPaciente = new JIF_RecaudacionTipoPaciente(this);
         jifPagoMedicos = new JIF_PagoMedicos(this);
-        jpInformeMedicoOcupacional = new JPanel_InformeMedicoOcupacional(this);
-        jifFormaPago = new JIF_FormaPago(this);
-        jifRegAreaConsumo = new JIF_RegAreaConsumo(this);
         jifAdministrarServicio = new JIF_AdministrarServicio(this);
         jdVisorHc = new JD_VisorHc(this);
         jifServicioAdd = new JIF_ServicioAdd(this);
@@ -779,8 +655,7 @@ public class JF_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmHistoriaClinicaActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        insertarInternalFrames(jifHistoriaClinica);
-        jifHistoriaClinica.cargarDatosUser(user, oPersona, oRol);
+    
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -793,9 +668,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         if (oRol.getDenominacion().trim().equals("FARMACIA")) {
-            insertarInternalFrames(jifCerrarCajaFar);
-            jifCerrarCajaFar.cargarDatosUser(user, oPersona, oRol);
-            jifCerrarCajaFar.inicializar();
+            
         } else {
             insertarInternalFrames(jifCerrarCaja);
             jifCerrarCaja.cargarDatosUser(user, oPersona, oRol);
@@ -854,7 +727,7 @@ public class JF_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jmi007ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi007ActionPerformed
-        insertarInternalFrames(jifRecaudaciobTipoPaciente);
+        
     }//GEN-LAST:event_jmi007ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

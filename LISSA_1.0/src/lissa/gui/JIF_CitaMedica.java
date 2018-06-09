@@ -623,8 +623,8 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         oCita.setMedico((Medico) cbxMedico.getSelectedItem());
         oCita.setIdUsuario(userTemp.getIdUsuario());
         oCita.setFecha(jdcFecha.getDate());
-        oCita.setHora_inicio(jsHoraInicio.getValue().toString() + ":" + jsMinutoInicio.getValue().toString() + " " + jsAmPm1.getValue().toString());
-        oCita.setHora_fin(jsHoraFin.getValue().toString() + ":" + jsMinutoFin.getValue().toString() + " " + jsAmPm2.getValue().toString());
+        oCita.setHoraInicio(jsHoraInicio.getValue().toString() + ":" + jsMinutoInicio.getValue().toString() + " " + jsAmPm1.getValue().toString());
+        oCita.setHoraFin(jsHoraFin.getValue().toString() + ":" + jsMinutoFin.getValue().toString() + " " + jsAmPm2.getValue().toString());
         oCita.setServicio(txfServicio.getText().toUpperCase().trim());
         oCita.setEstado(cbxEstado.getSelectedItem().toString());//pendiente de atencion
         oCita.setHoraIni((Integer) jsHoraInicio.getValue());
@@ -650,8 +650,8 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         oCitaTemp.setMedico((Medico) cbxMedico.getSelectedItem());
         oCitaTemp.setIdUsuario(userTemp.getIdUsuario());
         oCitaTemp.setFecha(jdcFecha.getDate());
-        oCitaTemp.setHora_inicio(jsHoraInicio.getValue().toString() + ":" + jsMinutoInicio.getValue().toString() + " " + jsAmPm1.getValue().toString());
-        oCitaTemp.setHora_fin(jsHoraFin.getValue().toString() + ":" + jsMinutoFin.getValue().toString() + " " + jsAmPm2.getValue().toString());
+        oCitaTemp.setHoraInicio(jsHoraInicio.getValue().toString() + ":" + jsMinutoInicio.getValue().toString() + " " + jsAmPm1.getValue().toString());
+        oCitaTemp.setHoraFin(jsHoraFin.getValue().toString() + ":" + jsMinutoFin.getValue().toString() + " " + jsAmPm2.getValue().toString());
         oCitaTemp.setServicio(txfServicio.getText().toUpperCase().trim());
         oCitaTemp.setEstado(cbxEstado.getSelectedItem().toString());//pendiente de atencion
         oCitaTemp.setHoraIni((Integer) jsHoraInicio.getValue());
@@ -792,21 +792,6 @@ public class JIF_CitaMedica extends javax.swing.JInternalFrame {
         //oTextAutoCompleter.addItems((ArrayList<Object>)(Object)lista);
     }
 
-    private void listarPersonas() {
-        oPersonaBl = new PersonaBl();
-        listPers = oPersonaBl.listar();
-        if(!listPers.isEmpty()){
-            oTextAutoCompleter.setMode(0);
-            for (int i = 0; i < listPers.size(); i++) {
-                Persona per = listPers.get(i);
-                oTextAutoCompleter.addItem(new Persona(per));
-            }
-            //oTextAutoCompleter.addItems((ArrayList<Object>)listPers);
-        }else{
-            System.out.println("lista  vacia");
-        }
-        
-    }
 
     private void personalizarTabla() {
         Utilitarios.formateaColumna(0, tblCitas, 80);

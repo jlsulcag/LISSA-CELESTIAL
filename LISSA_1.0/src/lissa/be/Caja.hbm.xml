@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.Caja" table="caja" schema="public" optimistic-lock="version">
         <id name="idcaja" type="int">
             <column name="idcaja" />
             <generator class="increment" />
         </id>
-        <many-to-one name="usuario" class="lissa.be.Usuario" fetch="select">
-            <column name="id_usuario" />
-        </many-to-one>
         <many-to-one name="areaCaja" class="lissa.be.AreaCaja" fetch="select">
             <column name="id_areacaja" />
+        </many-to-one>
+        <many-to-one name="usuario" class="lissa.be.Usuario" fetch="select">
+            <column name="id_usuario" />
         </many-to-one>
         <property name="fechaApertura" type="date">
             <column name="fecha_apertura" length="13" not-null="true" />

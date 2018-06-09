@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.Paciente" table="paciente" schema="public" optimistic-lock="version">
         <id name="idpaciente" type="int">
@@ -24,7 +24,7 @@
             <column name="id_historia_clinica" />
         </property>
         <property name="estado" type="string">
-            <column name="estado" length="20" />
+            <column name="estado" length="20" not-null="true" />
         </property>
         <property name="horaIngreso" type="string">
             <column name="hora_ingreso" length="20" />
@@ -33,7 +33,7 @@
             <column name="id_especialidad" />
         </many-to-one>
         <many-to-one name="usuario" class="lissa.be.Usuario" fetch="select">
-            <column name="id_usuario" not-null="true"/>
+            <column name="id_usuario" not-null="true" />
         </many-to-one>
         <set name="comprobantes" table="comprobante" inverse="true" lazy="true" fetch="select">
             <key>

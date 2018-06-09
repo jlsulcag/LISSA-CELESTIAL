@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 07-dic-2016 10:43:52 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -82,4 +82,5 @@ public class AreaCaja implements java.io.Serializable {
                 return "<SELECCIONE>";
         }
     }
+
 }

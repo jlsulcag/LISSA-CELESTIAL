@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 15/03/2017 09:10:09 AM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -16,18 +16,19 @@ public class MedicoDerivaAtiende  implements java.io.Serializable {
      private BigDecimal monto;
      private String estadoPago;
      private String tipoMedico;
-     private Integer idCajaafecto;
+     private int idCajaafecto;
 
     public MedicoDerivaAtiende() {
     }
 
-    public MedicoDerivaAtiende(int idmedicoderivaatiende, ItemsComprobante itemsComprobante, Medico medico, BigDecimal monto, String estadoPago, String tipoMedico) {
+    public MedicoDerivaAtiende(int idmedicoderivaatiende, ItemsComprobante itemsComprobante, Medico medico, BigDecimal monto, String estadoPago, String tipoMedico, int idCajaafecto) {
        this.idmedicoderivaatiende = idmedicoderivaatiende;
        this.itemsComprobante = itemsComprobante;
        this.medico = medico;
        this.monto = monto;
        this.estadoPago = estadoPago;
        this.tipoMedico = tipoMedico;
+       this.idCajaafecto = idCajaafecto;
     }
    
     public int getIdmedicoderivaatiende() {
@@ -72,12 +73,11 @@ public class MedicoDerivaAtiende  implements java.io.Serializable {
     public void setTipoMedico(String tipoMedico) {
         this.tipoMedico = tipoMedico;
     }
-
-    public Integer getIdCajaafecto() {
-        return idCajaafecto;
+    public int getIdCajaafecto() {
+        return this.idCajaafecto;
     }
-
-    public void setIdCajaafecto(Integer idCajaafecto) {
+    
+    public void setIdCajaafecto(int idCajaafecto) {
         this.idCajaafecto = idCajaafecto;
     }
 

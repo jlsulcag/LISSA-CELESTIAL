@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -36,7 +36,7 @@ public class Caja  implements java.io.Serializable {
         this.idcaja = idcaja;
         this.fechaApertura = fechaApertura;
     }
-    public Caja(int idcaja, AreaCaja areaCaja,Usuario usuario, Date fechaApertura, String horaApertura, Date fechaCierre, String horaCierre, String estado, BigDecimal saldoInicial, BigDecimal saldoFinal, BigDecimal saldoContabilizado, BigDecimal descuadre, String turno, Set<Comprobante> comprobantes) {
+    public Caja(int idcaja, AreaCaja areaCaja, Usuario usuario, Date fechaApertura, String horaApertura, Date fechaCierre, String horaCierre, String estado, BigDecimal saldoInicial, BigDecimal saldoFinal, BigDecimal saldoContabilizado, BigDecimal descuadre, String turno, Set<Comprobante> comprobantes) {
        this.idcaja = idcaja;
        this.areaCaja = areaCaja;
        this.usuario = usuario;

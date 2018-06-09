@@ -21,7 +21,6 @@ import lissa.bl.RolBl;
 import lissa.bl.UsuarioBl;
 import lissa.bl.UsuarioRolBl;
 import lissa.controller.RolCtrl;
-import lissa.gui.farmacia.JIF_PrincipalFarmacia;
 import lissa.util.Utilitarios;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.rx.cr.util.gui.ShapeDecorated;
@@ -43,13 +42,8 @@ public final class JD_IniciarSesion extends javax.swing.JDialog {
 
     private Set<UsuarioRol> rolesUsuario = null;
     private JIF_EmitirComprobante jifEmitirComprobante = null;
-    private JIF_HistoriaClinica jifHistoriaClinica = null;
-    private JPanel_HistoriaClinica jPanelHistoriaClinica = null;
     private RolCtrl oRolCtrl;
     private ArrayList<Rol> listRoles;
-
-    //Ventana Inicial para el modulo de farmacia
-    private JIF_PrincipalFarmacia rootFarm = null;
 
     public JD_IniciarSesion() {
         initComponents();
@@ -61,8 +55,6 @@ public final class JD_IniciarSesion extends javax.swing.JDialog {
         this.root = root;
         personalizaLoguin();
         jifEmitirComprobante = new JIF_EmitirComprobante(this.root);
-        jifHistoriaClinica = new JIF_HistoriaClinica(this.root);
-        jPanelHistoriaClinica = new JPanel_HistoriaClinica(this.root);
     }
     /*
      public JD_IniciarSesion(JIF_PrincipalFarmacia rootFarm) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {

@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14/06/2017 04:06:49 PM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 
@@ -17,10 +17,11 @@ public class ServiciosFondoSolidaridad  implements java.io.Serializable {
     public ServiciosFondoSolidaridad() {
     }
 
-    public ServiciosFondoSolidaridad(int idserviciosfs, FondoSolidaridad fondoSolidaridad, PaqueteFondoSolidaridad paqueteFondoSolidaridad) {
+    public ServiciosFondoSolidaridad(int idserviciosfs, FondoSolidaridad fondoSolidaridad, PaqueteFondoSolidaridad paqueteFondoSolidaridad, String estado) {
        this.idserviciosfs = idserviciosfs;
        this.fondoSolidaridad = fondoSolidaridad;
        this.paqueteFondoSolidaridad = paqueteFondoSolidaridad;
+       this.estado = estado;
     }
    
     public int getIdserviciosfs() {
@@ -44,11 +45,10 @@ public class ServiciosFondoSolidaridad  implements java.io.Serializable {
     public void setPaqueteFondoSolidaridad(PaqueteFondoSolidaridad paqueteFondoSolidaridad) {
         this.paqueteFondoSolidaridad = paqueteFondoSolidaridad;
     }
-    
     public String getEstado() {
-        return estado;
+        return this.estado;
     }
-
+    
     public void setEstado(String estado) {
         this.estado = estado;
     }

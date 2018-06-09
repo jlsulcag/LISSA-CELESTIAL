@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,10 +15,15 @@ public class Cita  implements java.io.Serializable {
      private Persona persona;
      private Integer idUsuario;
      private Date fecha;
-     private String hora_inicio;
-     private String hora_fin;
+     private String horaInicio;
      private String servicio;
      private String estado;
+     private String horaFin;
+     private String asunto;
+     private String nota;
+     private String sintomas;
+     private String estadoPago;
+     private Double costo;
      private Integer horaIni;
      private Integer minutoIni;
      private String amPmIni;
@@ -33,25 +38,29 @@ public class Cita  implements java.io.Serializable {
     public Cita(int idcita) {
         this.idcita = idcita;
     }
-
-    public Cita(int idcita, Medico medico, Persona persona, Integer idUsuario, Date fecha, String hora_inicio, String hora_fin, String servicio, String estado, Integer horaIni, Integer minutoIni, String amPmIni, Integer horaFn, Integer minutoFn, String amPmFn) {
-        this.idcita = idcita;
-        this.medico = medico;
-        this.persona = persona;
-        this.idUsuario = idUsuario;
-        this.fecha = fecha;
-        this.hora_inicio = hora_inicio;
-        this.hora_fin = hora_fin;
-        this.servicio = servicio;
-        this.estado = estado;
-        this.horaIni = horaIni;
-        this.minutoIni = minutoIni;
-        this.amPmIni = amPmIni;
-        this.horaFn = horaFn;
-        this.minutoFn = minutoFn;
-        this.amPmFn = amPmFn;
+    public Cita(int idcita, Medico medico, Persona persona, Integer idUsuario, Date fecha, String horaInicio, String servicio, String estado, String horaFin, String asunto, String nota, String sintomas, String estadoPago, Double costo, Integer horaIni, Integer minutoIni, String amPmIni, Integer horaFn, Integer minutoFn, String amPmFn) {
+       this.idcita = idcita;
+       this.medico = medico;
+       this.persona = persona;
+       this.idUsuario = idUsuario;
+       this.fecha = fecha;
+       this.horaInicio = horaInicio;
+       this.servicio = servicio;
+       this.estado = estado;
+       this.horaFin = horaFin;
+       this.asunto = asunto;
+       this.nota = nota;
+       this.sintomas = sintomas;
+       this.estadoPago = estadoPago;
+       this.costo = costo;
+       this.horaIni = horaIni;
+       this.minutoIni = minutoIni;
+       this.amPmIni = amPmIni;
+       this.horaFn = horaFn;
+       this.minutoFn = minutoFn;
+       this.amPmFn = amPmFn;
     }
-       
+   
     public int getIdcita() {
         return this.idcita;
     }
@@ -87,12 +96,12 @@ public class Cita  implements java.io.Serializable {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-    public String getHora_inicio() {
-        return this.hora_inicio;
+    public String getHoraInicio() {
+        return this.horaInicio;
     }
     
-    public void setHora_inicio(String hora_inicio) {
-        this.hora_inicio = hora_inicio;
+    public void setHoraInicio(String horaInicio) {
+        this.horaInicio = horaInicio;
     }
     public String getServicio() {
         return this.servicio;
@@ -105,66 +114,97 @@ public class Cita  implements java.io.Serializable {
         return this.estado;
     }
     
-    public void setEstado(String acude) {
-        this.estado = acude;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-
-    public String getHora_fin() {
-        return hora_fin;
+    public String getHoraFin() {
+        return this.horaFin;
     }
-
-    public void setHora_fin(String hora_fin) {
-        this.hora_fin = hora_fin;
+    
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
     }
-
+    public String getAsunto() {
+        return this.asunto;
+    }
+    
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
+    }
+    public String getNota() {
+        return this.nota;
+    }
+    
+    public void setNota(String nota) {
+        this.nota = nota;
+    }
+    public String getSintomas() {
+        return this.sintomas;
+    }
+    
+    public void setSintomas(String sintomas) {
+        this.sintomas = sintomas;
+    }
+    public String getEstadoPago() {
+        return this.estadoPago;
+    }
+    
+    public void setEstadoPago(String estadoPago) {
+        this.estadoPago = estadoPago;
+    }
+    public Double getCosto() {
+        return this.costo;
+    }
+    
+    public void setCosto(Double costo) {
+        this.costo = costo;
+    }
     public Integer getHoraIni() {
-        return horaIni;
+        return this.horaIni;
     }
-
+    
     public void setHoraIni(Integer horaIni) {
         this.horaIni = horaIni;
     }
-
     public Integer getMinutoIni() {
-        return minutoIni;
+        return this.minutoIni;
     }
-
+    
     public void setMinutoIni(Integer minutoIni) {
         this.minutoIni = minutoIni;
     }
-
     public String getAmPmIni() {
-        return amPmIni;
+        return this.amPmIni;
     }
-
+    
     public void setAmPmIni(String amPmIni) {
         this.amPmIni = amPmIni;
     }
-
     public Integer getHoraFn() {
-        return horaFn;
+        return this.horaFn;
     }
-
+    
     public void setHoraFn(Integer horaFn) {
         this.horaFn = horaFn;
     }
-
     public Integer getMinutoFn() {
-        return minutoFn;
+        return this.minutoFn;
     }
-
+    
     public void setMinutoFn(Integer minutoFn) {
         this.minutoFn = minutoFn;
     }
-
     public String getAmPmFn() {
-        return amPmFn;
+        return this.amPmFn;
     }
-
+    
     public void setAmPmFn(String amPmFn) {
         this.amPmFn = amPmFn;
     }
-    
+
+
+
+
 }
 
 

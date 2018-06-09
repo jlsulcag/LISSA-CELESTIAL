@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -18,9 +18,9 @@ public class FondoSolidaridad  implements java.io.Serializable {
      private Date fechaReg;
      private Boolean estado;
      private BigDecimal importe;
+     private Set<HistorialAtencionFps> historialAtencionFpses = new HashSet<HistorialAtencionFps>(0);
      private Set<ServicioFondoSolidaridad> servicioFondoSolidaridads = new HashSet<ServicioFondoSolidaridad>(0);
      private Set<ServiciosFondoSolidaridad> serviciosFondoSolidaridads = new HashSet<ServiciosFondoSolidaridad>(0);
-     private Set<HistorialAtencionFps> historialAtencionFpses = new HashSet<HistorialAtencionFps>(0);
 
     public FondoSolidaridad() {
     }
@@ -29,13 +29,15 @@ public class FondoSolidaridad  implements java.io.Serializable {
     public FondoSolidaridad(int idFondoSolidaridad) {
         this.idFondoSolidaridad = idFondoSolidaridad;
     }
-    public FondoSolidaridad(int idFondoSolidaridad, Persona persona, Date fechaReg, Boolean estado, BigDecimal importe, Set<ServicioFondoSolidaridad> servicioFondoSolidaridads) {
+    public FondoSolidaridad(int idFondoSolidaridad, Persona persona, Date fechaReg, Boolean estado, BigDecimal importe, Set<HistorialAtencionFps> historialAtencionFpses, Set<ServicioFondoSolidaridad> servicioFondoSolidaridads, Set<ServiciosFondoSolidaridad> serviciosFondoSolidaridads) {
        this.idFondoSolidaridad = idFondoSolidaridad;
        this.persona = persona;
        this.fechaReg = fechaReg;
        this.estado = estado;
        this.importe = importe;
+       this.historialAtencionFpses = historialAtencionFpses;
        this.servicioFondoSolidaridads = servicioFondoSolidaridads;
+       this.serviciosFondoSolidaridads = serviciosFondoSolidaridads;
     }
    
     public int getIdFondoSolidaridad() {
@@ -73,6 +75,13 @@ public class FondoSolidaridad  implements java.io.Serializable {
     public void setImporte(BigDecimal importe) {
         this.importe = importe;
     }
+    public Set<HistorialAtencionFps> getHistorialAtencionFpses() {
+        return this.historialAtencionFpses;
+    }
+    
+    public void setHistorialAtencionFpses(Set<HistorialAtencionFps> historialAtencionFpses) {
+        this.historialAtencionFpses = historialAtencionFpses;
+    }
     public Set<ServicioFondoSolidaridad> getServicioFondoSolidaridads() {
         return this.servicioFondoSolidaridads;
     }
@@ -80,21 +89,12 @@ public class FondoSolidaridad  implements java.io.Serializable {
     public void setServicioFondoSolidaridads(Set<ServicioFondoSolidaridad> servicioFondoSolidaridads) {
         this.servicioFondoSolidaridads = servicioFondoSolidaridads;
     }
-
     public Set<ServiciosFondoSolidaridad> getServiciosFondoSolidaridads() {
-        return serviciosFondoSolidaridads;
+        return this.serviciosFondoSolidaridads;
     }
-
+    
     public void setServiciosFondoSolidaridads(Set<ServiciosFondoSolidaridad> serviciosFondoSolidaridads) {
         this.serviciosFondoSolidaridads = serviciosFondoSolidaridads;
-    }
-
-    public Set<HistorialAtencionFps> getHistorialAtencionFpses() {
-        return historialAtencionFpses;
-    }
-
-    public void setHistorialAtencionFpses(Set<HistorialAtencionFps> historialAtencionFpses) {
-        this.historialAtencionFpses = historialAtencionFpses;
     }
 
 

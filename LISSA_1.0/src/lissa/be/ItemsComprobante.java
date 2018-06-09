@@ -1,9 +1,8 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +27,7 @@ public class ItemsComprobante  implements java.io.Serializable {
      private BigDecimal importeAdicional;
      private String observacion;
      private int porcCubierto;
-     private BigDecimal montoCubierto;  
+     private BigDecimal montoCubierto;
      private BigDecimal montoCubiertoSoles;
      private Set<ServicioFondoSolidaridad> servicioFondoSolidaridads = new HashSet<ServicioFondoSolidaridad>(0);
      private Set<MedicoDerivaAtiende> medicoDerivaAtiendes = new HashSet<MedicoDerivaAtiende>(0);
@@ -37,10 +36,32 @@ public class ItemsComprobante  implements java.io.Serializable {
     }
 
 	
-    public ItemsComprobante(long iditemcomprobante) {
+    public ItemsComprobante(long iditemcomprobante, int porcCubierto, BigDecimal montoCubierto) {
         this.iditemcomprobante = iditemcomprobante;
+        this.porcCubierto = porcCubierto;
+        this.montoCubierto = montoCubierto;
     }
-    
+    public ItemsComprobante(long iditemcomprobante, Beneficio beneficio, Comprobante comprobante, Medico medicoByIdMedicoDeriva, Medico medicoByIdMedicoAtiende, Procedimiento procedimiento, BigDecimal montoProcedimiento, String concepto, Boolean estado, BigDecimal montoAtencion, BigDecimal montoDerivacion, BigDecimal montoPagado, BigDecimal importeAdicional, String observacion, int porcCubierto, BigDecimal montoCubierto, BigDecimal montoCubiertoSoles, Set<ServicioFondoSolidaridad> servicioFondoSolidaridads, Set<MedicoDerivaAtiende> medicoDerivaAtiendes) {
+       this.iditemcomprobante = iditemcomprobante;
+       this.beneficio = beneficio;
+       this.comprobante = comprobante;
+       this.medicoByIdMedicoDeriva = medicoByIdMedicoDeriva;
+       this.medicoByIdMedicoAtiende = medicoByIdMedicoAtiende;
+       this.procedimiento = procedimiento;
+       this.montoProcedimiento = montoProcedimiento;
+       this.concepto = concepto;
+       this.estado = estado;
+       this.montoAtencion = montoAtencion;
+       this.montoDerivacion = montoDerivacion;
+       this.montoPagado = montoPagado;
+       this.importeAdicional = importeAdicional;
+       this.observacion = observacion;
+       this.porcCubierto = porcCubierto;
+       this.montoCubierto = montoCubierto;
+       this.montoCubiertoSoles = montoCubiertoSoles;
+       this.servicioFondoSolidaridads = servicioFondoSolidaridads;
+       this.medicoDerivaAtiendes = medicoDerivaAtiendes;
+    }
    
     public long getIditemcomprobante() {
         return this.iditemcomprobante;
@@ -77,7 +98,20 @@ public class ItemsComprobante  implements java.io.Serializable {
     public void setMedicoByIdMedicoAtiende(Medico medicoByIdMedicoAtiende) {
         this.medicoByIdMedicoAtiende = medicoByIdMedicoAtiende;
     }
+    public Procedimiento getProcedimiento() {
+        return this.procedimiento;
+    }
     
+    public void setProcedimiento(Procedimiento procedimiento) {
+        this.procedimiento = procedimiento;
+    }
+    public BigDecimal getMontoProcedimiento() {
+        return this.montoProcedimiento;
+    }
+    
+    public void setMontoProcedimiento(BigDecimal montoProcedimiento) {
+        this.montoProcedimiento = montoProcedimiento;
+    }
     public String getConcepto() {
         return this.concepto;
     }
@@ -92,7 +126,6 @@ public class ItemsComprobante  implements java.io.Serializable {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-    
     public BigDecimal getMontoAtencion() {
         return this.montoAtencion;
     }
@@ -128,6 +161,27 @@ public class ItemsComprobante  implements java.io.Serializable {
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
+    public int getPorcCubierto() {
+        return this.porcCubierto;
+    }
+    
+    public void setPorcCubierto(int porcCubierto) {
+        this.porcCubierto = porcCubierto;
+    }
+    public BigDecimal getMontoCubierto() {
+        return this.montoCubierto;
+    }
+    
+    public void setMontoCubierto(BigDecimal montoCubierto) {
+        this.montoCubierto = montoCubierto;
+    }
+    public BigDecimal getMontoCubiertoSoles() {
+        return this.montoCubiertoSoles;
+    }
+    
+    public void setMontoCubiertoSoles(BigDecimal montoCubiertoSoles) {
+        this.montoCubiertoSoles = montoCubiertoSoles;
+    }
     public Set<ServicioFondoSolidaridad> getServicioFondoSolidaridads() {
         return this.servicioFondoSolidaridads;
     }
@@ -135,53 +189,12 @@ public class ItemsComprobante  implements java.io.Serializable {
     public void setServicioFondoSolidaridads(Set<ServicioFondoSolidaridad> servicioFondoSolidaridads) {
         this.servicioFondoSolidaridads = servicioFondoSolidaridads;
     }
-
-    public int getPorcCubierto() {
-        return porcCubierto;
-    }
-
-    public void setPorcCubierto(int porcCubierto) {
-        this.porcCubierto = porcCubierto;
-    }
-
-    public BigDecimal getMontoCubierto() {
-        return montoCubierto;
-    }
-
-    public void setMontoCubierto(BigDecimal montoCubierto) {
-        this.montoCubierto = montoCubierto;
-    }
-
-    public BigDecimal getMontoCubiertoSoles() {
-        return montoCubiertoSoles;
-    }
-
-    public void setMontoCubiertoSoles(BigDecimal montoCubiertoSoles) {
-        this.montoCubiertoSoles = montoCubiertoSoles;
-    }
-
     public Set<MedicoDerivaAtiende> getMedicoDerivaAtiendes() {
-        return medicoDerivaAtiendes;
+        return this.medicoDerivaAtiendes;
     }
-
+    
     public void setMedicoDerivaAtiendes(Set<MedicoDerivaAtiende> medicoDerivaAtiendes) {
         this.medicoDerivaAtiendes = medicoDerivaAtiendes;
-    }
-
-    public Procedimiento getProcedimiento() {
-        return procedimiento;
-    }
-
-    public void setProcedimiento(Procedimiento procedimiento) {
-        this.procedimiento = procedimiento;
-    }
-
-    public BigDecimal getMontoProcedimiento() {
-        return montoProcedimiento;
-    }
-
-    public void setMontoProcedimiento(BigDecimal montoProcedimiento) {
-        this.montoProcedimiento = montoProcedimiento;
     }
 
 

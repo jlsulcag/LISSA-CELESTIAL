@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14/06/2017 04:06:49 PM by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +14,7 @@ public class PaqueteFondoSolidaridad implements java.io.Serializable {
     private String estado;
     private Set<PaqueteFondoDetalle> paqueteFondoDetalles = new HashSet<PaqueteFondoDetalle>(0);
     private Set<ServiciosFondoSolidaridad> serviciosFondoSolidaridads = new HashSet<ServiciosFondoSolidaridad>(0);
+
     public static final int DEFECTO = -1, DATO = 3;
     private int op = -1;
 
@@ -81,14 +82,14 @@ public class PaqueteFondoSolidaridad implements java.io.Serializable {
     public void setOp(int op) {
         this.op = op;
     }
-    
+
     @Override
     public String toString() {
         switch (op) {
             case DATO:
                 return getPaquete();
             default:
-                return "<Seleccione>";
+                return "<SELECCIONE>";
         }
     }
 

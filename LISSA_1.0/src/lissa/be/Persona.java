@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -24,7 +24,6 @@ public class Persona  implements java.io.Serializable {
      private Date fechaReg;
      private String direccion;
      private String telefono;
-     private Boolean estado;
      private String gradoInstruccion;
      private String lugarNacimiento;
      private String lugarProcedencia;
@@ -41,6 +40,7 @@ public class Persona  implements java.io.Serializable {
      private String numeroDetalle;
      private String urbanizacion;
      private String autorizaUsoDatos;
+     private Boolean estado;
      private Set<HistoriaClinica> historiaClinicas = new HashSet<HistoriaClinica>(0);
      private Set<PersonaEmpresa> personaEmpresas = new HashSet<PersonaEmpresa>(0);
      private Set<Paciente> pacientes = new HashSet<Paciente>(0);
@@ -49,7 +49,6 @@ public class Persona  implements java.io.Serializable {
      private Set<Cita> citas = new HashSet<Cita>(0);
      private Set<Medico> medicos = new HashSet<Medico>(0);
      private Set<SeguroVidaUsaPersona> seguroVidaUsaPersonas = new HashSet<SeguroVidaUsaPersona>(0);
-     private Persona oPersona;
 
     public Persona() {
     }
@@ -58,12 +57,7 @@ public class Persona  implements java.io.Serializable {
     public Persona(int idPersona) {
         this.idPersona = idPersona;
     }
-    
-    public Persona(Persona per){
-        this.oPersona = per;
-    }
-    
-    public Persona(int idPersona, PeEstadoCivil peEstadoCivil, TipoDocIdentidad tipoDocIdentidad, Ubigeo ubigeo, String nombre, String apellidoPaterno, Date fechaNacimiento, String numeroDocumento, String apellidoMaterno, Date fechaReg, String direccion, String telefono, Boolean estado, String gradoInstruccion, String lugarNacimiento, String lugarProcedencia, String sexo, String ocupacion, String correoElectronico, Integer totalHijosVivos, Integer numTotalDependientes, byte[] foto, String domicioFiscal, String avJr, String direccionDf, String numero, String numeroDetalle, String urbanizacion, String autorizaUsoDatos, Set<HistoriaClinica> historiaClinicas, Set<PersonaEmpresa> personaEmpresas, Set<Paciente> pacientes, Set<FondoSolidaridad> fondoSolidaridads, Set<Usuario> usuarios, Set<Cita> citas, Set<Medico> medicos, Set<SeguroVidaUsaPersona> seguroVidaUsaPersonas) {
+    public Persona(int idPersona, PeEstadoCivil peEstadoCivil, TipoDocIdentidad tipoDocIdentidad, Ubigeo ubigeo, String nombre, String apellidoPaterno, Date fechaNacimiento, String numeroDocumento, String apellidoMaterno, Date fechaReg, String direccion, String telefono, String gradoInstruccion, String lugarNacimiento, String lugarProcedencia, String sexo, String ocupacion, String correoElectronico, Integer totalHijosVivos, Integer numTotalDependientes, byte[] foto, String domicioFiscal, String avJr, String direccionDf, String numero, String numeroDetalle, String urbanizacion, String autorizaUsoDatos, Boolean estado, Set<HistoriaClinica> historiaClinicas, Set<PersonaEmpresa> personaEmpresas, Set<Paciente> pacientes, Set<FondoSolidaridad> fondoSolidaridads, Set<Usuario> usuarios, Set<Cita> citas, Set<Medico> medicos, Set<SeguroVidaUsaPersona> seguroVidaUsaPersonas) {
        this.idPersona = idPersona;
        this.peEstadoCivil = peEstadoCivil;
        this.tipoDocIdentidad = tipoDocIdentidad;
@@ -76,7 +70,6 @@ public class Persona  implements java.io.Serializable {
        this.fechaReg = fechaReg;
        this.direccion = direccion;
        this.telefono = telefono;
-       this.estado = estado;
        this.gradoInstruccion = gradoInstruccion;
        this.lugarNacimiento = lugarNacimiento;
        this.lugarProcedencia = lugarProcedencia;
@@ -91,8 +84,9 @@ public class Persona  implements java.io.Serializable {
        this.direccionDf = direccionDf;
        this.numero = numero;
        this.numeroDetalle = numeroDetalle;
-       this.urbanizacion = urbanizacion;       
+       this.urbanizacion = urbanizacion;
        this.autorizaUsoDatos = autorizaUsoDatos;
+       this.estado = estado;
        this.historiaClinicas = historiaClinicas;
        this.personaEmpresas = personaEmpresas;
        this.pacientes = pacientes;
@@ -186,13 +180,6 @@ public class Persona  implements java.io.Serializable {
     
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-    public Boolean getEstado() {
-        return this.estado;
-    }
-    
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
     }
     public String getGradoInstruccion() {
         return this.gradoInstruccion;
@@ -299,13 +286,19 @@ public class Persona  implements java.io.Serializable {
     public void setUrbanizacion(String urbanizacion) {
         this.urbanizacion = urbanizacion;
     }
-    
     public String getAutorizaUsoDatos() {
         return this.autorizaUsoDatos;
     }
     
     public void setAutorizaUsoDatos(String autorizaUsoDatos) {
         this.autorizaUsoDatos = autorizaUsoDatos;
+    }
+    public Boolean getEstado() {
+        return this.estado;
+    }
+    
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
     public Set<HistoriaClinica> getHistoriaClinicas() {
         return this.historiaClinicas;
@@ -364,12 +357,7 @@ public class Persona  implements java.io.Serializable {
         this.seguroVidaUsaPersonas = seguroVidaUsaPersonas;
     }
 
-    @Override
-    public String toString() {
-        return oPersona.getNombre().trim() + " " + oPersona.getApellidoPaterno().trim() + " " + oPersona.getApellidoMaterno().trim();
-    }
 
-    
 
 
 }

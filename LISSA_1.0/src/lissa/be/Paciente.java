@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -22,26 +22,15 @@ public class Paciente  implements java.io.Serializable {
      private String horaIngreso;
      private Especialidad especialidad;
      private Usuario usuario;
+
+
+
      private Set<Comprobante> comprobantes = new HashSet<Comprobante>(0);
 
     public Paciente() {
     }
 
-	
-    public Paciente(int idpaciente, Persona persona, Date fechaIngreso) {
-        this.idpaciente = idpaciente;
-        this.persona = persona;
-        this.fechaIngreso = fechaIngreso;
-    }
-    public Paciente(int idpaciente, Persona persona, Date fechaIngreso, Integer numeroAtencion, String tipoIngreso, Integer idHistoriaClinica, Set<Comprobante> comprobantes) {
-       this.idpaciente = idpaciente;
-       this.persona = persona;
-       this.fechaIngreso = fechaIngreso;
-       this.numeroAtencion = numeroAtencion;
-       this.tipoIngreso = tipoIngreso;
-       this.idHistoriaClinica = idHistoriaClinica;
-       this.comprobantes = comprobantes;
-    }
+
    
     public int getIdpaciente() {
         return this.idpaciente;
@@ -85,28 +74,27 @@ public class Paciente  implements java.io.Serializable {
     public void setIdHistoriaClinica(Integer idHistoriaClinica) {
         this.idHistoriaClinica = idHistoriaClinica;
     }
+    public String getEstado() {
+        return this.estado;
+    }
+    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public String getHoraIngreso() {
+        return this.horaIngreso;
+    }
+    
+    public void setHoraIngreso(String horaIngreso) {
+        this.horaIngreso = horaIngreso;
+    }
+    
     public Set<Comprobante> getComprobantes() {
         return this.comprobantes;
     }
     
     public void setComprobantes(Set<Comprobante> comprobantes) {
         this.comprobantes = comprobantes;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getHoraIngreso() {
-        return horaIngreso;
-    }
-
-    public void setHoraIngreso(String horaIngreso) {
-        this.horaIngreso = horaIngreso;
     }
 
     public Especialidad getEspecialidad() {

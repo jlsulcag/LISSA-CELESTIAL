@@ -2,7 +2,6 @@
 package lissa.bl;
 
 import java.util.ArrayList;
-import lissa.be.AtencionOcupacional;
 import lissa.be.PersonaJuridica;
 import lissa.dao.PersonaJuridicaDao;
 
@@ -30,10 +29,5 @@ public class PersonaJuridicaBl {
     public PersonaJuridica buscarxRuc(String ruc) {
         dao = new PersonaJuridicaDao();
         return dao.buscarxRuc(ruc);
-    }
-
-    public PersonaJuridica buscarxId(AtencionOcupacional oAtencionOcupacional) {
-        dao = new PersonaJuridicaDao();
-        return dao.buscarxId(oAtencionOcupacional);
     }
 }

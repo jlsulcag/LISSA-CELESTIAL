@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -31,19 +31,19 @@ public class Comprobante  implements java.io.Serializable {
      private Integer numeroOperacion;
      private Integer grupoNumeracion;
      private String tipoPaciente;
-     private Set<Pago> pagos = new HashSet<Pago>(0);
      private Set<ItemsComprobante> itemsComprobantes = new HashSet<ItemsComprobante>(0);
 
     public Comprobante() {
     }
 
 	
-    public Comprobante(int idComprobante, Caja caja, Paciente paciente) {
+    public Comprobante(int idComprobante, Caja caja, Paciente paciente, String tipoPaciente) {
         this.idComprobante = idComprobante;
         this.caja = caja;
         this.paciente = paciente;
+        this.tipoPaciente = tipoPaciente;
     }
-    public Comprobante(int idComprobante, Beneficio beneficio, Caja caja, Paciente paciente, TipoComprobante tipoComprobante, Boolean estado, Date fechaBoleta, Integer idPersonaRucFactura, Date fechaReg, Integer numeroBoleta, BigDecimal subTotal, BigDecimal montoIgv, BigDecimal montoTotal, String motivoAnulacion, Integer idUsuario, Integer numeroOperacion, Integer grupoNumeracion, Set<Pago> pagos, Set<ItemsComprobante> itemsComprobantes) {
+    public Comprobante(int idComprobante, Beneficio beneficio, Caja caja, Paciente paciente, TipoComprobante tipoComprobante, Boolean estado, Date fechaBoleta, Integer idPersonaRucFactura, Date fechaReg, Integer numeroBoleta, BigDecimal subTotal, BigDecimal montoIgv, BigDecimal montoTotal, String motivoAnulacion, Integer idUsuario, Integer numeroOperacion, Integer grupoNumeracion, String tipoPaciente, Set<ItemsComprobante> itemsComprobantes) {
        this.idComprobante = idComprobante;
        this.beneficio = beneficio;
        this.caja = caja;
@@ -61,7 +61,7 @@ public class Comprobante  implements java.io.Serializable {
        this.idUsuario = idUsuario;
        this.numeroOperacion = numeroOperacion;
        this.grupoNumeracion = grupoNumeracion;
-       this.pagos = pagos;
+       this.tipoPaciente = tipoPaciente;
        this.itemsComprobantes = itemsComprobantes;
     }
    
@@ -184,12 +184,12 @@ public class Comprobante  implements java.io.Serializable {
     public void setGrupoNumeracion(Integer grupoNumeracion) {
         this.grupoNumeracion = grupoNumeracion;
     }
-    public Set<Pago> getPagos() {
-        return this.pagos;
+    public String getTipoPaciente() {
+        return this.tipoPaciente;
     }
     
-    public void setPagos(Set<Pago> pagos) {
-        this.pagos = pagos;
+    public void setTipoPaciente(String tipoPaciente) {
+        this.tipoPaciente = tipoPaciente;
     }
     public Set<ItemsComprobante> getItemsComprobantes() {
         return this.itemsComprobantes;
@@ -197,14 +197,6 @@ public class Comprobante  implements java.io.Serializable {
     
     public void setItemsComprobantes(Set<ItemsComprobante> itemsComprobantes) {
         this.itemsComprobantes = itemsComprobantes;
-    }
-
-    public String getTipoPaciente() {
-        return tipoPaciente;
-    }
-
-    public void setTipoPaciente(String tipoPaciente) {
-        this.tipoPaciente = tipoPaciente;
     }
 
 

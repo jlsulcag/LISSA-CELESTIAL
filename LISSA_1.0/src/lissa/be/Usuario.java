@@ -1,5 +1,5 @@
 package lissa.be;
-// Generated 14-abr-2016 18:27:18 by Hibernate Tools 4.3.1
+// Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -21,6 +21,7 @@ public class Usuario  implements java.io.Serializable {
      private Date fechaReg;
      private Set<Caja> cajas = new HashSet<Caja>(0);
      private Set<UsuarioRol> usuarioRols = new HashSet<UsuarioRol>(0);
+     private Set<Permiso> permisos = new HashSet<Permiso>(0);
 
     public Usuario() {
     }
@@ -29,7 +30,7 @@ public class Usuario  implements java.io.Serializable {
     public Usuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-    public Usuario(int idUsuario, Persona persona, String nombre, String descripcion, String contrasenia, Boolean estado, Date fechaReg, Set<Caja> cajas, Set<UsuarioRol> usuarioRols) {
+    public Usuario(int idUsuario, Persona persona, String nombre, String descripcion, String contrasenia, Boolean estado, Date fechaReg, Set<Caja> cajas, Set<UsuarioRol> usuarioRols, Set<Permiso> permisos) {
        this.idUsuario = idUsuario;
        this.persona = persona;
        this.nombre = nombre;
@@ -39,6 +40,7 @@ public class Usuario  implements java.io.Serializable {
        this.fechaReg = fechaReg;
        this.cajas = cajas;
        this.usuarioRols = usuarioRols;
+       this.permisos = permisos;
     }
    
     public int getIdUsuario() {
@@ -103,6 +105,13 @@ public class Usuario  implements java.io.Serializable {
     
     public void setUsuarioRols(Set<UsuarioRol> usuarioRols) {
         this.usuarioRols = usuarioRols;
+    }
+    public Set<Permiso> getPermisos() {
+        return this.permisos;
+    }
+    
+    public void setPermisos(Set<Permiso> permisos) {
+        this.permisos = permisos;
     }
 
 

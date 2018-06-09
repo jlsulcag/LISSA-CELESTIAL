@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import lissa.be.AtencionOcupacional;
 import lissa.be.Caja;
 import lissa.be.Especialidad;
 import lissa.be.FondoPrevisionTemp;
@@ -30,7 +29,6 @@ import lissa.be.TipoDocIdentidad;
 import lissa.be.TipoHistoriaClinica;
 import lissa.be.Ubigeo;
 import lissa.be.Usuario;
-import lissa.bl.AtencionOcupacionalBl;
 import lissa.bl.PersonaBl;
 import lissa.bl.FondoPrevisionBl;
 import lissa.bl.HistoriaClinicaBl;
@@ -40,14 +38,10 @@ import lissa.bl.SeguroPersonaBl;
 import lissa.bl.EstadoCivilBl;
 import lissa.bl.FondoSolidaridadTempBl;
 import lissa.bl.PacienteBl;
-import lissa.bl.PersonaJuridicaBl;
 import lissa.bl.TipoDocIdentidadBl;
 import lissa.bl.TipoHistoriaClinicaBl;
-import lissa.bl.UbigeoBl;
 import lissa.controller.EspecialidadCtrl;
 import lissa.controller.EstadoCivilCtrl;
-import lissa.controller.EvaluacionOcuCtrl;
-import lissa.controller.ExamenOcupCtrl;
 import lissa.controller.TipoDocIdentidadCtrl;
 import lissa.controller.TipoHCCtrl;
 import lissa.table.ModeloDetalleAtencion;
@@ -58,7 +52,6 @@ import lissa.table.ModeloPersonas;
 import lissa.table.ModeloServicioFondoS;
 import lissa.table.ModelosSeguroVida;
 import lissa.util.Mensajes;
-import lissa.util.UtilUbigeo;
 import lissa.util.Utilitarios;
 
 public class JPanel_Admision extends javax.swing.JPanel {
@@ -101,14 +94,11 @@ public class JPanel_Admision extends javax.swing.JPanel {
     private ArrayList<TipoHistoriaClinica> listTipoHc;
     private TipoDocIdentidadBl oTipoDocIdentidadBl;
     private ArrayList<TipoDocIdentidad> listTipoDocIdentidad;
-    private UtilUbigeo oUtilUbigeo = null;
     private TipoDocIdentidadCtrl oTipoDocIdentidadCtrl;
     private TipoHCCtrl oTipoHCCtrl;
     private EstadoCivilCtrl oEstadoCivilCtrl;
     private EspecialidadCtrl oEspecialidadCtrl;
 
-    private AtencionOcupacional oAtencionOcupacional = null;
-    private AtencionOcupacionalBl oAtencionOcupacionalBl = null;
     private ModeloPaciente oModeloPaciente = null;
     private ArrayList<Paciente> listPaciente;
     private ArrayList<ItemsComprobante> listItemsComprobante;
@@ -132,8 +122,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         oModeloSeguro = new ModelosSeguroVida();
         tblSeguros.setModel(oModeloSeguro);
         oModeloFondoPrevision = new ModeloFondoPrevision();        
-        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();        
-        oUtilUbigeo = new UtilUbigeo(root);
+        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();   
         llenarCbxSeguro();
         
         oModeloPaciente = new ModeloPaciente();
@@ -1788,32 +1777,6 @@ public class JPanel_Admision extends javax.swing.JPanel {
         }
     }
     
-    ////////////////////////////////////////////////////
-    public void defeaultSelectedUbigeoPersonasPasticipantes(String reg, String prob, String dist, JComboBox cbxr, JComboBox cbxp, JComboBox cbxd) {
-        oUtilUbigeo.defaultSelectUbigeo(reg, prob, dist, cbxr, cbxp, cbxd);
-    }
-
-    public void eventoComboPersonasPasticipantesRegion(JComboBox cbxr, JComboBox cbxp, JComboBox cbxd, String reg, String prob, String dist) {
-        oUtilUbigeo.eventoComboRegion(cbxr, cbxp, cbxd, reg, prob, dist);
-    }
-
-    public void eventoComboPersonasPasticipantesProvincia(JComboBox cbxr, JComboBox cbxp, JComboBox cbxd, String reg, String prob, String dist) {
-        oUtilUbigeo.eventoComboProvincia(cbxr, cbxp, cbxd, reg, prob, dist);
-    }
-
-    public void eventoComboPersonasPasticipantesDistrito(JComboBox cbxr, JComboBox cbxp, JComboBox cbxd, String reg, String prob, String dist) {
-        oUtilUbigeo.eventoComboDistrito(cbxr, cbxp, cbxd, reg, prob, dist);
-    }
-    ///////////////////////////////////////////////////
-
-    private boolean esOcupacional() {
-        if (cbxTipoIngreso.getSelectedItem().toString().equals("OCUPACIONAL")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 
     private void listarIngresosPaciente(int idPersona) {
         oPacienteBl = new PacienteBl();

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<!-- Generated 07/06/2018 05:59:47 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="lissa.be.SeguroVida" table="seguro_vida" schema="public" optimistic-lock="version">
         <id name="idSeguroVida" type="int">
@@ -12,7 +12,7 @@
             <column name="descripcion" length="100" />
         </property>
         <property name="fechaReg" type="date">
-            <column name="fecha_reg" length="29" />
+            <column name="fecha_reg" length="13" />
         </property>
         <property name="estado" type="java.lang.Boolean">
             <column name="estado" />

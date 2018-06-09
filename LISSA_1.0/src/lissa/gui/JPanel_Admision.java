@@ -122,9 +122,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         oModeloSeguro = new ModelosSeguroVida();
         tblSeguros.setModel(oModeloSeguro);
         oModeloFondoPrevision = new ModeloFondoPrevision();        
-        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();   
-        llenarCbxSeguro();
-        
+        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();  
         oModeloPaciente = new ModeloPaciente();
         tblIngresos.setModel(oModeloPaciente);
         oModeloDetalleAtencion = new ModeloDetalleAtencion();
@@ -1852,6 +1850,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
     }
 
     void iniciar() {
+        llenarCbxSeguro();
         //llenarCbxTipoHc();
         oTipoHCCtrl = new TipoHCCtrl(root);
         oTipoHCCtrl.rellenaTipoHC(cbxTipohc);

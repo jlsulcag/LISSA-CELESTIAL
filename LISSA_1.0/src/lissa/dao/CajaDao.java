@@ -98,9 +98,9 @@ public class CajaDao {
         } catch (HibernateException he) {
             manejaExcepcion(he);
         }
-//        finally {
-//            sesion.close();
-//        }
+        finally {
+            sesion.close();
+        }
         return obj;
     }
 

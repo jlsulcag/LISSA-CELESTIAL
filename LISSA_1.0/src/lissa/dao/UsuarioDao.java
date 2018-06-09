@@ -9,7 +9,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class UsuarioDao {    
+public class UsuarioDao {
+
     private Session sesion;
     private Transaction tx;
     private Usuario oUsuario;
@@ -24,7 +25,7 @@ public class UsuarioDao {
             tx.commit();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-        } 
+        }
 //        finally {
 //            sesion.close();
 //        }
@@ -42,16 +43,21 @@ public class UsuarioDao {
     }
 
     public Usuario buscarUsuario(String usuario, String clave) {
-        oUsuario = new Usuario();
-        iniciarOperacion();
-        //query hql para la consulta
-        String hql = "from Usuario as u where u.nombre='" + usuario + "' and u.contrasenia='" + clave + "'";
-        Query query = sesion.createQuery(hql);
-        query.setMaxResults(1);
-        oUsuario = (Usuario) query.uniqueResult();
-        //listPersona = session.createQuery("from Persona as p where p.numeroDocumento='"+numeroDocumento+"'").list();
-        sesion.getTransaction().commit();
-        //oPersona = listPersona.get(0);       
+        try {
+            oUsuario = new Usuario();
+            iniciarOperacion();
+            //query hql para la consulta
+            String hql = "from Usuario as u where u.nombre='" + usuario + "' and u.contrasenia='" + clave + "'";
+            Query query = sesion.createQuery(hql);
+            query.setMaxResults(1);
+            oUsuario = (Usuario) query.uniqueResult();
+            //sesion.getTransaction().commit(); 
+        } catch (Exception e) {
+            oUsuario = null;
+        }finally{
+            sesion.close();
+        }      
+              
         return oUsuario;
     }
 
@@ -79,8 +85,8 @@ public class UsuarioDao {
         }
         return res;
     }
-    
-    public  ArrayList<Usuario> buscar(String ref) {
+
+    public ArrayList<Usuario> buscar(String ref) {
         ArrayList<Usuario> list = null;
         try {
             iniciarOperacion();

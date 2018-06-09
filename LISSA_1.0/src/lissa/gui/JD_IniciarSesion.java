@@ -120,11 +120,6 @@ public final class JD_IniciarSesion extends javax.swing.JDialog {
 
         txpClave.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txpClave.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txpClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txpClaveActionPerformed(evt);
-            }
-        });
         txpClave.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txpClaveKeyPressed(evt);
@@ -288,10 +283,6 @@ public final class JD_IniciarSesion extends javax.swing.JDialog {
     private void txfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfUsuarioActionPerformed
         txpClave.requestFocus();
     }//GEN-LAST:event_txfUsuarioActionPerformed
-
-    private void txpClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txpClaveActionPerformed
-        //btnAceptar.doClick();
-    }//GEN-LAST:event_txpClaveActionPerformed
 
     private void txfUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfUsuarioKeyPressed
         escapeExit(evt);

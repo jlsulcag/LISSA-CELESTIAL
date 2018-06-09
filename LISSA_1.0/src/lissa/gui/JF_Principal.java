@@ -648,6 +648,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         insertarInternalFrames(jifAdministrarMedico);
+        jifAdministrarMedico.iniciar();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jmHistoriaClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmHistoriaClinicaActionPerformed
@@ -714,6 +715,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jifAdmision.iniciar();
         jifAdmision.enviarDatos(user, oPersona, oRol);
         jifAdmision.enviarDatosCaja(buscarCaja());
+        jifAdmision.iniciar();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed

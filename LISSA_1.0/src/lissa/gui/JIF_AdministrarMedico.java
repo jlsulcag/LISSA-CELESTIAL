@@ -49,9 +49,7 @@ public class JIF_AdministrarMedico extends javax.swing.JInternalFrame {
         tblResultados.setModel(oModeloMedico);
         oModeloEspecialidad = new ModeloEspecialidad();
         tblEspecialidad.setModel(oModeloEspecialidad);
-        llenarCbxTipoMedico();
-        llenarCbxEspecialidad();
-        personalizaVistaTabla();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -1054,5 +1052,11 @@ public class JIF_AdministrarMedico extends javax.swing.JInternalFrame {
         oEspecialidad = oBlEspecialidad.buscar(oEspecialidad.getIdEspecialidad());
         //oModeloEspecialidad.clear();
         oModeloEspecialidad.add(oEspecialidad);
+    }
+
+    void iniciar() {
+        llenarCbxTipoMedico();
+        llenarCbxEspecialidad();
+        personalizaVistaTabla();
     }
 }

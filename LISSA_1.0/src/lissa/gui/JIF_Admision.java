@@ -98,5 +98,6 @@ public class JIF_Admision extends javax.swing.JInternalFrame {
         jPanelAdmision.iniciar();
     }
 
+
     
 }

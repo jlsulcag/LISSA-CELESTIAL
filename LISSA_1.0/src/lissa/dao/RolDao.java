@@ -56,7 +56,9 @@ public class RolDao {
             list = (ArrayList<Rol>) query.list();
         } catch (HibernateException e) {
             manejaExcepcion(e);
-        } 
+        } finally{
+            sesion.close();
+        }
         return list;
     }
     

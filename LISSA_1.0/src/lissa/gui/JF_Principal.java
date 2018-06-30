@@ -77,9 +77,9 @@ public class JF_Principal extends javax.swing.JFrame {
     public JPanel_Admision jpAdmision;
     public JIF_AddEspecialidad jifAddEspecialidad;
     public JIF_AdministrarSeguro jifAdministrarSeguro;
-    public JIF_PagoMedicos jifPagoMedicos;    
+    public JIF_PagoMedicos jifPagoMedicos;
     public JIF_ComprasResumen jifComprasResumen;
-    public JIF_RepVentas jifRepVentas;    
+    public JIF_RepVentas jifRepVentas;
     public JIF_AdministrarServicio jifAdministrarServicio;
     public JD_VisorHc jdVisorHc;
     public JIF_ServicioAdd jifServicioAdd;
@@ -112,7 +112,7 @@ public class JF_Principal extends javax.swing.JFrame {
         }
         //fin configuracion
         jifComprasResumen = new JIF_ComprasResumen(this);
-        jifRepVentas = new JIF_RepVentas(this);        
+        jifRepVentas = new JIF_RepVentas(this);
         jifBuscarProcedimiento = new JIF_BuscarProcedimiento(this);
 
         //carga de iniciar sesion
@@ -656,7 +656,7 @@ public class JF_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmHistoriaClinicaActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-    
+
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
@@ -668,15 +668,9 @@ public class JF_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        if (oRol.getDenominacion().trim().equals("FARMACIA")) {
-            
-        } else {
-            insertarInternalFrames(jifCerrarCaja);
-            jifCerrarCaja.cargarDatosUser(user, oPersona, oRol);
-            jifCerrarCaja.inicializar();
-        }
-
-
+        insertarInternalFrames(jifCerrarCaja);
+        jifCerrarCaja.cargarDatosUser(user, oPersona, oRol);
+        jifCerrarCaja.inicializar();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jmi006ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi006ActionPerformed
@@ -729,7 +723,7 @@ public class JF_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jmi007ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi007ActionPerformed
-        
+
     }//GEN-LAST:event_jmi007ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -951,7 +945,7 @@ public class JF_Principal extends javax.swing.JFrame {
         //Menu configuraciones
         jmbPrincipal.add(jmConfiguracion);
         jmbPrincipal.add(Box.createHorizontalGlue());
-        jmbPrincipal.add(jmAyuda);        
+        jmbPrincipal.add(jmAyuda);
 
         jmbPrincipal.updateUI();
     }
@@ -985,7 +979,7 @@ public class JF_Principal extends javax.swing.JFrame {
         //Menu configuraciones
         jmbPrincipal.add(jmConfiguracion);
         //jmConfiguracion.removeAll();
-        
+
         //
         jmbPrincipal.add(jmMiCuenta);
         jmbPrincipal.add(Box.createHorizontalGlue());
@@ -1077,7 +1071,6 @@ public class JF_Principal extends javax.swing.JFrame {
         jmbPrincipal.add(Box.createHorizontalGlue());
         jmbPrincipal.add(jmAyuda);
 
-        
         jmbPrincipal.updateUI();
     }
 
@@ -1097,7 +1090,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jmbPrincipal.removeAll();
         habilitarLoguin();
         jmbPrincipal.add(jmInicio);
-        jmbPrincipal.add(jmAdmision);        
+        jmbPrincipal.add(jmAdmision);
         jmbPrincipal.add(jmHistoriaClinica);
         jmHistoriaClinica.removeAll();
         jmbPrincipal.add(jmMiCuenta);

@@ -87,8 +87,6 @@ public class CajaDao {
 //        }
 //        return list;
 //    }
-    
-
     public Caja buscarPorIdusuario(Usuario user) {
         try {
             iniciarOperacion();
@@ -97,8 +95,7 @@ public class CajaDao {
             obj = (Caja) query.uniqueResult();
         } catch (HibernateException he) {
             manejaExcepcion(he);
-        }
-        finally {
+        } finally {
             sesion.close();
         }
         return obj;
@@ -120,15 +117,15 @@ public class CajaDao {
     }
 
     public ArrayList<Caja> listarxUsuario(Usuario user, String caja) {
-    try {
+        try {
             iniciarOperacion();
-            String hql = "select A from Caja A inner join A.usuario B inner join A.areaCaja C where B.idUsuario=" + user.getIdUsuario() + " and C.modulo = '"+caja + "' order by A.fechaApertura desc, A.idcaja desc";
+            String hql = "select A from Caja A left join fetch A.usuario B left join fetch A.areaCaja C where B.idUsuario=" + user.getIdUsuario() + " and C.modulo = '" + caja + "' order by A.fechaApertura desc, A.idcaja desc";
             Query query = sesion.createQuery(hql);
             list = (ArrayList<Caja>) query.list();
         } catch (HibernateException e) {
             manejaExcepcion(e);
-        }
-        finally{
+        } 
+        finally {
             sesion.close();
         }
         return list;

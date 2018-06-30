@@ -152,7 +152,8 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1)
+                        .addGap(77, 77, 77)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -284,7 +285,7 @@ public class JIF_BuscarProcedimiento extends javax.swing.JInternalFrame {
         oModeloLaboratorioAd.clear();
         listarLaboratorioFull();
         personalizaVistaTabla();
-        listProcedimiento.clear();
+        //listProcedimiento.clear();
         tblLaboratorio.getColumnModel().getColumn(4).setCellEditor(new TCellEditorLaboratorio(new JCheckBox()));
         jTabbedPane1.setSelectedIndex(0);
     }

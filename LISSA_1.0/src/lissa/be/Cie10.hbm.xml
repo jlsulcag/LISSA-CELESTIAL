@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Cie10" table="cie10" schema="public" optimistic-lock="version">
+        <id name="idCie10" type="int">
+            <column name="id_cie10" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="examenOcupacional" class="lissa.be.ExamenOcupacional" fetch="select">
+            <column name="id_examenocupacional" />
+        </many-to-one>
+        <property name="codigo" type="string">
+            <column name="codigo" length="20" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="300" />
+        </property>
+    </class>
+</hibernate-mapping>

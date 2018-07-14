@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2016 18:27:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.EvaluacionOcupacional" table="evaluacion_ocupacional" schema="public" optimistic-lock="version">
+        <id name="idevaluacionocupacional" type="int">
+            <column name="idevaluacionocupacional" />
+            <generator class="increment" />
+        </id>
+        <property name="evaluacion" type="string">
+            <column name="evaluacion" length="60" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="estado" length="10"/>
+        </property>
+        <set name="atencionOcupacionals" table="atencion_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_evaluacion" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.AtencionOcupacional" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.CertMedicoOcupacional" table="cert_medico_ocupacional" schema="public" optimistic-lock="version">
+        <id name="idcertmedicoocupacional" type="long">
+            <column name="idcertmedicoocupacional" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="atencionOcupacional" class="lissa.be.AtencionOcupacional" fetch="select">
+            <column name="id_atencionocupacional" not-null="true" />
+        </many-to-one>
+        <many-to-one name="condicion" class="lissa.be.Condicion" fetch="select">
+            <column name="id_condicion" not-null="true" />
+        </many-to-one>
+       
+        <property name="idMedico" type="java.lang.Long">
+            <column name="id_medico" />
+        </property>
+        <set name="cmoRecomendacioneses" table="cmo_recomendaciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cmo" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.CmoRecomendaciones" />
+        </set>
+        <set name="cmoObservacioneses" table="cmo_observaciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cmo" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.CmoObservaciones" />
+        </set>
+        <set name="fmoRestriccioneses" table="fmo_restricciones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_cmo" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.FmoRestricciones" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.ExamenOcupacional" table="examen_ocupacional" schema="public" optimistic-lock="version">
+        <id name="idexamenocupacional" type="long">
+            <column name="idexamenocupacional" />
+            <generator class="increment" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="100" not-null="true" />
+        </property>
+        <set name="restriccions" table="restriccion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_examenocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Restriccion" />
+        </set>
+        <set name="cie10s" table="cie10" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_examenocupacional" />
+            </key>
+            <one-to-many class="lissa.be.Cie10" />
+        </set>
+        <set name="recomendacions" table="recomendacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_examenocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.Recomendacion" />
+        </set>
+        <set name="motivoObservacions" table="motivo_observacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_examenocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.MotivoObservacion" />
+        </set>
+    </class>
+</hibernate-mapping>

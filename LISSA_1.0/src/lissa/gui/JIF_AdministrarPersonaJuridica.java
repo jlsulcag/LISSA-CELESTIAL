@@ -36,6 +36,7 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
     public static final int JIF_EMITIR_COMPROBANTE = 1;
     public static final int JIF_EMITIR_COMPROBANTE2 = 2;
     public static final int JIF_VENTAS = 3;
+    public static final int JIF_OCUPACIONAL = 3;
 
     public JIF_AdministrarPersonaJuridica(JF_Principal root) {
         initComponents();
@@ -499,7 +500,6 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
         this.txfActividadEconomica.setText(beanTabla.getActividadEcon());
         this.txfDireccion.setText(beanTabla.getDireccion());
         this.txfTelefono.setText(beanTabla.getTelefono());
-        
 
     }
 
@@ -512,6 +512,9 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
         switch (getInvocador()) {
             case JIF_EMITIR_COMPROBANTE:
                 root.jifEmitirComprobante.cargarDatosPersonaJuridica(beanTabla);
+                break;
+            case JIF_OCUPACIONAL:
+                root.jifOcupacional.cargarPersonaJuridica(beanTabla);
                 break;
         }
     }
@@ -598,7 +601,7 @@ public class JIF_AdministrarPersonaJuridica extends javax.swing.JInternalFrame {
             Mensajes.msjRegCorrecta();
         } else {
             Mensajes.msjRegError();
-        }      
+        }
     }
 
     private void actualizar() {

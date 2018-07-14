@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="lissa.be.MotivoObservacion" optimistic-lock="version" schema="public" table="motivo_observacion">
+    <id name="idmotivoobservacion" type="long">
+      <column name="idmotivoobservacion"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one class="lissa.be.ExamenOcupacional" fetch="select" name="examenOcupacional">
+      <column name="id_examenocupacional" not-null="true"/>
+    </many-to-one>
+    <property name="descripcion" type="string">
+      <column length="200" name="descripcion" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="certMedicoOcupacionals" table="cert_medico_ocupacional">
+      <key>
+        <column name="id_motivoobservacion"/>
+      </key>
+      <one-to-many class="lissa.be.CertMedicoOcupacional"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,6 +1,10 @@
 package lissa.be;
 // Generated 07/06/2018 05:59:42 PM by Hibernate Tools 4.3.1
 
+import java.util.HashSet;
+import java.util.Set;
+
+
 
 
 /**
@@ -105,7 +109,6 @@ public class Empresa  implements java.io.Serializable {
     public void setTelefonoCel(String telefonoCel) {
         this.telefonoCel = telefonoCel;
     }
-
 
 
 

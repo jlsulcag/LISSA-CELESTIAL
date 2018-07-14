@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.Recomendacion" table="recomendacion" schema="public" optimistic-lock="version">
+        <id name="idrecomendacion" type="long">
+            <column name="idrecomendacion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="examenOcupacional" class="lissa.be.ExamenOcupacional" fetch="select">
+            <column name="id_examenocupacional" not-null="true" />
+        </many-to-one>
+        <property name="descipcion" type="string">
+            <column name="descipcion" length="200" />
+        </property>
+        <set name="certMedicoOcupacionals" table="cert_medico_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_recomendacion" />
+            </key>
+            <one-to-many class="lissa.be.CertMedicoOcupacional" />
+        </set>
+    </class>
+</hibernate-mapping>

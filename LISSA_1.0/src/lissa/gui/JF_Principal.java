@@ -24,6 +24,8 @@ import lissa.be.Usuario;
 import lissa.bl.CajaBl;
 import lissa.conf.FileConf;
 import lissa.gui.clinica.JIF_ServicioAdd;
+import lissa.gui.ocupacional.JIF_Certificados;
+import lissa.gui.ocupacional.JIF_Ocupacional;
 import lissa.gui.rep.JIF_ComprasResumen;
 import lissa.gui.rep.JIF_RecaudacionTipoPaciente;
 import lissa.gui.rep.JIF_RepVentas;
@@ -83,6 +85,8 @@ public class JF_Principal extends javax.swing.JFrame {
     public JIF_AdministrarServicio jifAdministrarServicio;
     public JD_VisorHc jdVisorHc;
     public JIF_ServicioAdd jifServicioAdd;
+    public JIF_Ocupacional jifOcupacional;
+    public JIF_Certificados jifCertificados;
 
 //    private JD_BackUpDB_Creator_Sirec bcpc = null;
 //    private JD_BackUpDB_Restore_Sirec bcpr = null;
@@ -157,6 +161,8 @@ public class JF_Principal extends javax.swing.JFrame {
         jifAdministrarServicio = new JIF_AdministrarServicio(this);
         jdVisorHc = new JD_VisorHc(this);
         jifServicioAdd = new JIF_ServicioAdd(this);
+        jifOcupacional = new JIF_Ocupacional(this);
+        jifCertificados = new JIF_Certificados(this);
 
     }
 
@@ -205,6 +211,8 @@ public class JF_Principal extends javax.swing.JFrame {
         Ayuda = new javax.swing.JMenuItem();
         JMAcercaDe = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jmOcupacional = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LISSA");
@@ -554,6 +562,18 @@ public class JF_Principal extends javax.swing.JFrame {
 
         jmbPrincipal.add(jmAyuda);
 
+        jmOcupacional.setText("Salud Ocupacional");
+
+        jMenuItem2.setText("Salud Ocupacional");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jmOcupacional.add(jMenuItem2);
+
+        jmbPrincipal.add(jmOcupacional);
+
         setJMenuBar(jmbPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -709,7 +729,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jifAdmision.iniciar();
         jifAdmision.enviarDatos(user, oPersona, oRol);
         jifAdmision.enviarDatosCaja(buscarCaja());
-        jifAdmision.iniciar();
+        //jifAdmision.iniciar();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
@@ -735,6 +755,11 @@ public class JF_Principal extends javax.swing.JFrame {
         insertarInternalFrames(jifAdministrarServicio);
         jifAdministrarServicio.iniciar();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        insertarInternalFrames(jifOcupacional);
+        jifOcupacional.iniciar();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     public static void main(String args[]) {
 
@@ -766,6 +791,7 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem7;
@@ -781,6 +807,7 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jmHistoriaClinica;
     private javax.swing.JMenu jmInicio;
     private javax.swing.JMenu jmMiCuenta;
+    private javax.swing.JMenu jmOcupacional;
     private javax.swing.JMenu jmPersonal;
     private javax.swing.JMenu jmReportes;
     private javax.swing.JMenuBar jmbPrincipal;
@@ -1090,9 +1117,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jmbPrincipal.removeAll();
         habilitarLoguin();
         jmbPrincipal.add(jmInicio);
-        jmbPrincipal.add(jmAdmision);
-        jmbPrincipal.add(jmHistoriaClinica);
-        jmHistoriaClinica.removeAll();
+        jmbPrincipal.add(jmOcupacional);
         jmbPrincipal.add(jmMiCuenta);
         jmbPrincipal.add(Box.createHorizontalGlue());
         jmbPrincipal.add(jmAyuda);

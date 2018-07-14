@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/07/2018 12:13:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="lissa.be.AtencionOcupacional" table="atencion_ocupacional" schema="public" optimistic-lock="version">
+        <id name="idatencionocupacional" type="int">
+            <column name="idatencionocupacional" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="personaJuridica" class="lissa.be.PersonaJuridica" fetch="select">
+            <column name="id_empresa" not-null="true" />
+        </many-to-one>
+        <many-to-one name="evaluacionOcupacional" class="lissa.be.EvaluacionOcupacional" fetch="select">
+            <column name="id_evaluacion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="historiaClinica" class="lissa.be.HistoriaClinica" fetch="select">
+            <column name="id_historiaclinica" not-null="true" />
+        </many-to-one>
+        <many-to-one name="puestoLaboral" class="lissa.be.PuestoLaboral" fetch="select">
+            <column name="id_puestolaboral" />
+        </many-to-one>
+        <property name="fechaExamen" type="date">
+            <column name="fecha_examen" length="13" not-null="true" />
+        </property>
+        <property name="fechaEmision" type="date">
+            <column name="fecha_emision" length="13" not-null="true" />
+        </property>
+        <property name="edadIngreso" type="java.lang.Integer">
+            <column name="edad_ingreso" />
+        </property>
+        <property name="fechaReg" type="date">
+            <column name="fecha_reg" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

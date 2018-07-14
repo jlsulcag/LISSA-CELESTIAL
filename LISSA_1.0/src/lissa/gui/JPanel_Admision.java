@@ -121,8 +121,8 @@ public class JPanel_Admision extends javax.swing.JPanel {
         tblResultados.setModel(modeloPersonas);
         oModeloSeguro = new ModelosSeguroVida();
         tblSeguros.setModel(oModeloSeguro);
-        oModeloFondoPrevision = new ModeloFondoPrevision();        
-        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();  
+        oModeloFondoPrevision = new ModeloFondoPrevision();
+        oModeloFondoPrevisionTemp = new ModeloFondoPrevisionTemp();
         oModeloPaciente = new ModeloPaciente();
         tblIngresos.setModel(oModeloPaciente);
         oModeloDetalleAtencion = new ModeloDetalleAtencion();
@@ -911,7 +911,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
             if (tblResultados.getRowSelectionAllowed() && tblResultados.getSelectedRow() != -1) {
                 try {
                     resetComponent();
-                    obtenerDatosPaciente();                    
+                    obtenerDatosPaciente();
                     estadoSectionIngreso(true);
                     estadoTextFields(false);
                     activarBotones(true, true, false, true);
@@ -961,7 +961,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
             } else {
                 Mensajes.msjRegError();
             }
-        } else {            
+        } else {
             Mensajes.msjValidarIngreso();
             paintComponentesIngreso();
         }
@@ -994,16 +994,16 @@ public class JPanel_Admision extends javax.swing.JPanel {
     }//GEN-LAST:event_formComponentHidden
 
     private void cbxTipoIngresoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxTipoIngresoItemStateChanged
-       
+
     }//GEN-LAST:event_cbxTipoIngresoItemStateChanged
 
     private void btnAbrirAtencionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirAtencionesActionPerformed
         if (oPersona != null) {
-            if(oCaja != null){
+            if (oCaja != null) {
                 insetarAtencionPaciente();
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Aperture caja antes realizar cualquier operación", "Atención", JOptionPane.ERROR_MESSAGE);
-            }            
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Cargue los datos de un persona", "Atención", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -1278,7 +1278,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         if (cbxEstadoCivil.getSelectedIndex() > 0) {
             oPersona.setPeEstadoCivil((PeEstadoCivil) cbxEstadoCivil.getSelectedItem());
         }
-       
+
         if (cbxAutorizaUsoDatos.getSelectedIndex() > 0) {
             oPersona.setAutorizaUsoDatos(cbxAutorizaUsoDatos.getSelectedItem().toString().trim());
         } else {
@@ -1358,10 +1358,9 @@ public class JPanel_Admision extends javax.swing.JPanel {
         if (cbxEstadoCivil.getSelectedIndex() > 0) {
             oPersona.setPeEstadoCivil((PeEstadoCivil) cbxEstadoCivil.getSelectedItem());
         }
-        
+
         //Validar  Dni
         //generar d manera  automatica la historia clinica        
-        
         if (cbxAutorizaUsoDatos.getSelectedIndex() > 0) {
             oPersona.setAutorizaUsoDatos(cbxAutorizaUsoDatos.getSelectedItem().toString().trim());
         } else {
@@ -1632,7 +1631,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         } else {
             oEstadoCivilCtrl.recuperaDatosEstadoCivil(beanTablaPersona.getPeEstadoCivil().getIdpeestadocivil(), cbxEstadoCivil);
         }
-        
+
         if (beanTablaPersona.getAutorizaUsoDatos() == null || beanTablaPersona.getAutorizaUsoDatos().equals("")) {
             this.cbxAutorizaUsoDatos.setSelectedIndex(0);
         } else {
@@ -1663,7 +1662,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
 
         //Buscar y cargar los  seguros  con los que  cuenta el paciente
         listarSegurosBD();
-        
+
         //Listar fondo de prevision registrados en LISSA por ultima fecha de pago
         oBlFondoPrevision = new FondoPrevisionBl();
         ArrayList<FondoSolidaridad> listfs;
@@ -1682,7 +1681,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
         modeloPersonas.clear();
         oModeloFondoPrevision.clear();
         oModeloFondoPrevisionTemp.clear();
-        oModeloSeguro.clear();        
+        oModeloSeguro.clear();
         estadoSectionIngreso(true);
         resetComponent();
         resetPaintComponent();
@@ -1774,7 +1773,6 @@ public class JPanel_Admision extends javax.swing.JPanel {
             }
         }
     }
-    
 
     private void listarIngresosPaciente(int idPersona) {
         oPacienteBl = new PacienteBl();
@@ -1824,7 +1822,7 @@ public class JPanel_Admision extends javax.swing.JPanel {
                 root.jifEmitirComprobante.EnviarDatosCaja(oCaja);
                 root.jifEmitirComprobante.inicializar();
                 root.insertarInternalFrames(root.jifEmitirComprobante);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Registre un nuevo ingreso", "Atención", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -1877,8 +1875,8 @@ public class JPanel_Admision extends javax.swing.JPanel {
     }
 
     private boolean isDatosValidosIngreso() {
-        return (cbxTipoIngreso.getSelectedIndex()>0
-                && cbxEspecialidad.getSelectedIndex()>0);
+        return (cbxTipoIngreso.getSelectedIndex() > 0
+                && cbxEspecialidad.getSelectedIndex() > 0);
     }
 
     private void paintComponentesIngreso() {
@@ -1892,10 +1890,10 @@ public class JPanel_Admision extends javax.swing.JPanel {
     }
 
     private void imprimir() {
-        if(isDatosValidosImpresion()){
+        if (isDatosValidosImpresion()) {
             root.jdVisorHc.setPrintHistoriaClinica(printHc);
             root.jdVisorHc.clearData();
-            if(beanTablaPersona != null && oHistoriaClinica != null){
+            if (beanTablaPersona != null && oHistoriaClinica != null) {
                 printHc.setFecha_registro(Utilitarios.formatFecha(new Date()));
                 printHc.setNumero_hc(oHistoriaClinica.getNumerohc().toString());
                 printHc.setApe_paterno(beanTablaPersona.getApellidoPaterno());
@@ -1903,32 +1901,31 @@ public class JPanel_Admision extends javax.swing.JPanel {
                 printHc.setNombres(beanTablaPersona.getNombre());
                 if (beanTablaPersona.getSexo() != null && beanTablaPersona.getSexo().equals("MASCULINO")) {
                     printHc.setSexo("M");
-                }else if(beanTablaPersona.getSexo() != null && beanTablaPersona.getSexo().equals("FEMENINO")){
+                } else if (beanTablaPersona.getSexo() != null && beanTablaPersona.getSexo().equals("FEMENINO")) {
                     printHc.setSexo("F");
                 }
-                printHc.setFecha_nacimiento(beanTablaPersona.getFechaNacimiento()!= null?Utilitarios.formatFecha(beanTablaPersona.getFechaNacimiento()):"");
-                printHc.setEdad(beanTablaPersona.getFechaNacimiento() != null?Utilitarios.obtenerEdad(beanTablaPersona.getFechaNacimiento())+"":"");
-                printHc.setLugar_nacimiento(beanTablaPersona.getLugarNacimiento() != null?beanTablaPersona.getLugarNacimiento():"");
-                printHc.setProcedencia(beanTablaPersona.getLugarProcedencia() != null?beanTablaPersona.getLugarProcedencia():"");
-                printHc.setGrado_instruccion(beanTablaPersona.getGradoInstruccion() != null?beanTablaPersona.getGradoInstruccion():"");
-                printHc.setEstado_civil(beanTablaPersona.getPeEstadoCivil() != null ? beanTablaPersona.getPeEstadoCivil().getEstadoCivil():"");
-                printHc.setOcupacion(beanTablaPersona.getOcupacion() != null?beanTablaPersona.getOcupacion():"");
-                printHc.setDni(beanTablaPersona.getNumeroDocumento() != null?beanTablaPersona.getNumeroDocumento():"");
-                printHc.setCelular(beanTablaPersona.getTelefono() != null?"Telefono : "+beanTablaPersona.getTelefono():"");
-                
+                printHc.setFecha_nacimiento(beanTablaPersona.getFechaNacimiento() != null ? Utilitarios.formatFecha(beanTablaPersona.getFechaNacimiento()) : "");
+                printHc.setEdad(beanTablaPersona.getFechaNacimiento() != null ? Utilitarios.obtenerEdad(beanTablaPersona.getFechaNacimiento()) + "" : "");
+                printHc.setLugar_nacimiento(beanTablaPersona.getLugarNacimiento() != null ? beanTablaPersona.getLugarNacimiento() : "");
+                printHc.setProcedencia(beanTablaPersona.getLugarProcedencia() != null ? beanTablaPersona.getLugarProcedencia() : "");
+                printHc.setGrado_instruccion(beanTablaPersona.getGradoInstruccion() != null ? beanTablaPersona.getGradoInstruccion() : "");
+                printHc.setEstado_civil(beanTablaPersona.getPeEstadoCivil() != null ? beanTablaPersona.getPeEstadoCivil().getEstadoCivil() : "");
+                printHc.setOcupacion(beanTablaPersona.getOcupacion() != null ? beanTablaPersona.getOcupacion() : "");
+                printHc.setDni(beanTablaPersona.getNumeroDocumento() != null ? beanTablaPersona.getNumeroDocumento() : "");
+                printHc.setCelular(beanTablaPersona.getTelefono() != null ? "Telefono : " + beanTablaPersona.getTelefono() : "");
+
                 root.jdVisorHc.pintarDatos();
                 root.jdVisorHc.setVisible(true);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No cuenta con HC", "Atención", JOptionPane.ERROR_MESSAGE);
             }
-        }else{
+        } else {
             Mensajes.hcSeleccionePersona();
         }
     }
 
     private boolean isDatosValidosImpresion() {
-        return (tblResultados.getRowSelectionAllowed()
-                );
+        return (tblResultados.getRowSelectionAllowed());
     }
 
 }

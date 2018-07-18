@@ -32,5 +32,17 @@
         <property name="fechaReg" type="date">
             <column name="fecha_reg" length="13" not-null="true" />
         </property>
+        <set name="certMedicoOcupacionals" table="cert_medico_ocupacional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.CertMedicoOcupacional" />
+        </set>
+        <set name="certMedicoOcupacional2s" table="cert_medico_ocupacional2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_atencionocupacional" not-null="true" />
+            </key>
+            <one-to-many class="lissa.be.CertMedicoOcupacional2" />
+        </set>
     </class>
 </hibernate-mapping>

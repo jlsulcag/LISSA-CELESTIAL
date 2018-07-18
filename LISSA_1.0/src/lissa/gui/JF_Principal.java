@@ -87,6 +87,7 @@ public class JF_Principal extends javax.swing.JFrame {
     public JIF_ServicioAdd jifServicioAdd;
     public JIF_Ocupacional jifOcupacional;
     public JIF_Certificados jifCertificados;
+    public JIF_AdminCie10 jifAdminCie10;
 
 //    private JD_BackUpDB_Creator_Sirec bcpc = null;
 //    private JD_BackUpDB_Restore_Sirec bcpr = null;
@@ -163,6 +164,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jifServicioAdd = new JIF_ServicioAdd(this);
         jifOcupacional = new JIF_Ocupacional(this);
         jifCertificados = new JIF_Certificados(this);
+        jifAdminCie10 = new JIF_AdminCie10(this);
 
     }
 

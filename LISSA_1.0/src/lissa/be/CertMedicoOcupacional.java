@@ -16,6 +16,7 @@ public class CertMedicoOcupacional implements java.io.Serializable {
     private Set<CmoRecomendaciones> cmoRecomendacioneses = new HashSet<CmoRecomendaciones>(0);
     private Set<CmoObservaciones> cmoObservacioneses = new HashSet<CmoObservaciones>(0);
     private Set<FmoRestricciones> fmoRestriccioneses = new HashSet<FmoRestricciones>(0);
+    private Set<CmoCie10> cmoCie10s = new HashSet<CmoCie10>(0);
 
     public CertMedicoOcupacional() {
     }
@@ -74,6 +75,14 @@ public class CertMedicoOcupacional implements java.io.Serializable {
 
     public void setFmoRestriccioneses(Set<FmoRestricciones> fmoRestriccioneses) {
         this.fmoRestriccioneses = fmoRestriccioneses;
+    }
+
+    public Set<CmoCie10> getCmoCie10s() {
+        return cmoCie10s;
+    }
+
+    public void setCmoCie10s(Set<CmoCie10> cmoCie10s) {
+        this.cmoCie10s = cmoCie10s;
     }
 
 }

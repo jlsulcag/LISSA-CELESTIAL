@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 10/07/2018 11:20:51 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 14/07/2018 08:27:01 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="lissa.be.CertMedicoOcupacional" table="cert_medico_ocupacional" schema="public" optimistic-lock="version">
+    <class name="lissa.be.CertMedicoOcupacional2" table="cert_medico_ocupacional2" schema="public" optimistic-lock="version">
         <id name="idcertmedicoocupacional" type="long">
             <column name="idcertmedicoocupacional" />
             <generator class="increment" />
@@ -14,33 +14,26 @@
         <many-to-one name="condicion" class="lissa.be.Condicion" fetch="select">
             <column name="id_condicion" not-null="true" />
         </many-to-one>
-       
         <property name="idMedico" type="java.lang.Long">
             <column name="id_medico" />
         </property>
-        <set name="cmoRecomendacioneses" table="cmo_recomendaciones" inverse="true" lazy="true" fetch="select">
+        <set name="fmoRestricciones2s" table="fmo_restricciones2" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_cmo" not-null="true" />
             </key>
-            <one-to-many class="lissa.be.CmoRecomendaciones" />
+            <one-to-many class="lissa.be.FmoRestricciones2" />
         </set>
-        <set name="cmoObservacioneses" table="cmo_observaciones" inverse="true" lazy="true" fetch="select">
+        <set name="cmoObservaciones2s" table="cmo_observaciones2" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_cmo" not-null="true" />
             </key>
-            <one-to-many class="lissa.be.CmoObservaciones" />
+            <one-to-many class="lissa.be.CmoObservaciones2" />
         </set>
-        <set name="fmoRestriccioneses" table="fmo_restricciones" inverse="true" lazy="true" fetch="select">
+        <set name="cmoRecomendaciones2s" table="cmo_recomendaciones2" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_cmo" not-null="true" />
             </key>
-            <one-to-many class="lissa.be.FmoRestricciones" />
-        </set>
-        <set name="cmoCie10s" table="cmo_cie10" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="id_cmo" not-null="true" />
-            </key>
-            <one-to-many class="lissa.be.CmoCie10" />
+            <one-to-many class="lissa.be.CmoRecomendaciones2" />
         </set>
     </class>
 </hibernate-mapping>

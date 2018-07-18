@@ -13,6 +13,7 @@ public class Condicion implements java.io.Serializable {
     private long idcondicion;
     private String descripcion;
     private Set<CertMedicoOcupacional> certMedicoOcupacionals = new HashSet<CertMedicoOcupacional>(0);
+    private Set<CertMedicoOcupacional2> certMedicoOcupacional2s = new HashSet<CertMedicoOcupacional2>(0);
     public static final int DEFECTO = -1, DATO = 3;
     private int op = -1;
 
@@ -70,6 +71,14 @@ public class Condicion implements java.io.Serializable {
             default:
                 return "<SELECCIONE>";
         }
+    }
+
+    public Set<CertMedicoOcupacional2> getCertMedicoOcupacional2s() {
+        return certMedicoOcupacional2s;
+    }
+
+    public void setCertMedicoOcupacional2s(Set<CertMedicoOcupacional2> certMedicoOcupacional2s) {
+        this.certMedicoOcupacional2s = certMedicoOcupacional2s;
     }
 
 }

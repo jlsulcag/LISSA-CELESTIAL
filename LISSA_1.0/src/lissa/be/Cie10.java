@@ -9,7 +9,7 @@ package lissa.be;
 public class Cie10  implements java.io.Serializable {
 
 
-     private int idCie10;
+     private long idcie10;
      private ExamenOcupacional examenOcupacional;
      private String codigo;
      private String descripcion;
@@ -19,22 +19,22 @@ public class Cie10  implements java.io.Serializable {
 
 	
     public Cie10(int idCie10, String codigo) {
-        this.idCie10 = idCie10;
+        this.idcie10 = idCie10;
         this.codigo = codigo;
     }
     public Cie10(int idCie10, ExamenOcupacional examenOcupacional, String codigo, String descripcion) {
-       this.idCie10 = idCie10;
+       this.idcie10 = idCie10;
        this.examenOcupacional = examenOcupacional;
        this.codigo = codigo;
        this.descripcion = descripcion;
     }
    
-    public int getIdCie10() {
-        return this.idCie10;
+    public long getIdcie10() {
+        return this.idcie10;
     }
     
-    public void setIdCie10(int idCie10) {
-        this.idCie10 = idCie10;
+    public void setIdcie10(long idcie10) {
+        this.idcie10 = idcie10;
     }
     public ExamenOcupacional getExamenOcupacional() {
         return this.examenOcupacional;

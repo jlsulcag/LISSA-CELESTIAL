@@ -62,5 +62,10 @@
     <mapping resource="lissa/be/FmoRestricciones.hbm.xml"/>
     <mapping resource="lissa/be/CmoObservaciones.hbm.xml"/>
     <mapping resource="lissa/be/CmoRecomendaciones.hbm.xml"/>
+    <mapping resource="lissa/be/CertMedicoOcupacional2.hbm.xml"/>
+    <mapping resource="lissa/be/FmoRestricciones2.hbm.xml"/>
+    <mapping resource="lissa/be/CmoObservaciones2.hbm.xml"/>
+    <mapping resource="lissa/be/CmoRecomendaciones2.hbm.xml"/>
+    <mapping resource="lissa/be/CmoCie10.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import lissa.be.Cie10;
 import lissa.util.AbstractDA;
+import lissa.utiles.HibernateUtil;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class Cie10Dao extends AbstractDA<Cie10>{
-
+    private Session sesion;
+    private Transaction tx;
     @Override
     public Cie10 registrar(Cie10 bean) {
         return save(bean);
@@ -40,7 +45,7 @@ public class Cie10Dao extends AbstractDA<Cie10>{
 
     @Override
     public Cie10 buscar(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return search(Cie10.class, id);
     }
 
     @Override
@@ -51,6 +56,32 @@ public class Cie10Dao extends AbstractDA<Cie10>{
     @Override
     public long id() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ArrayList<Cie10> buscarxRef(String ref) {
+        ArrayList<Cie10> list = null;
+        try {
+            iniciarOperacion();
+            list = (ArrayList<Cie10>) sesion.createQuery("from Cie10 c where c.codigo like '%" + ref + "%'").list();
+
+            if (list.isEmpty()) {
+                list = (ArrayList<Cie10>) sesion.createQuery("from Cie10 c where c.descripcion like '%" + ref + "%'").list();
+            }
+        } catch (HibernateException e) {
+            manejaExcepcion(e);
+        }
+        tx.commit();
+        return list;
+    }
+    
+     private void iniciarOperacion() throws HibernateException {
+        sesion = HibernateUtil.getSessionFactory().openSession();
+        tx = sesion.beginTransaction();
+    }
+
+    private void manejaExcepcion(HibernateException he) throws HibernateException {
+        tx.rollback();
+        throw new HibernateException("Ocurrió un error en la capa de acceso a datos", he);
     }
     
 }

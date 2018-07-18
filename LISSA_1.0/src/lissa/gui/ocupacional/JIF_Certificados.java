@@ -1,19 +1,31 @@
 package lissa.gui.ocupacional;
 
+import javax.swing.JOptionPane;
 import lissa.be.AtencionOcupacional;
 import lissa.be.CertMedicoOcupacional;
+import lissa.be.CertMedicoOcupacional2;
+import lissa.be.Cie10;
+import lissa.be.CmoCie10;
 import lissa.be.CmoObservaciones;
+import lissa.be.CmoObservaciones2;
 import lissa.be.CmoRecomendaciones;
+import lissa.be.CmoRecomendaciones2;
 import lissa.be.Condicion;
 import lissa.be.ExamenOcupacional;
 import lissa.be.FmoRestricciones;
+import lissa.be.FmoRestricciones2;
 import lissa.be.MotivoObservacion;
 import lissa.be.Persona;
 import lissa.be.Recomendacion;
 import lissa.be.Restriccion;
+import lissa.bl.CertMedicoOcupacional2Bl;
 import lissa.bl.CertMedicoOcupacionalBl;
+import lissa.bl.CmoCie10Bl;
+import lissa.bl.CmoObservaciones2Bl;
 import lissa.bl.CmoObservacionesBl;
+import lissa.bl.CmoRecomendaciones2Bl;
 import lissa.bl.CmoRecomendacionesBl;
+import lissa.bl.FmoRestricciones2Bl;
 import lissa.bl.FmoRestriccionesBl;
 import lissa.controller.CondicionCtrl;
 import lissa.controller.ExamenOcupacionalCtrl;
@@ -21,9 +33,14 @@ import lissa.controller.MotivoObservacionCtrl;
 import lissa.controller.RecomendacionCtrl;
 import lissa.controller.RestriccionCtrl;
 import lissa.gui.JF_Principal;
+import lissa.table.ModeloCmoCie10;
 import lissa.table.ModeloObservacion;
+import lissa.table.ModeloObservacion2;
 import lissa.table.ModeloRecomendacion;
+import lissa.table.ModeloRecomendacion2;
 import lissa.table.ModeloRestricciones1;
+import lissa.table.ModeloRestricciones2;
+import org.rx.cr.util.Utilitarios;
 
 public class JIF_Certificados extends javax.swing.JInternalFrame {
 
@@ -40,6 +57,15 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
     private AtencionOcupacional oAtencionOcupacional;
     private CertMedicoOcupacional oCertMedicoOcupacional;
     private CertMedicoOcupacionalBl oCertMedicoOcupacionalBl;
+    private CertMedicoOcupacional2 oCertMedicoOcupacional2;
+    private CertMedicoOcupacional2Bl oCertMedicoOcupacional2Bl;
+    private ModeloRestricciones2 oModeloRestricciones2;
+    private ModeloObservacion2 oModeloObservacion2;
+    private ModeloRecomendacion2 oModeloRecomendacion2;
+    private Cie10 oCie10;
+    private ModeloCmoCie10 oModeloCmoCie10;
+    private CmoCie10 oCmoCie10;
+    private CmoCie10Bl oCmoCie10Bl;
 
     public JIF_Certificados(JF_Principal root) {
         initComponents();
@@ -50,6 +76,16 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         tblOnservaciones1.setModel(oModeloObservacion1);
         oModeloRecomendacion = new ModeloRecomendacion();
         tblRecomendaciones.setModel(oModeloRecomendacion);
+
+        oModeloRestricciones2 = new ModeloRestricciones2();
+        tblRestricciones2.setModel(oModeloRestricciones2);
+        oModeloObservacion2 = new ModeloObservacion2();
+        tblOnservaciones2.setModel(oModeloObservacion2);
+        oModeloRecomendacion2 = new ModeloRecomendacion2();
+        tblRecomendaciones1.setModel(oModeloRecomendacion2);
+
+        oModeloCmoCie10 = new ModeloCmoCie10();
+        tblComCie10.setModel(oModeloCmoCie10);
     }
 
     /**
@@ -73,7 +109,6 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         cbxObservacion1 = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
         cbxRecomendacion1 = new javax.swing.JComboBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -87,7 +122,38 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblRestricciones1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        txfCie10Desc = new javax.swing.JTextField();
+        txfCie10 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tblComCie10 = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        cbxCategoria2 = new javax.swing.JComboBox();
+        jButton13 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        cbxRecomendacion2 = new javax.swing.JComboBox();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblRestricciones2 = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        cbxCategoria3 = new javax.swing.JComboBox();
+        jButton12 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblRecomendaciones1 = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        cbxCondicion2 = new javax.swing.JComboBox();
+        jLabel16 = new javax.swing.JLabel();
+        cbxRestricciones2 = new javax.swing.JComboBox();
+        jLabel17 = new javax.swing.JLabel();
+        cbxObservacion2 = new javax.swing.JComboBox();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblOnservaciones2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
@@ -129,8 +195,6 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Recomendaciones :");
 
-        jCheckBox1.setText("Replicar");
-
         jButton3.setText("+");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +224,7 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Guardar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -230,9 +294,7 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
                                 .addComponent(cbxCategoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jCheckBox1))
+                                .addComponent(jButton2)
                                 .addGap(45, 45, 45))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -267,7 +329,7 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -277,8 +339,7 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 143, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
                 .addContainerGap())
@@ -286,28 +347,272 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("CERTIFICADO1", jPanel1);
 
+        jLabel57.setText("CIE-10 :");
+
+        txfCie10Desc.setEnabled(false);
+
+        txfCie10.setEnabled(false);
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/search.png"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/add.png"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lissa/resources/remove.png"))); // NOI18N
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        tblComCie10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane12.setViewportView(tblComCie10);
+
+        jLabel13.setText("Categoria :");
+
+        cbxCategoria2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCategoria2ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Guardar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton13))
+                    .addComponent(jScrollPane12)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxCategoria2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txfCie10Desc)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txfCie10, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(551, 551, 551))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(cbxCategoria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9)
+                    .addComponent(jButton8)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel57)
+                            .addComponent(txfCie10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txfCie10Desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton13)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CERTIFICADO2", jPanel2);
+
+        tblRestricciones2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane5.setViewportView(tblRestricciones2);
+
+        jButton6.setText("+");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("+");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("+");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Categoria :");
+
+        cbxCategoria3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCategoria3ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("Guardar");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        tblRecomendaciones1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane6.setViewportView(tblRecomendaciones1);
+
+        jLabel15.setText("Condición :");
+
+        jLabel16.setText("Restricciones :");
+
+        jLabel17.setText("Motivo de la Observación :");
+
+        jLabel18.setText("Recomendaciones :");
+
+        tblOnservaciones2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane7.setViewportView(tblOnservaciones2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbxRecomendacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton11))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel16))
+                                .addGap(62, 62, 62)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cbxCondicion2, 0, 324, Short.MAX_VALUE)
+                                    .addComponent(cbxRestricciones2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxCategoria3, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton12)
+                                .addGap(45, 45, 45))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbxObservacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton10)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(cbxCondicion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(cbxCategoria3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(cbxRestricciones2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6)
+                    .addComponent(jLabel17)
+                    .addComponent(cbxObservacion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(cbxRecomendacion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 143, Short.MAX_VALUE)
+                        .addComponent(jButton12))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("CERTIFICADO3", jPanel3);
@@ -420,7 +725,7 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -456,28 +761,105 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         guardarCertificado1();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        root.insertarInternalFrames(root.jifAdminCie10);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        if (isDatosValidosCie10()) {
+            agregarCie10();
+            personalizaVistaTabla();
+            resetComponentCie10();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese Cie10", "Atención", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void cbxCategoria2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCategoria2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxCategoria2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (cbxRestricciones2.getSelectedIndex() > 0) {
+            agregarRestricciones2();
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        if (cbxObservacion2.getSelectedIndex() > 0) {
+            agregarObservaciones2();
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        if (cbxRecomendacion2.getSelectedIndex() > 0) {
+            agregarRecomendaciones2();
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void cbxCategoria3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCategoria3ActionPerformed
+        if (cbxCategoria1.getSelectedIndex() > 0) {
+            cargarCombosDependientes2();
+        }
+    }//GEN-LAST:event_cbxCategoria3ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        guardarCertificado3();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        if(oModeloCmoCie10.size() > 0){
+            guardarCmoCie10();
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cbxCategoria1;
+    private javax.swing.JComboBox cbxCategoria2;
+    private javax.swing.JComboBox cbxCategoria3;
     private javax.swing.JComboBox cbxCondicion1;
+    private javax.swing.JComboBox cbxCondicion2;
     private javax.swing.JComboBox cbxObservacion1;
+    private javax.swing.JComboBox cbxObservacion2;
     private javax.swing.JComboBox cbxRecomendacion1;
+    private javax.swing.JComboBox cbxRecomendacion2;
     private javax.swing.JComboBox cbxRestricciones1;
+    private javax.swing.JComboBox cbxRestricciones2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -487,16 +869,26 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblComCie10;
     private javax.swing.JTable tblOnservaciones1;
+    private javax.swing.JTable tblOnservaciones2;
     private javax.swing.JTable tblRecomendaciones;
+    private javax.swing.JTable tblRecomendaciones1;
     private javax.swing.JTable tblRestricciones1;
+    private javax.swing.JTable tblRestricciones2;
     private javax.swing.JTextField txfApellidosNombres;
+    private javax.swing.JTextField txfCie10;
+    private javax.swing.JTextField txfCie10Desc;
     private javax.swing.JTextField txfDni;
     private javax.swing.JTextField txfEdad;
     private javax.swing.JTextField txfEmpresa;
@@ -508,6 +900,9 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         oCondicionCtrl.rellenaCbx(cbxCondicion1);
         oExamenOcupacionalCtrl = new ExamenOcupacionalCtrl(root);
         oExamenOcupacionalCtrl.rellenaCbx(cbxCategoria1);
+        oCondicionCtrl.rellenaCbx(cbxCondicion2);
+        oExamenOcupacionalCtrl.rellenaCbx(cbxCategoria2);
+        oExamenOcupacionalCtrl.rellenaCbx(cbxCategoria3);
     }
 
     private void cargarCombosDependientes() {
@@ -615,5 +1010,134 @@ public class JIF_Certificados extends javax.swing.JInternalFrame {
         txfEdad.setText(oAtencionOcupacional.getEdadIngreso().toString());
         txfEmpresa.setText(oAtencionOcupacional.getPersonaJuridica().getRazonSocial().trim());
         txfPuestoLaboral.setText(oAtencionOcupacional.getPuestoLaboral().getPuestoLaboral().trim());
+    }
+
+    private void guardarCertificado3() {
+        if (isDatosValidos2()) {
+            oCertMedicoOcupacional2 = guardarGenerales2();
+            if (oCertMedicoOcupacional2 != null) {
+                if (oModeloRestricciones2.size() > 0) {
+                    guardarRestricciones2();
+                }
+                if (oModeloObservacion2.size() > 0) {
+                    guardarObservaciones2();
+                }
+                if (oModeloRestricciones2.size() > 0) {
+                    guardarRecomendaciones2();
+                }
+            }
+
+        }
+    }
+
+    private CertMedicoOcupacional2 guardarGenerales2() {
+        oCertMedicoOcupacional2 = new CertMedicoOcupacional2();
+        oCertMedicoOcupacional2Bl = new CertMedicoOcupacional2Bl();
+        oCertMedicoOcupacional2.setAtencionOcupacional(oAtencionOcupacional);
+        oCertMedicoOcupacional2.setCondicion((Condicion) cbxCondicion2.getSelectedItem());
+        return oCertMedicoOcupacional2Bl.registrar(oCertMedicoOcupacional2);
+    }
+
+    private void guardarRestricciones2() {
+        FmoRestricciones2Bl oFmoRestricciones2Bl = new FmoRestricciones2Bl();
+        for (int i = 0; i < oModeloRestricciones2.size(); i++) {
+            FmoRestricciones2 oFmoRestricciones2 = new FmoRestricciones2();
+            oFmoRestricciones2 = oModeloRestricciones2.get(i);
+            oFmoRestricciones2.setCertMedicoOcupacional2(oCertMedicoOcupacional2);
+            oFmoRestricciones2Bl.registrar(oFmoRestricciones2);
+        }
+    }
+
+    private void guardarObservaciones2() {
+        CmoObservaciones2Bl oCmoObservaciones2Bl = new CmoObservaciones2Bl();
+        for (int i = 0; i < oModeloObservacion2.size(); i++) {
+            CmoObservaciones2 oCmoObservaciones2 = new CmoObservaciones2();
+            oCmoObservaciones2 = oModeloObservacion2.get(i);
+            oCmoObservaciones2.setCertMedicoOcupacional2(oCertMedicoOcupacional2);
+            oCmoObservaciones2Bl.registrar(oCmoObservaciones2);
+        }
+    }
+
+    private void guardarRecomendaciones2() {
+        CmoRecomendaciones2Bl oCmoRecomendaciones2Bl = new CmoRecomendaciones2Bl();
+        for (int i = 0; i < oModeloRecomendacion2.size(); i++) {
+            CmoRecomendaciones2 oCmoRecomendaciones2 = new CmoRecomendaciones2();
+            oCmoRecomendaciones2 = oModeloRecomendacion2.get(i);
+            oCmoRecomendaciones2.setCertMedicoOcupacional2(oCertMedicoOcupacional2);
+            oCmoRecomendaciones2Bl.registrar(oCmoRecomendaciones2);
+        }
+    }
+
+    private void cargarCombosDependientes2() {
+        oRestriccionCtrl = new RestriccionCtrl(root);
+        oRestriccionCtrl.rellenaCbx(cbxRestricciones2, ((ExamenOcupacional) cbxCategoria3.getSelectedItem()).getIdexamenocupacional());
+        //
+        oMotivoObservacionCtrl = new MotivoObservacionCtrl(root);
+        oMotivoObservacionCtrl.rellenaCbx(cbxObservacion2, ((ExamenOcupacional) cbxCategoria3.getSelectedItem()).getIdexamenocupacional());
+        //
+        oRecomendacionCtrl = new RecomendacionCtrl(root);
+        oRecomendacionCtrl.rellenaCbx(cbxRecomendacion2, ((ExamenOcupacional) cbxCategoria3.getSelectedItem()).getIdexamenocupacional());
+    }
+
+    private void agregarRestricciones2() {
+        FmoRestricciones2 fmoRestriccion = new FmoRestricciones2();
+        fmoRestriccion.setIdRestriccion(((Restriccion) cbxRestricciones2.getSelectedItem()).getIdrestriccion());
+        oModeloRestricciones2.add(fmoRestriccion);
+        cbxRestricciones2.setSelectedIndex(0);
+    }
+
+    private void agregarObservaciones2() {
+        CmoObservaciones2 oCmoObservaciones = new CmoObservaciones2();
+        oCmoObservaciones.setIdObservacion(((MotivoObservacion) cbxObservacion2.getSelectedItem()).getIdmotivoobservacion());
+        oModeloObservacion2.add(oCmoObservaciones);
+        cbxObservacion2.setSelectedIndex(0);
+    }
+
+    private void agregarRecomendaciones2() {
+        CmoRecomendaciones2 oCmoRecomendaciones = new CmoRecomendaciones2();
+        oCmoRecomendaciones.setIdRecomendacion(((Recomendacion) cbxRecomendacion2.getSelectedItem()).getIdrecomendacion());
+        oModeloRecomendacion2.add(oCmoRecomendaciones);
+        cbxRecomendacion2.setSelectedIndex(0);
+    }
+
+    private boolean isDatosValidos2() {
+        return (cbxCondicion2.getSelectedIndex() > 0);
+    }
+
+    public void cargarCie10(Cie10 beanTabla) {
+        oCie10 = beanTabla;
+        txfCie10.setText(oCie10.getCodigo());
+        txfCie10Desc.setText(oCie10.getDescripcion());
+    }
+
+    private boolean isDatosValidosCie10() {
+        return (oCie10 != null);
+    }
+
+    private void agregarCie10() {
+        CmoCie10 oCmoCie10 = new CmoCie10();
+        oCmoCie10.setIdCie10(oCie10.getIdcie10());
+        oModeloCmoCie10.add(oCmoCie10);
+    }
+
+    private void resetComponentCie10() {
+        txfCie10.setText("");
+        txfCie10Desc.setText("");
+        oCie10 = null;
+    }
+
+    private void personalizaVistaTabla() {
+        Utilitarios.formateaAnchoColumnaTabla(0, tblComCie10, 50);
+    }
+
+    private void guardarCmoCie10() {
+        oCmoCie10Bl = new CmoCie10Bl();
+        for (int i = 0; i < oModeloCmoCie10.size(); i++) {
+            oCmoCie10 = new CmoCie10();
+            oCmoCie10 = oModeloCmoCie10.get(i);
+            oCmoCie10.setCertMedicoOcupacional(oCertMedicoOcupacional);
+            oCmoCie10Bl.registrar(oCmoCie10);
+        }
+        //imprimir
     }
 }

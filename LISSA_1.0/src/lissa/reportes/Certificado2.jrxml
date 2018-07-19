@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Certificado1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="113" bottomMargin="85" uuid="afec4c79-70bc-499e-a8df-c86fbd838190">
-	<property name="ireport.zoom" value="1.1000000000000203"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Certificado2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="85" bottomMargin="56" uuid="afec4c79-70bc-499e-a8df-c86fbd838190">
+	<property name="ireport.zoom" value="0.7513148009015927"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="472"/>
+	<property name="ireport.y" value="125"/>
 	<parameter name="ID" class="java.lang.Long">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -90,9 +90,9 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 		</band>
 	</title>
 	<detail>
-		<band height="582" splitType="Stretch">
+		<band height="623" splitType="Stretch">
 			<rectangle>
-				<reportElement uuid="332f7a00-e4da-4fd0-be16-ead0a88dca8e" x="0" y="1" width="483" height="578"/>
+				<reportElement uuid="332f7a00-e4da-4fd0-be16-ead0a88dca8e" x="0" y="1" width="483" height="610"/>
 			</rectangle>
 			<rectangle>
 				<reportElement uuid="0a397b2e-3500-493a-80a5-eee1e012af29" x="0" y="1" width="161" height="45"/>
@@ -236,171 +236,171 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 				<text><![CDATA[Empresa]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="197aea95-c6e9-4659-9694-c1fe54982724" x="0" y="142" width="483" height="20"/>
+				<reportElement uuid="197aea95-c6e9-4659-9694-c1fe54982724" x="0" y="249" width="483" height="20"/>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="bce3b789-9716-4e1d-9ade-7d377f2e8c90" mode="Opaque" x="1" y="143" width="482" height="19" backcolor="#999999"/>
+				<reportElement uuid="bce3b789-9716-4e1d-9ade-7d377f2e8c90" mode="Opaque" x="1" y="250" width="482" height="19" backcolor="#999999"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[CONDICIÓN : Puesto al que postula]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="8bc916bd-ba35-453e-8f22-7e9a5e79571b" x="0" y="162" width="185" height="40"/>
+				<reportElement uuid="8bc916bd-ba35-453e-8f22-7e9a5e79571b" x="0" y="270" width="185" height="40"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="d9bfb882-8464-4120-8896-6b57ef9513be" x="0" y="242" width="185" height="40"/>
+				<reportElement uuid="d9bfb882-8464-4120-8896-6b57ef9513be" x="0" y="350" width="185" height="40"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="70d43e52-9ac8-4d37-bc51-a835e8f48c0c" x="0" y="282" width="185" height="41"/>
+				<reportElement uuid="70d43e52-9ac8-4d37-bc51-a835e8f48c0c" x="0" y="390" width="185" height="41"/>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="e65f16aa-c6d0-4841-ab4e-a38e52bcbc6b" x="0" y="162" width="137" height="20"/>
+				<reportElement uuid="e65f16aa-c6d0-4841-ab4e-a38e52bcbc6b" x="0" y="270" width="137" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[APTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b417e900-0c54-4056-90d9-0c6036a76b24" x="0" y="182" width="137" height="20"/>
+				<reportElement uuid="b417e900-0c54-4056-90d9-0c6036a76b24" x="0" y="290" width="137" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Para el puesto que trabaja o postula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="bb277036-2fe3-47a4-be41-6cc250ed65e5" x="0" y="202" width="137" height="20"/>
+				<reportElement uuid="bb277036-2fe3-47a4-be41-6cc250ed65e5" x="0" y="310" width="137" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[APTO CON RESTRICCION]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="e09ad1ca-f106-479e-b9f4-8ca359740e35" x="0" y="242" width="137" height="20"/>
+				<reportElement uuid="e09ad1ca-f106-479e-b9f4-8ca359740e35" x="0" y="350" width="137" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[NO APTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="96853cef-feca-4f63-a6f8-f2d4ba6cbe0e" x="0" y="262" width="137" height="20"/>
+				<reportElement uuid="96853cef-feca-4f63-a6f8-f2d4ba6cbe0e" x="0" y="370" width="137" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Para el puesto que trabaja o postula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b06b72d2-d2d3-439c-a7fa-9c4c4de7f263" x="0" y="222" width="137" height="20"/>
+				<reportElement uuid="b06b72d2-d2d3-439c-a7fa-9c4c4de7f263" x="0" y="330" width="137" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Para el puesto que trabaja o postula]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="bcb0b261-1ac6-4688-a3e4-cb394e2ecd93" x="137" y="162" width="48" height="40"/>
+				<reportElement uuid="bcb0b261-1ac6-4688-a3e4-cb394e2ecd93" x="137" y="270" width="48" height="40"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="45851f6b-5ba3-4ec1-a8e9-792ee2e6f6f1" x="137" y="202" width="48" height="40"/>
+				<reportElement uuid="45851f6b-5ba3-4ec1-a8e9-792ee2e6f6f1" x="137" y="310" width="48" height="40"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="12e21f23-3100-4ad2-8cdb-c3934ae5a4c9" x="137" y="242" width="48" height="40"/>
+				<reportElement uuid="12e21f23-3100-4ad2-8cdb-c3934ae5a4c9" x="137" y="350" width="48" height="40"/>
 			</rectangle>
 			<textField>
-				<reportElement uuid="063811c1-d335-4e45-b54c-8b4cc367b537" x="137" y="162" width="48" height="40"/>
+				<reportElement uuid="063811c1-d335-4e45-b54c-8b4cc367b537" x="137" y="270" width="48" height="40"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{descripcion}.equals("APTO"))?"X":""]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="5f366f3a-0e9d-4944-bac7-24c88ea0798d" x="137" y="201" width="48" height="41"/>
+				<reportElement uuid="5f366f3a-0e9d-4944-bac7-24c88ea0798d" x="137" y="309" width="48" height="41"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{descripcion}.equals("APTO CON RESTRICCION"))?"X":""]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="3be2f7e0-9cba-4a3c-ac39-527f4257964d" x="137" y="242" width="48" height="40"/>
+				<reportElement uuid="3be2f7e0-9cba-4a3c-ac39-527f4257964d" x="137" y="350" width="48" height="40"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{descripcion}.equals("NO APTO"))?"X":""]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="87a427d7-58f6-40ed-85ee-2634c4e15e07" x="0" y="283" width="137" height="20"/>
+				<reportElement uuid="87a427d7-58f6-40ed-85ee-2634c4e15e07" x="0" y="391" width="137" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[OBSERVADO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="0962d1aa-331e-4016-a9d8-d23d5b22285f" x="0" y="303" width="137" height="20"/>
+				<reportElement uuid="0962d1aa-331e-4016-a9d8-d23d5b22285f" x="0" y="411" width="137" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Para el puesto que trabaja o postula]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="7fcd39a4-c9f0-45cd-a927-d61fe6a515ba" x="137" y="282" width="48" height="41"/>
+				<reportElement uuid="7fcd39a4-c9f0-45cd-a927-d61fe6a515ba" x="137" y="390" width="48" height="41"/>
 			</rectangle>
 			<textField>
-				<reportElement uuid="88649799-be97-4ae4-b695-73260e2cbd83" x="137" y="282" width="48" height="41"/>
+				<reportElement uuid="88649799-be97-4ae4-b695-73260e2cbd83" x="137" y="390" width="48" height="41"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{descripcion}.equals("OBSERVADO"))?"X":""]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="d8b025ab-b000-42ba-a794-de2ccaadc1b1" x="185" y="162" width="297" height="15"/>
+				<reportElement uuid="d8b025ab-b000-42ba-a794-de2ccaadc1b1" x="185" y="270" width="297" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[RESTRICCIONES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="ce83303f-5f35-4a03-abcf-7e0713401f53" x="185" y="242" width="298" height="15"/>
+				<reportElement uuid="ce83303f-5f35-4a03-abcf-7e0713401f53" x="185" y="350" width="298" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[MOTIVO DE LA OBSERVACION]]></text>
 			</staticText>
 			<line>
-				<reportElement uuid="e7a18073-370f-44ae-801d-b83a7ecff398" x="185" y="242" width="298" height="1"/>
+				<reportElement uuid="e7a18073-370f-44ae-801d-b83a7ecff398" x="185" y="350" width="298" height="1"/>
 			</line>
 			<rectangle>
-				<reportElement uuid="57dad5b7-287c-45e0-8b5e-fc726e6e0324" x="0" y="323" width="482" height="20"/>
+				<reportElement uuid="57dad5b7-287c-45e0-8b5e-fc726e6e0324" x="0" y="431" width="482" height="20"/>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="1c4f30cf-0a71-454a-b6dd-68d7fac2d106" mode="Opaque" x="0" y="323" width="482" height="19" backcolor="#999999"/>
+				<reportElement uuid="1c4f30cf-0a71-454a-b6dd-68d7fac2d106" mode="Opaque" x="0" y="431" width="482" height="19" backcolor="#999999"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[RECOMENDACIONES]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="bac53c35-c067-4ed9-aa4b-2a4d58c51020" x="0" y="435" width="482" height="20"/>
+				<reportElement uuid="bac53c35-c067-4ed9-aa4b-2a4d58c51020" x="0" y="520" width="482" height="20"/>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="d723a531-0f34-4266-9f95-c4504a1c1c26" x="0" y="435" width="114" height="20"/>
+				<reportElement uuid="d723a531-0f34-4266-9f95-c4504a1c1c26" x="0" y="519" width="114" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[FECHA DE EXAMEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="819f9d5d-5321-4f29-9822-865a885cecf3" x="225" y="435" width="114" height="20"/>
+				<reportElement uuid="819f9d5d-5321-4f29-9822-865a885cecf3" x="225" y="519" width="114" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[FECHA DE EMISIÓN]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="4dea9761-3431-4bcb-bd9f-71d3122d262b" x="114" y="435" width="110" height="20"/>
+				<reportElement uuid="4dea9761-3431-4bcb-bd9f-71d3122d262b" x="114" y="519" width="110" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{fecha_examen}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="e4e553e6-8f14-4703-8fda-6ab2303b8259" x="339" y="435" width="143" height="20"/>
+				<reportElement uuid="e4e553e6-8f14-4703-8fda-6ab2303b8259" x="339" y="519" width="143" height="20"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{fecha_emision}]]></textFieldExpression>
 			</textField>
 			<rectangle>
-				<reportElement uuid="4e0c6669-fbc9-413b-b270-658db16ee260" x="0" y="455" width="482" height="20"/>
+				<reportElement uuid="4e0c6669-fbc9-413b-b270-658db16ee260" x="0" y="541" width="482" height="20"/>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="e0fa76e1-3eb7-4dbb-8ac4-1af95d8215d4" mode="Opaque" x="0" y="455" width="482" height="19" backcolor="#999999"/>
+				<reportElement uuid="e0fa76e1-3eb7-4dbb-8ac4-1af95d8215d4" mode="Opaque" x="0" y="541" width="482" height="19" backcolor="#999999"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -437,7 +437,7 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 				<textFieldExpression><![CDATA[$F{razon_social}]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement uuid="3affda52-3927-4713-a8f3-dd3451b9b132" x="185" y="177" width="297" height="66"/>
+				<reportElement uuid="3affda52-3927-4713-a8f3-dd3451b9b132" x="185" y="285" width="297" height="66"/>
 				<subreportParameter name="ID">
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -445,7 +445,7 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Restricciones1.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement uuid="02a1b0e2-0efc-4006-a364-50009a417663" x="185" y="257" width="297" height="66"/>
+				<reportElement uuid="02a1b0e2-0efc-4006-a364-50009a417663" x="185" y="365" width="297" height="66"/>
 				<subreportParameter name="ID">
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -453,12 +453,30 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Observaciones1.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement uuid="e05e2ebd-5118-4083-8cdb-e818c50e94e8" x="1" y="343" width="481" height="92"/>
+				<reportElement uuid="e05e2ebd-5118-4083-8cdb-e818c50e94e8" x="1" y="450" width="481" height="69"/>
 				<subreportParameter name="ID">
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA["D:\\Repositorio\\Clinica Celestial\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\Recomendaciones1.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement uuid="ea7c89bc-5e35-4d8d-8180-caa94066a8b0" x="0" y="142" width="482" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="da4684a2-b16a-440f-8078-0ffaa0af621d" mode="Opaque" x="0" y="142" width="482" height="19" backcolor="#999999"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIE 10]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="c26a4a31-dfe9-439a-885a-6e26de55ed51" x="1" y="162" width="481" height="88"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["D:\\Repositorio\\Clinica Celestial\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\Cie10.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

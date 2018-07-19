@@ -96,7 +96,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         cbxEstadoCivil = new javax.swing.JComboBox();
         jLabel45 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txfGrupoSanguineo = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jdcFechaEmision = new com.toedter.calendar.JDateChooser();
@@ -119,7 +119,6 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         btnCancelar = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         cbxTipoHCBusq = new javax.swing.JComboBox();
-        jButton3 = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Salud Ocupacional");
@@ -305,7 +304,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Grupo Sanguineo y Factor :");
 
-        jTextField1.setText("jTextField1");
+        txfGrupoSanguineo.setEnabled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -339,27 +338,19 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(cbxEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(txfnNumDni, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(txfApeMaterno)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txfApeMaterno)
+                    .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
+                    .addComponent(txfnNumDni, javax.swing.GroupLayout.Alignment.LEADING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jdcFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                        .addComponent(txfNombres))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jdcFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(txfNombres)
+                    .addComponent(txfGrupoSanguineo))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -389,7 +380,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
                     .addComponent(jLabel41)
                     .addComponent(cbxEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfGrupoSanguineo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
@@ -433,40 +424,43 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txfEmpresa))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
+                        .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxEvaluacion, 0, 300, Short.MAX_VALUE)))
+                        .addComponent(jdcFechaExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfEmpresa)
+                            .addComponent(cbxEvaluacion, 0, 300, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(txfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxPuestoLaboral, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
+                            .addComponent(jButton2))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jdcFechaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxPuestoLaboral, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addComponent(jButton2))
-                .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel21)
-                .addGap(18, 18, 18)
-                .addComponent(jdcFechaExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdcFechaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRegIngreso))
+                        .addComponent(btnRegIngreso))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -549,13 +543,6 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
                 .addGap(0, 4, Short.MAX_VALUE))
         );
 
-        jButton3.setText("Fichas");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -573,8 +560,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -604,8 +590,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
                         .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
@@ -708,11 +693,6 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         root.insertarInternalFrames(root.jifAdministrarPersonaJuridica);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        root.insertarInternalFrames(root.jifCertificados);
-        root.jifCertificados.iniciar();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -731,7 +711,6 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox cbxTipohc;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -757,7 +736,6 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private com.toedter.calendar.JDateChooser jdcFechaEmision;
     private com.toedter.calendar.JDateChooser jdcFechaExamen;
     private com.toedter.calendar.JDateChooser jdcFechaNacimiento;
@@ -767,6 +745,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txfBusqueda;
     private javax.swing.JTextField txfEdad;
     private javax.swing.JTextField txfEmpresa;
+    private javax.swing.JTextField txfGrupoSanguineo;
     private javax.swing.JTextField txfHistoriaClinica;
     private javax.swing.JTextField txfNombres;
     private javax.swing.JTextField txfnNumDni;
@@ -813,6 +792,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         txfEmpresa.setText("");
         jdcFechaEmision.setDate(null);
         jdcFechaExamen.setDate(null);
+        txfGrupoSanguineo.setText("");
 
     }
 
@@ -845,7 +825,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         } else {
             oEstadoCivilCtrl.recuperaDatosEstadoCivil(beanTablaPersona.getPeEstadoCivil().getIdpeestadocivil(), cbxEstadoCivil);
         }
-
+        txfGrupoSanguineo.setText(beanTablaPersona.getGrupoSanguineo());
         //Buscar Numero de historia clinica del paciente seleccionado
         oBlHistoriaClinica = new HistoriaClinicaBl();
         oHistoriaClinica = oBlHistoriaClinica.buscar(beanTablaPersona, (TipoHistoriaClinica) cbxTipoHCBusq.getSelectedItem());
@@ -881,7 +861,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         this.cbxTipoDoc.setEnabled(e);
         //this.cbxTipohc.setEnabled(e);
         this.cbxEstadoCivil.setEnabled(e);
-        jTextField1.setEnabled(e);
+        txfGrupoSanguineo.setEnabled(e);
     }
 
     private void generarHistoriaClinica() {
@@ -1058,6 +1038,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         if (cbxEstadoCivil.getSelectedIndex() > 0) {
             oPersona.setPeEstadoCivil((PeEstadoCivil) cbxEstadoCivil.getSelectedItem());
         }
+        oPersona.setGrupoSanguineo(txfGrupoSanguineo.getText().toUpperCase().trim().equals("")?"":txfGrupoSanguineo.getText().toUpperCase().trim());
 
         return oBLPersona.registrarPersona(oPersona);
     }
@@ -1113,7 +1094,7 @@ public class JIF_Ocupacional extends javax.swing.JInternalFrame {
         if (cbxEstadoCivil.getSelectedIndex() > 0) {
             oPersona.setPeEstadoCivil((PeEstadoCivil) cbxEstadoCivil.getSelectedItem());
         }
-
+        oPersona.setGrupoSanguineo(txfGrupoSanguineo.getText().toUpperCase().trim().equals("")?"":txfGrupoSanguineo.getText().toUpperCase().trim());
         oBLPersona.actualizar(oPersona);
         return oPersona;
     }

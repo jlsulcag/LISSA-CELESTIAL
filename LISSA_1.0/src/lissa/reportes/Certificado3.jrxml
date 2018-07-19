@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Certificado1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="113" bottomMargin="85" uuid="afec4c79-70bc-499e-a8df-c86fbd838190">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Certificado2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="113" bottomMargin="85" uuid="afec4c79-70bc-499e-a8df-c86fbd838190">
 	<property name="ireport.zoom" value="1.1000000000000203"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="472"/>
+	<property name="ireport.y" value="384"/>
 	<parameter name="ID" class="java.lang.Long">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -24,7 +24,7 @@ h.descripcion,
 b.fecha_examen,
 b.fecha_emision,
 a.idcertmedicoocupacional
-from cert_medico_ocupacional a inner join atencion_ocupacional b
+from cert_medico_ocupacional2 a inner join atencion_ocupacional b
 on a.id_atencionocupacional = b.idatencionocupacional inner join historia_clinica c
 on b.id_historiaclinica = c.idhistoriaclinica inner join persona d
 on c.id_persona = d.id_persona inner join puesto_laboral e
@@ -442,7 +442,7 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Restricciones1.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Restricciones2.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement uuid="02a1b0e2-0efc-4006-a364-50009a417663" x="185" y="257" width="297" height="66"/>
@@ -450,7 +450,7 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Observaciones1.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Observaciones2.jasper"]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement uuid="e05e2ebd-5118-4083-8cdb-e818c50e94e8" x="1" y="343" width="481" height="92"/>
@@ -458,7 +458,7 @@ where a.idcertmedicoocupacional = $P{ID}]]>
 					<subreportParameterExpression><![CDATA[$F{idcertmedicoocupacional}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["D:\\Repositorio\\Clinica Celestial\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\Recomendaciones1.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA["D:\\Repositorio\\Clinica Celestial\\LISSA-CELESTIAL\\LISSA_1.0\\src\\lissa\\reportes\\Recomendaciones2.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

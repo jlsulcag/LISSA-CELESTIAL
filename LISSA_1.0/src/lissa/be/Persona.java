@@ -41,6 +41,7 @@ public class Persona  implements java.io.Serializable {
      private String urbanizacion;
      private String autorizaUsoDatos;
      private Boolean estado;
+     private String grupoSanguineo;
      private Set<HistoriaClinica> historiaClinicas = new HashSet<HistoriaClinica>(0);
      private Set<PersonaEmpresa> personaEmpresas = new HashSet<PersonaEmpresa>(0);
      private Set<Paciente> pacientes = new HashSet<Paciente>(0);
@@ -355,6 +356,14 @@ public class Persona  implements java.io.Serializable {
     
     public void setSeguroVidaUsaPersonas(Set<SeguroVidaUsaPersona> seguroVidaUsaPersonas) {
         this.seguroVidaUsaPersonas = seguroVidaUsaPersonas;
+    }
+
+    public String getGrupoSanguineo() {
+        return grupoSanguineo;
+    }
+
+    public void setGrupoSanguineo(String grupoSanguineo) {
+        this.grupoSanguineo = grupoSanguineo;
     }
 
 

@@ -92,6 +92,9 @@
         <property name="estado" type="java.lang.Boolean">
             <column name="estado" />
         </property>
+        <property name="grupoSanguineo" type="string">
+            <column name="grupo_sanguineo" length="30" />
+        </property>
         <set name="historiaClinicas" table="historia_clinica" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="id_persona" not-null="true" />
